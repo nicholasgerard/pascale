@@ -21,7 +21,10 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 				<p class="overline">Ensemble pour NY 2026</p>
 				<h1>Pascale Richard</h1>
 				<p class="tagline">Construisons l'avenir, ensemble.</p>
-				<a href="#contact" class="cta">Rejoignez le mouvement</a>
+				<div class="buttons">
+					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
+					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta secondary">Découvrir Pascale</a>
+				</div>
 			</div>
 		</main>
 		<footer>
@@ -107,6 +110,24 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 
 	.cta:hover {
 		background: #c4212f;
+	}
+
+	.cta.secondary {
+		background: transparent;
+		color: var(--blue);
+		border: 2px solid var(--blue);
+	}
+
+	.cta.secondary:hover {
+		background: var(--blue);
+		color: var(--white);
+	}
+
+	.buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	footer {
