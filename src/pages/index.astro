@@ -12,7 +12,7 @@ import '../styles/fonts.css';
 		/>
 	</head>
 	<body>
-		<!-- ═══ DARK HERO ═══ -->
+		<!-- ═══ DARK HERO (not sticky) ═══ -->
 		<section class="hero">
 			<nav>
 				<img src="/assets/logos/RENAISSANCE_logo-complet_blanc.png" alt="Renaissance" class="nav-logo" />
@@ -34,7 +34,7 @@ import '../styles/fonts.css';
 
 				<div class="divider"></div>
 
-				<p class="quote">« Le plus satisfaisant est d'aider mes concitoyens. Conseiller des Français de l'étranger est une fonction méconnue, mais les conseillers font un travail important. »</p>
+				<p class="quote">&laquo; Le plus satisfaisant est d'aider mes concitoyens. Conseiller des Français de l'étranger est une fonction méconnue, mais les conseillers font un travail important. &raquo;</p>
 
 				<ul class="facts">
 					<li><strong>25+ ans</strong> à New York</li>
@@ -50,103 +50,167 @@ import '../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ PRIORITIES ═══ -->
-		<section class="priorities">
-			<div class="container">
-				<p class="section-label">Engagements</p>
-				<h2>Trois priorités pour notre communauté</h2>
-				<div class="priority-grid">
+		<!-- ═══════════════════════════════════════════════════════
+		     STICKY CONTAINER — single parent so all sticky
+		     headers share the same scroll context and pile up.
+		     ═══════════════════════════════════════════════════════ -->
+		<div class="sticky-container">
+
+			<!-- ── STICKY HEADER #1 ── -->
+			<div class="sticky-header sticky-1">
+				<div class="sticky-header-inner">
+					<span class="section-num">01</span>
+					<div class="sticky-header-text">
+						<span class="section-label-sticky">Engagements</span>
+						<span class="section-title-sticky">Trois priorités pour notre communauté</span>
+					</div>
+				</div>
+				<div class="accent-bar"></div>
+			</div>
+
+			<!-- ── PRIORITIES CONTENT ── -->
+			<div class="section-block priorities-section">
+				<svg class="section-pattern priorities-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+							<circle cx="2" cy="2" r="1" fill="currentColor" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#dot-grid)" />
+				</svg>
+				<div class="section-content priorities-content">
 					<div class="priority-card">
-						<div class="card-accent"></div>
-						<div class="card-number">01</div>
-						<h3>Solidarité</h3>
-						<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">01</span>
+							<h3>Solidarité</h3>
+							<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
+						</div>
 					</div>
 					<div class="priority-card">
-						<div class="card-accent"></div>
-						<div class="card-number">02</div>
-						<h3>Lien &amp; événements</h3>
-						<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">02</span>
+							<h3>Lien &amp; événements</h3>
+							<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
+						</div>
 					</div>
 					<div class="priority-card">
-						<div class="card-accent"></div>
-						<div class="card-number">03</div>
-						<h3>Services numériques</h3>
-						<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">03</span>
+							<h3>Services numériques</h3>
+							<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- ═══ QUOTE BAND ═══ -->
-		<section class="quote-band">
-			<div class="container">
-				<blockquote>
-					« Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer. »
-				</blockquote>
+			<!-- ── QUOTE BAND ── -->
+			<div class="quote-band">
+				<div class="quote-band-inner">
+					<blockquote>
+						Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer.
+					</blockquote>
+				</div>
 			</div>
-		</section>
 
-		<!-- ═══ TIMELINE ═══ -->
-		<section class="parcours">
-			<div class="container narrow">
-				<p class="section-label">Parcours</p>
-				<h2>D'une carrière dans les médias à l'engagement politique</h2>
-				<div class="timeline">
-					<div class="tl-item">
-						<span class="tl-year">Années 2000</span>
-						<div class="tl-content">
+			<!-- ── STICKY HEADER #2 ── -->
+			<div class="sticky-header sticky-2">
+				<div class="sticky-header-inner">
+					<span class="section-num">02</span>
+					<div class="sticky-header-text">
+						<span class="section-label-sticky">Parcours</span>
+						<span class="section-title-sticky">D'une carrière dans les médias à l'engagement politique</span>
+					</div>
+				</div>
+				<div class="accent-bar"></div>
+			</div>
+
+			<!-- ── TIMELINE CONTENT ── -->
+			<div class="section-block parcours-section">
+				<svg class="section-pattern parcours-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="concentric-rings" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+							<circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
+							<circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" />
+							<circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#concentric-rings)" />
+				</svg>
+				<div class="section-content timeline-content">
+					<div class="timeline">
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">Années 2000</span>
 							<h4>Installation à New York</h4>
 							<p>Carrière de journaliste. Rédactrice en chef de France Amérique. Directrice des événements culturels au Lycée Français de New York.</p>
 						</div>
-					</div>
-					<div class="tl-item">
-						<span class="tl-year">2016</span>
-						<div class="tl-content">
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2016</span>
 							<h4>Engagement avec En Marche</h4>
 							<p>S'engage dès la première heure avec le mouvement d'Emmanuel Macron. Campagne aux côtés de Roland Lescure pour l'Amérique du Nord.</p>
 						</div>
-					</div>
-					<div class="tl-item">
-						<span class="tl-year">2017</span>
-						<div class="tl-content">
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2017</span>
 							<h4>Suppléante du député Lescure</h4>
 							<p>Suppléante pendant la première mandature du député de la 1ère circonscription des Français établis hors de France.</p>
 						</div>
-					</div>
-					<div class="tl-item">
-						<span class="tl-year">2021</span>
-						<div class="tl-content">
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2021</span>
 							<h4>Élue conseillère des Français de l'étranger</h4>
 							<p>Tête de liste En Marche pour NY, NJ, CT et les Bermudes. Élue à l'Assemblée des Français de l'étranger, commission développement durable.</p>
 						</div>
-					</div>
-					<div class="tl-item current">
-						<span class="tl-year">2026</span>
-						<div class="tl-content">
+						<div class="tl-item current">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2026</span>
 							<h4>Candidate aux législatives</h4>
 							<p>Candidate Renaissance aux élections législatives pour représenter les Français de la circonscription tri-state.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- ═══ EVENTS ═══ -->
-		<section class="events">
-			<div class="container">
-				<p class="section-label">Événements</p>
-				<h2>Rencontrons-nous</h2>
-				<div class="events-placeholder">
-					<p class="coming-soon">À venir</p>
-					<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informé.</p>
+			<!-- ── STICKY HEADER #3 ── -->
+			<div class="sticky-header sticky-3">
+				<div class="sticky-header-inner">
+					<span class="section-num">03</span>
+					<div class="sticky-header-text">
+						<span class="section-label-sticky">Événements</span>
+						<span class="section-title-sticky">Rencontrons-nous</span>
+					</div>
+				</div>
+				<div class="accent-bar"></div>
+			</div>
+
+			<!-- ── EVENTS CONTENT ── -->
+			<div class="section-block events-section">
+				<svg class="section-pattern events-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="cross-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+							<path d="M20 16 L24 20 L20 24 L16 20 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#cross-pattern)" />
+				</svg>
+				<div class="section-content events-content">
+					<div class="events-placeholder">
+						<p class="coming-soon">À venir</p>
+						<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informés.</p>
+					</div>
 				</div>
 			</div>
-		</section>
+
+		</div><!-- /.sticky-container -->
 
 		<!-- ═══ CTA BOTTOM ═══ -->
 		<section class="cta-bottom">
-			<div class="container">
+			<div class="cta-top-accent"></div>
+			<div class="cta-bottom-inner">
 				<h2>Rejoignez le mouvement</h2>
 				<p class="cta-sub">Ensemble, construisons l'avenir de notre communauté française aux États-Unis.</p>
 				<div class="buttons">
@@ -156,6 +220,7 @@ import '../styles/fonts.css';
 			</div>
 		</section>
 
+		<!-- ═══ FOOTER ═══ -->
 		<footer>
 			<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="Renaissance" class="footer-logo" />
 			<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
@@ -164,41 +229,46 @@ import '../styles/fonts.css';
 </html>
 
 <style>
+	/* ─── VARIABLES ─── */
 	:root {
 		--navy: #001B6E;
 		--blue: #002395;
 		--red: #ED2939;
 		--white: #FFFFFF;
+		--warm-white: #FAFAFA;
 		--gold: #C9A84C;
 		--text: #1A1A2E;
-		--light: #F7F7FB;
-		--border: #E4E4EC;
+		--light: #F0F0F5;
+		--border: #E2E2EA;
+		--sticky-h: 51px; /* fixed header height: 48px inner + 2px accent + 1px border */
 	}
 
+	/* ─── RESET ─── */
 	* { margin: 0; padding: 0; box-sizing: border-box; }
 
 	html {
-		font-family: 'Maax', system-ui, sans-serif;
+		font-family: 'Maax', system-ui, -apple-system, sans-serif;
 		color: var(--text);
 		scroll-behavior: smooth;
 		font-size: 16px;
+		background: var(--warm-white);
 	}
 
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 2rem;
+	body {
+		line-height: 1.7;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.container.narrow {
-		max-width: 720px;
-	}
-
-	/* ─── HERO (dark) ─── */
+	/* ═══════════════════════════════════════
+	   HERO — full intro, NOT sticky
+	   ═══════════════════════════════════════ */
 	.hero {
 		background: var(--navy);
 		color: var(--white);
 		text-align: center;
+		position: relative;
+		z-index: 5;
 	}
 
 	nav {
@@ -237,12 +307,14 @@ import '../styles/fonts.css';
 		line-height: 1.08;
 		margin-bottom: 0.625rem;
 		color: var(--white);
+		letter-spacing: -0.02em;
 	}
 
 	.role {
 		font-size: 1.125rem;
 		color: rgba(255, 255, 255, 0.7);
 		margin-bottom: 0.625rem;
+		line-height: 1.5;
 	}
 
 	.geo {
@@ -255,6 +327,7 @@ import '../styles/fonts.css';
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		margin-bottom: 2.5rem;
+		line-height: 1;
 	}
 
 	.dot {
@@ -262,6 +335,7 @@ import '../styles/fonts.css';
 		height: 4px;
 		border-radius: 50%;
 		background: var(--gold);
+		flex-shrink: 0;
 	}
 
 	.divider {
@@ -275,7 +349,7 @@ import '../styles/fonts.css';
 	.hero .quote {
 		font-size: 1.125rem;
 		font-style: italic;
-		line-height: 1.7;
+		line-height: 1.8;
 		color: rgba(255, 255, 255, 0.75);
 		margin-bottom: 2rem;
 		max-width: 500px;
@@ -295,6 +369,7 @@ import '../styles/fonts.css';
 	.facts li {
 		font-size: 0.875rem;
 		color: rgba(255, 255, 255, 0.5);
+		line-height: 1.5;
 	}
 
 	.facts strong {
@@ -308,7 +383,7 @@ import '../styles/fonts.css';
 		justify-content: center;
 	}
 
-	/* ─── BUTTONS (shared) ─── */
+	/* ─── SHARED BUTTONS ─── */
 	.cta {
 		display: inline-block;
 		padding: 0.875rem 2.25rem;
@@ -316,9 +391,10 @@ import '../styles/fonts.css';
 		font-weight: 700;
 		font-size: 1rem;
 		text-decoration: none;
-		transition: all 0.2s;
+		transition: all 0.2s ease;
 		background: var(--red);
 		color: var(--white);
+		line-height: 1.2;
 	}
 
 	.cta:hover {
@@ -347,117 +423,255 @@ import '../styles/fonts.css';
 		background: rgba(255, 255, 255, 0.1);
 	}
 
-	/* ─── PRIORITIES ─── */
-	.priorities {
-		padding: 6rem 0;
-		background: var(--white);
+	/* ═══════════════════════════════════════
+	   SECTION BACKGROUND PATTERNS (SVG)
+	   Subtle layered patterns inside sections.
+	   ═══════════════════════════════════════ */
+	.section-pattern {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 0;
 	}
 
-	.section-label {
+	.priorities-pattern {
+		color: var(--blue);
+		opacity: 0.045;
+	}
+
+	.parcours-pattern {
+		color: var(--navy);
+		opacity: 0.04;
+	}
+
+	.events-pattern {
+		color: var(--red);
+		opacity: 0.04;
+	}
+
+	/* ═══════════════════════════════════════
+	   STICKY CONTAINER & HEADERS
+	   All sticky headers live inside one
+	   shared parent so they stack/pile up.
+	   ═══════════════════════════════════════ */
+	.sticky-container {
+		position: relative;
+		z-index: 4; /* between hero(5) and cta(5) — scopes sticky z-indexes inside */
+	}
+
+	.section-block {
+		position: relative;
+	}
+
+	.sticky-header {
+		position: sticky;
+		background: rgba(250, 250, 250, 0.94);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--border);
+		z-index: 100;
+	}
+
+	/* Each header stacks below the previous ones */
+	.sticky-1 { top: 0; z-index: 100; }
+	.sticky-2 { top: var(--sticky-h); z-index: 101; }
+	.sticky-3 { top: calc(var(--sticky-h) * 2); z-index: 102; }
+
+	.sticky-header-inner {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0.625rem 2rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		height: calc(var(--sticky-h) - 3px); /* total - accent bar - border */
+		overflow: hidden;
+	}
+
+	.section-num {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: var(--blue);
+		opacity: 0.18;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		flex-shrink: 0;
+	}
+
+	.sticky-header-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.0625rem;
+		min-width: 0; /* allow flex child to shrink for ellipsis */
+	}
+
+	.section-label-sticky {
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		font-size: 0.8125rem;
+		font-size: 0.625rem;
 		font-weight: 700;
 		color: var(--red);
-		margin-bottom: 0.625rem;
-		text-align: center;
+		line-height: 1.2;
 	}
 
-	.priorities h2 {
-		text-align: center;
-		font-size: clamp(1.5rem, 3vw, 2rem);
+	.section-title-sticky {
+		font-size: 1rem;
+		font-weight: 700;
 		color: var(--blue);
-		margin-bottom: 3.5rem;
 		line-height: 1.3;
+		letter-spacing: -0.01em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
-	.priority-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+	.accent-bar {
+		height: 2px;
+		background: linear-gradient(90deg, var(--blue), var(--red));
+	}
+
+	/* ═══════════════════════════════════════
+	   PRIORITIES — editorial single-column
+	   ═══════════════════════════════════════ */
+	.priorities-section {
+		background: var(--warm-white);
+	}
+
+	.section-content {
+		max-width: 640px;
+		margin: 0 auto;
+		padding: 3.5rem 2rem 5rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.priorities-content {
+		display: flex;
+		flex-direction: column;
 		gap: 1.75rem;
 	}
 
 	.priority-card {
-		position: relative;
-		background: var(--light);
-		padding: 2.5rem 2rem;
-		border-radius: 10px;
+		display: flex;
+		background: var(--white);
+		border-radius: 8px;
 		overflow: hidden;
+		border: 1px solid var(--border);
+		transition: box-shadow 0.25s ease;
 	}
 
-	.card-accent {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 3px;
-		background: linear-gradient(90deg, var(--blue), var(--red));
+	.priority-card:hover {
+		box-shadow: 0 4px 24px rgba(0, 35, 149, 0.06);
+	}
+
+	.card-left-accent {
+		width: 5px;
+		flex-shrink: 0;
+		background: linear-gradient(180deg, var(--blue), var(--red));
+	}
+
+	.card-inner {
+		padding: 2rem 2.25rem;
 	}
 
 	.card-number {
-		font-size: 0.8125rem;
+		display: inline-block;
+		font-size: 0.75rem;
 		font-weight: 700;
 		color: var(--red);
-		margin-bottom: 1rem;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.08em;
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
 	}
 
 	.priority-card h3 {
-		font-size: 1.1875rem;
+		font-size: 1.25rem;
+		font-weight: 700;
 		color: var(--blue);
-		margin-bottom: 0.75rem;
+		margin-bottom: 0.625rem;
+		line-height: 1.3;
+		letter-spacing: -0.01em;
 	}
 
 	.priority-card p {
 		font-size: 1rem;
-		line-height: 1.7;
+		line-height: 1.85;
 		color: #555;
 	}
 
-	/* ─── QUOTE BAND ─── */
+	/* ═══════════════════════════════════════
+	   QUOTE BAND — marks as pseudo-elements
+	   with diagonal stripe overlay
+	   ═══════════════════════════════════════ */
 	.quote-band {
 		background: var(--blue);
-		padding: 5rem 0;
+		padding: 5rem 2rem;
+		position: relative;
+		z-index: 5;
+		overflow: hidden;
+	}
+
+	.quote-band::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: repeating-linear-gradient(
+			-45deg,
+			transparent,
+			transparent 12px,
+			rgba(255, 255, 255, 0.03) 12px,
+			rgba(255, 255, 255, 0.03) 13px
+		);
+		pointer-events: none;
+	}
+
+	.quote-band-inner {
+		max-width: 640px;
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
 	}
 
 	.quote-band blockquote {
-		max-width: 640px;
-		margin: 0 auto;
 		font-size: clamp(1.125rem, 2.5vw, 1.375rem);
 		font-style: italic;
-		line-height: 1.7;
+		line-height: 1.85;
 		color: var(--white);
-		text-align: center;
 		position: relative;
-		padding: 0 2rem;
+		padding: 0 2.5rem;
 	}
 
 	.quote-band blockquote::before {
-		content: '';
-		display: block;
-		width: 40px;
-		height: 3px;
-		background: var(--gold);
-		margin: 0 auto 1.5rem;
-		border-radius: 2px;
+		content: '\00AB';
+		position: absolute;
+		left: -0.25rem;
+		top: -0.15em;
+		font-size: 3rem;
+		color: var(--gold);
+		opacity: 0.5;
+		font-style: italic;
+		line-height: 1;
 	}
 
-	/* ─── TIMELINE ─── */
-	.parcours {
-		padding: 6rem 0;
+	.quote-band blockquote::after {
+		content: '\00BB';
+		position: absolute;
+		right: -0.25rem;
+		bottom: -0.15em;
+		font-size: 3rem;
+		color: var(--gold);
+		opacity: 0.5;
+		font-style: italic;
+		line-height: 1;
+	}
+
+	/* ═══════════════════════════════════════
+	   TIMELINE
+	   ═══════════════════════════════════════ */
+	.parcours-section {
 		background: var(--light);
-	}
-
-	.parcours .section-label {
-		margin-bottom: 0.625rem;
-	}
-
-	.parcours h2 {
-		text-align: center;
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		color: var(--blue);
-		margin-bottom: 3.5rem;
-		line-height: 1.3;
 	}
 
 	.timeline {
@@ -468,9 +682,9 @@ import '../styles/fonts.css';
 	.timeline::before {
 		content: '';
 		position: absolute;
-		left: 0.5625rem;
-		top: 0.375rem;
-		bottom: 0.375rem;
+		left: 6px;
+		top: 6px;
+		bottom: 6px;
 		width: 2px;
 		background: var(--border);
 	}
@@ -484,60 +698,55 @@ import '../styles/fonts.css';
 		padding-bottom: 0;
 	}
 
-	.tl-item::before {
-		content: '';
+	.tl-marker {
 		position: absolute;
 		left: -3.5rem;
-		top: 0.375rem;
+		top: 6px;
 		width: 13px;
 		height: 13px;
 		border-radius: 50%;
 		background: var(--white);
 		border: 3px solid var(--border);
-		transform: translateX(calc(0.5625rem - 50% + 1px));
+		transform: translateX(calc(6px - 50% + 1px));
 		z-index: 1;
 	}
 
-	.tl-item.current::before {
+	.tl-item.current .tl-marker {
 		background: var(--red);
 		border-color: var(--red);
 		box-shadow: 0 0 0 5px rgba(237, 41, 57, 0.15);
 	}
 
 	.tl-year {
+		display: block;
 		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--blue);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		margin-bottom: 0.375rem;
+		line-height: 1.3;
 	}
 
-	.tl-content h4 {
+	.tl-item h4 {
 		font-size: 1.0625rem;
 		color: var(--text);
 		margin-bottom: 0.375rem;
 		font-weight: 700;
+		line-height: 1.4;
 	}
 
-	.tl-content p {
+	.tl-item p {
 		font-size: 1rem;
-		line-height: 1.7;
+		line-height: 1.85;
 		color: #666;
 	}
 
-	/* ─── EVENTS ─── */
-	.events {
-		padding: 6rem 0;
-		background: var(--white);
-	}
-
-	.events h2 {
-		text-align: center;
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		color: var(--blue);
-		margin-bottom: 3rem;
-		line-height: 1.3;
+	/* ═══════════════════════════════════════
+	   EVENTS
+	   ═══════════════════════════════════════ */
+	.events-section {
+		background: var(--warm-white);
 	}
 
 	.events-placeholder {
@@ -545,8 +754,7 @@ import '../styles/fonts.css';
 		border: 2px dashed var(--border);
 		border-radius: 12px;
 		padding: 4rem 2rem;
-		max-width: 560px;
-		margin: 0 auto;
+		background: var(--light);
 	}
 
 	.coming-soon {
@@ -556,35 +764,76 @@ import '../styles/fonts.css';
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		margin-bottom: 0.75rem;
+		line-height: 1.3;
 	}
 
 	.events-sub {
 		font-size: 1rem;
-		line-height: 1.7;
+		line-height: 1.85;
 		color: #888;
 		max-width: 400px;
 		margin: 0 auto;
 	}
 
-	/* ─── CTA BOTTOM ─── */
+	/* ═══════════════════════════════════════
+	   CTA BOTTOM — with radial burst pattern
+	   ═══════════════════════════════════════ */
 	.cta-bottom {
-		background: var(--navy);
+		background:
+			radial-gradient(ellipse at 30% 70%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+			radial-gradient(ellipse at 70% 30%, rgba(237, 41, 57, 0.04) 0%, transparent 50%),
+			var(--navy);
 		padding: 6rem 0;
 		text-align: center;
 		color: var(--white);
+		position: relative;
+		z-index: 5;
+		overflow: hidden;
+	}
+
+	.cta-bottom::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: repeating-linear-gradient(
+			45deg,
+			transparent,
+			transparent 18px,
+			rgba(255, 255, 255, 0.015) 18px,
+			rgba(255, 255, 255, 0.015) 19px
+		);
+		pointer-events: none;
+	}
+
+	.cta-top-accent {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, var(--blue), var(--red));
+	}
+
+	.cta-bottom-inner {
+		max-width: 640px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		position: relative;
 	}
 
 	.cta-bottom h2 {
 		font-size: clamp(1.5rem, 3vw, 2.25rem);
 		margin-bottom: 1rem;
 		color: var(--white);
+		line-height: 1.2;
+		letter-spacing: -0.01em;
 	}
 
 	.cta-sub {
 		font-size: 1.125rem;
 		color: rgba(255, 255, 255, 0.6);
 		margin-bottom: 2.5rem;
-		line-height: 1.6;
+		line-height: 1.85;
 	}
 
 	.cta-bottom .buttons {
@@ -594,17 +843,21 @@ import '../styles/fonts.css';
 		flex-wrap: wrap;
 	}
 
-	/* ─── FOOTER ─── */
+	/* ═══════════════════════════════════════
+	   FOOTER
+	   ═══════════════════════════════════════ */
 	footer {
 		text-align: center;
 		padding: 2.5rem 2rem;
 		font-size: 0.875rem;
 		color: #999;
-		border-top: 1px solid #eee;
+		border-top: 1px solid var(--border);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
+		background: var(--white);
+		line-height: 1.5;
 	}
 
 	.footer-logo {
@@ -613,16 +866,28 @@ import '../styles/fonts.css';
 		opacity: 0.45;
 	}
 
-	/* ─── RESPONSIVE ─── */
+	/* ═══════════════════════════════════════
+	   RESPONSIVE — 900px
+	   ═══════════════════════════════════════ */
 	@media (max-width: 900px) {
-		.priority-grid {
-			grid-template-columns: 1fr;
-			max-width: 480px;
-			margin: 0 auto;
+		.section-num {
+			font-size: 1.5rem;
+		}
+
+		.section-title-sticky {
+			font-size: 0.9375rem;
+		}
+
+		.sticky-header-inner {
+			gap: 0.875rem;
 		}
 	}
 
+	/* ═══════════════════════════════════════
+	   RESPONSIVE — 640px
+	   ═══════════════════════════════════════ */
 	@media (max-width: 640px) {
+		/* Hero */
 		.hero-inner {
 			padding: 2.5rem 1.5rem 4rem;
 		}
@@ -672,38 +937,90 @@ import '../styles/fonts.css';
 			align-items: center;
 		}
 
-		.priorities,
-		.parcours {
-			padding: 4rem 0;
+		/* Sticky headers — compact on mobile */
+		:root {
+			--sticky-h: 43px; /* smaller on mobile */
 		}
 
-		.priorities h2,
-		.parcours h2 {
-			margin-bottom: 2.5rem;
+		.sticky-header-inner {
+			padding: 0.5rem 1.25rem;
+			gap: 0.625rem;
+			height: calc(var(--sticky-h) - 3px);
 		}
 
+		.section-num {
+			font-size: 1.25rem;
+		}
+
+		.section-label-sticky {
+			font-size: 0.5625rem;
+		}
+
+		.section-title-sticky {
+			font-size: 0.8125rem;
+			line-height: 1.25;
+		}
+
+		.accent-bar {
+			height: 2px;
+		}
+
+		/* Section content */
+		.section-content {
+			padding: 2.5rem 1.5rem 4rem;
+		}
+
+		.priorities-content {
+			gap: 1.25rem;
+		}
+
+		.card-inner {
+			padding: 1.5rem 1.25rem;
+		}
+
+		.priority-card h3 {
+			font-size: 1.125rem;
+		}
+
+		/* Quote band */
 		.quote-band {
-			padding: 3.5rem 0;
+			padding: 3.5rem 1.5rem;
 		}
 
-		.cta-bottom {
-			padding: 4rem 0;
+		.quote-band blockquote::before,
+		.quote-band blockquote::after {
+			font-size: 2rem;
 		}
 
-		.priority-card {
-			padding: 2rem 1.5rem;
+		.quote-band blockquote {
+			padding: 0 1.75rem;
 		}
 
+		/* Timeline */
 		.timeline {
 			padding-left: 2.75rem;
 		}
 
-		.tl-item::before {
+		.tl-marker {
 			left: -2.75rem;
 		}
 
 		.tl-item {
 			padding-bottom: 2.25rem;
+		}
+
+		/* Events */
+		.events-placeholder {
+			padding: 3rem 1.5rem;
+		}
+
+		/* CTA bottom */
+		.cta-bottom {
+			padding: 4rem 0;
+		}
+
+		.cta-bottom-inner {
+			padding: 0 1.5rem;
 		}
 	}
 </style>

@@ -12,235 +12,192 @@ import '../../styles/fonts.css';
 		/>
 	</head>
 	<body>
-		<!-- ═══ DARK HERO (not sticky) ═══ -->
-		<section class="hero">
-			<nav>
-				<img src="/assets/logos/RENAISSANCE_logo-complet_blanc.png" alt="Renaissance" class="nav-logo" />
-			</nav>
 
-			<div class="hero-inner">
-				<div class="portrait-wrapper">
-					<img src="/assets/images/pascale.jpg" alt="Pascale Richard" class="portrait" />
-				</div>
-				<h1>Pascale Richard</h1>
-				<p class="role">Conseillère des Français de l'étranger</p>
-				<div class="geo">
-					<span>New York</span>
-					<span class="dot"></span>
-					<span>New Jersey</span>
-					<span class="dot"></span>
-					<span>Connecticut</span>
-				</div>
+		<!-- ═══ HERO — Cinematic split: photo left, dark navy right ═══ -->
+		<section class="split hero-split">
+			<div class="panel hero-photo">
+				<img src="/assets/images/pascale.jpg" alt="Pascale Richard" />
+			</div>
+			<div class="panel hero-content">
+				<nav>
+					<img src="/assets/logos/RENAISSANCE_logo-complet_blanc.png" alt="Renaissance" class="nav-logo" />
+				</nav>
 
-				<div class="divider"></div>
+				<div class="hero-body">
+					<h1>Pascale<br />Richard</h1>
+					<p class="role">Conseillère des Français de l'étranger</p>
+					<div class="geo">
+						<span>New York</span>
+						<span class="dot"></span>
+						<span>New Jersey</span>
+						<span class="dot"></span>
+						<span>Connecticut</span>
+					</div>
 
-				<p class="quote">&laquo; Le plus satisfaisant est d'aider mes concitoyens. Conseiller des Français de l'étranger est une fonction méconnue, mais les conseillers font un travail important. &raquo;</p>
+					<div class="gold-rule"></div>
 
-				<ul class="facts">
-					<li><strong>25+ ans</strong> à New York</li>
-					<li><strong>Engagée</strong> depuis 2016</li>
-					<li><strong>Élue</strong> en 2021</li>
-					<li><strong>Suppléante</strong> de R. Lescure</li>
-				</ul>
+					<p class="hero-quote">&laquo; Le plus satisfaisant est d'aider mes concitoyens. Conseiller des Français de l'étranger est une fonction méconnue, mais les conseillers font un travail important. &raquo;</p>
 
-				<div class="buttons">
-					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
-					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta ghost">Découvrir Pascale</a>
+					<ul class="facts">
+						<li><strong>25+ ans</strong> à New York</li>
+						<li><strong>Engagée</strong> depuis 2016</li>
+						<li><strong>Élue</strong> en 2021</li>
+						<li><strong>Suppléante</strong> de R. Lescure</li>
+					</ul>
+
+					<div class="btn-row">
+						<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Suivez-nous sur Instagram</a>
+						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Découvrir Pascale</a>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════════════════════════════════════════
-		     STICKY CONTAINER — single parent so all sticky
-		     headers share the same scroll context and pile up.
-		     ═══════════════════════════════════════════════════════ -->
-		<div class="sticky-container">
-
-			<!-- ── STICKY HEADER #1 ── -->
-			<div class="sticky-header sticky-1">
-				<div class="sticky-header-inner">
-					<span class="section-num">01</span>
-					<div class="sticky-header-text">
-						<span class="section-label-sticky">Engagements</span>
-						<span class="section-title-sticky">Trois priorités pour notre communauté</span>
-					</div>
-				</div>
-				<div class="accent-bar"></div>
+		<!-- ═══ PRIORITIES — Left: navy + decorative numbers / Right: white + cards ═══ -->
+		<section class="split priorities-split">
+			<div class="panel priorities-deco">
+				<span class="deco-num">01</span>
+				<span class="deco-num">02</span>
+				<span class="deco-num">03</span>
 			</div>
+			<div class="panel priorities-content">
+				<p class="section-label">Engagements</p>
+				<h2>Trois priorités pour notre communauté</h2>
 
-			<!-- ── PRIORITIES CONTENT ── -->
-			<div class="section-block priorities-section">
-				<svg class="section-pattern priorities-pattern" aria-hidden="true">
-					<defs>
-						<pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-							<circle cx="2" cy="2" r="1" fill="currentColor" />
-						</pattern>
-					</defs>
-					<rect width="100%" height="100%" fill="url(#dot-grid)" />
-				</svg>
-				<div class="section-content priorities-content">
+				<div class="priority-stack">
 					<div class="priority-card">
-						<div class="card-left-accent"></div>
-						<div class="card-inner">
-							<span class="card-number">01</span>
-							<h3>Solidarité</h3>
-							<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
-						</div>
+						<span class="card-num">01</span>
+						<h3>Solidarité</h3>
+						<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
 					</div>
 					<div class="priority-card">
-						<div class="card-left-accent"></div>
-						<div class="card-inner">
-							<span class="card-number">02</span>
-							<h3>Lien &amp; événements</h3>
-							<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
-						</div>
+						<span class="card-num">02</span>
+						<h3>Lien &amp; événements</h3>
+						<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
 					</div>
 					<div class="priority-card">
-						<div class="card-left-accent"></div>
-						<div class="card-inner">
-							<span class="card-number">03</span>
-							<h3>Services numériques</h3>
-							<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
-						</div>
+						<span class="card-num">03</span>
+						<h3>Services numériques</h3>
+						<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
 					</div>
 				</div>
 			</div>
+		</section>
 
-			<!-- ── QUOTE BAND ── -->
-			<div class="quote-band">
-				<div class="quote-band-inner">
-					<blockquote>
-						Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer.
-					</blockquote>
+		<!-- ═══ QUOTE — Left: red + quote text / Right: blue + guillemets ═══ -->
+		<section class="split quote-split">
+			<div class="panel quote-red">
+				<div class="quote-body">
+					<div class="quote-mark">&laquo;</div>
+					<blockquote>Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer.</blockquote>
+					<div class="quote-mark close">&raquo;</div>
 				</div>
 			</div>
-
-			<!-- ── STICKY HEADER #2 ── -->
-			<div class="sticky-header sticky-2">
-				<div class="sticky-header-inner">
-					<span class="section-num">02</span>
-					<div class="sticky-header-text">
-						<span class="section-label-sticky">Parcours</span>
-						<span class="section-title-sticky">D'une carrière dans les médias à l'engagement politique</span>
-					</div>
-				</div>
-				<div class="accent-bar"></div>
+			<div class="panel quote-blue">
+				<span class="guillemet-giant">&laquo;&raquo;</span>
 			</div>
+		</section>
 
-			<!-- ── TIMELINE CONTENT ── -->
-			<div class="section-block parcours-section">
-				<svg class="section-pattern parcours-pattern" aria-hidden="true">
-					<defs>
-						<pattern id="concentric-rings" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-							<circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
-							<circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" />
-							<circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" />
-						</pattern>
-					</defs>
-					<rect width="100%" height="100%" fill="url(#concentric-rings)" />
-				</svg>
-				<div class="section-content timeline-content">
-					<div class="timeline">
-						<div class="tl-item">
-							<div class="tl-marker"></div>
-							<span class="tl-year">Années 2000</span>
+		<!-- ═══ PARCOURS — Left: white + timeline / Right: navy + vertical label ═══ -->
+		<section class="split parcours-split">
+			<div class="panel parcours-content">
+				<p class="section-label">Parcours</p>
+				<h2>D'une carrière dans les médias à l'engagement politique</h2>
+				<div class="timeline">
+					<div class="tl-item">
+						<span class="tl-year">Années 2000</span>
+						<div class="tl-body">
 							<h4>Installation à New York</h4>
 							<p>Carrière de journaliste. Rédactrice en chef de France Amérique. Directrice des événements culturels au Lycée Français de New York.</p>
 						</div>
-						<div class="tl-item">
-							<div class="tl-marker"></div>
-							<span class="tl-year">2016</span>
+					</div>
+					<div class="tl-item">
+						<span class="tl-year">2016</span>
+						<div class="tl-body">
 							<h4>Engagement avec En Marche</h4>
 							<p>S'engage dès la première heure avec le mouvement d'Emmanuel Macron. Campagne aux côtés de Roland Lescure pour l'Amérique du Nord.</p>
 						</div>
-						<div class="tl-item">
-							<div class="tl-marker"></div>
-							<span class="tl-year">2017</span>
+					</div>
+					<div class="tl-item">
+						<span class="tl-year">2017</span>
+						<div class="tl-body">
 							<h4>Suppléante du député Lescure</h4>
 							<p>Suppléante pendant la première mandature du député de la 1ère circonscription des Français établis hors de France.</p>
 						</div>
-						<div class="tl-item">
-							<div class="tl-marker"></div>
-							<span class="tl-year">2021</span>
+					</div>
+					<div class="tl-item">
+						<span class="tl-year">2021</span>
+						<div class="tl-body">
 							<h4>Élue conseillère des Français de l'étranger</h4>
 							<p>Tête de liste En Marche pour NY, NJ, CT et les Bermudes. Élue à l'Assemblée des Français de l'étranger, commission développement durable.</p>
 						</div>
-						<div class="tl-item current">
-							<div class="tl-marker"></div>
-							<span class="tl-year">2026</span>
+					</div>
+					<div class="tl-item current">
+						<span class="tl-year">2026</span>
+						<div class="tl-body">
 							<h4>Candidate aux législatives</h4>
 							<p>Candidate Renaissance aux élections législatives pour représenter les Français de la circonscription tri-state.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<!-- ── STICKY HEADER #3 ── -->
-			<div class="sticky-header sticky-3">
-				<div class="sticky-header-inner">
-					<span class="section-num">03</span>
-					<div class="sticky-header-text">
-						<span class="section-label-sticky">Événements</span>
-						<span class="section-title-sticky">Rencontrons-nous</span>
-					</div>
-				</div>
-				<div class="accent-bar"></div>
+			<div class="panel parcours-deco">
+				<span class="vertical-label">Parcours</span>
 			</div>
+		</section>
 
-			<!-- ── EVENTS CONTENT ── -->
-			<div class="section-block events-section">
-				<svg class="section-pattern events-pattern" aria-hidden="true">
-					<defs>
-						<pattern id="cross-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-							<path d="M20 16 L24 20 L20 24 L16 20 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
-						</pattern>
-					</defs>
-					<rect width="100%" height="100%" fill="url(#cross-pattern)" />
-				</svg>
-				<div class="section-content events-content">
-					<div class="events-placeholder">
-						<p class="coming-soon">À venir</p>
-						<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informé.</p>
-					</div>
+		<!-- ═══ EVENTS — Left: blue + 2026 deco / Right: white + content ═══ -->
+		<section class="split events-split">
+			<div class="panel events-deco">
+				<div class="cal-deco">
+					<span class="cal-year">2026</span>
+					<span class="cal-icon">&#9783;</span>
 				</div>
 			</div>
+			<div class="panel events-content">
+				<p class="section-label">Événements</p>
+				<h2>Rencontrons-nous</h2>
+				<div class="events-placeholder">
+					<p class="coming-soon">À venir</p>
+					<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informés.</p>
+				</div>
+			</div>
+		</section>
 
-		</div><!-- /.sticky-container -->
-
-		<!-- ═══ CTA BOTTOM ═══ -->
-		<section class="cta-bottom">
-			<div class="cta-top-accent"></div>
-			<div class="cta-bottom-inner">
+		<!-- ═══ CTA — Full-width dark (breaks split for emphasis) ═══ -->
+		<section class="cta-section">
+			<div class="cta-inner">
 				<h2>Rejoignez le mouvement</h2>
 				<p class="cta-sub">Ensemble, construisons l'avenir de notre communauté française aux États-Unis.</p>
-				<div class="buttons">
-					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
-					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta ghost-light">Découvrir Pascale</a>
+				<div class="btn-row btn-row-center">
+					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Suivez-nous sur Instagram</a>
+					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Découvrir Pascale</a>
 				</div>
 			</div>
 		</section>
 
 		<!-- ═══ FOOTER ═══ -->
 		<footer>
+			<div class="footer-tricolore"></div>
 			<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="Renaissance" class="footer-logo" />
 			<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
 		</footer>
+
 	</body>
 </html>
 
 <style>
-	/* ─── VARIABLES ─── */
+	/* ─── PALETTE ─── */
 	:root {
 		--navy: #001B6E;
 		--blue: #002395;
 		--red: #ED2939;
 		--white: #FFFFFF;
-		--warm-white: #FAFAFA;
 		--gold: #C9A84C;
+		--offwhite: #F5F5FA;
 		--text: #1A1A2E;
-		--light: #F0F0F5;
-		--border: #E2E2EA;
-		--sticky-h: 51px; /* fixed header height: 48px inner + 2px accent + 1px border */
+		--muted: #6B6B80;
+		--border: #E0E0EC;
 	}
 
 	/* ─── RESET ─── */
@@ -251,29 +208,61 @@ import '../../styles/fonts.css';
 		color: var(--text);
 		scroll-behavior: smooth;
 		font-size: 16px;
-		background: var(--warm-white);
 	}
 
 	body {
-		line-height: 1.7;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		overflow-x: hidden;
+		background: var(--white);
 	}
 
-	/* ═══════════════════════════════════════
-	   HERO — full intro, NOT sticky
-	   ═══════════════════════════════════════ */
-	.hero {
+	img { display: block; max-width: 100%; }
+
+	/* ═══════════════════════════════════════════════
+	   SPLIT GRID SYSTEM
+	   Every section is a two-column 1fr 1fr grid.
+	   Each .panel fills its half with generous padding.
+	   ═══════════════════════════════════════════════ */
+	.split {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: 0;
+	}
+
+	.panel {
+		position: relative;
+		overflow: hidden;
+	}
+
+
+	/* ═══════════════════════════════════════════════
+	   HERO
+	   Left: photo (object-fit cover, full height)
+	   Right: navy background with content
+	   ═══════════════════════════════════════════════ */
+	.hero-split {
+		min-height: 100vh;
+	}
+
+	.hero-photo {
+		background: var(--navy);
+	}
+
+	.hero-photo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 20%;
+	}
+
+	.hero-content {
 		background: var(--navy);
 		color: var(--white);
-		text-align: center;
-		position: relative;
-		z-index: 5;
+		display: flex;
+		flex-direction: column;
 	}
 
-	nav {
-		padding: 2rem 2rem 0;
-		text-align: center;
+	.hero-content nav {
+		padding: 2.5rem 3.5rem 0;
 	}
 
 	.nav-logo {
@@ -281,53 +270,37 @@ import '../../styles/fonts.css';
 		opacity: 0.7;
 	}
 
-	.hero-inner {
-		max-width: 640px;
-		margin: 0 auto;
-		padding: 3rem 2rem 5rem;
+	.hero-body {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 3rem 3.5rem 4rem;
 	}
 
-	.portrait-wrapper {
-		margin-bottom: 2rem;
-	}
-
-	.portrait {
-		width: 152px;
-		height: 152px;
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: center top;
-		border: 3px solid var(--gold);
-		box-shadow: 0 0 50px rgba(201, 168, 76, 0.18);
-	}
-
-	.hero h1 {
-		font-size: clamp(2.5rem, 6vw, 4rem);
+	.hero-body h1 {
+		font-size: clamp(2.5rem, 4.5vw, 4rem);
 		font-weight: 700;
-		line-height: 1.08;
-		margin-bottom: 0.625rem;
-		color: var(--white);
+		line-height: 1.05;
+		margin-bottom: 0.75rem;
 		letter-spacing: -0.02em;
 	}
 
 	.role {
 		font-size: 1.125rem;
-		color: rgba(255, 255, 255, 0.7);
+		color: rgba(255,255,255,0.65);
 		margin-bottom: 0.625rem;
-		line-height: 1.5;
 	}
 
 	.geo {
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		gap: 0.75rem;
-		font-size: 0.875rem;
-		color: rgba(255, 255, 255, 0.45);
+		font-size: 0.8125rem;
+		color: rgba(255,255,255,0.4);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.12em;
 		margin-bottom: 2.5rem;
-		line-height: 1;
 	}
 
 	.dot {
@@ -335,348 +308,232 @@ import '../../styles/fonts.css';
 		height: 4px;
 		border-radius: 50%;
 		background: var(--gold);
-		flex-shrink: 0;
 	}
 
-	.divider {
-		width: 50px;
+	.gold-rule {
+		width: 48px;
 		height: 3px;
 		background: var(--gold);
-		margin: 0 auto 2rem;
 		border-radius: 2px;
+		margin-bottom: 2rem;
 	}
 
-	.hero .quote {
-		font-size: 1.125rem;
+	.hero-quote {
+		font-size: 1.0625rem;
 		font-style: italic;
-		line-height: 1.8;
-		color: rgba(255, 255, 255, 0.75);
+		line-height: 1.75;
+		color: rgba(255,255,255,0.7);
 		margin-bottom: 2rem;
-		max-width: 500px;
-		margin-left: auto;
-		margin-right: auto;
+		max-width: 460px;
 	}
 
 	.facts {
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem 1.5rem;
-		justify-content: center;
-		margin-bottom: 3rem;
+		gap: 0.5rem 1.75rem;
+		margin-bottom: 2.5rem;
 	}
 
 	.facts li {
 		font-size: 0.875rem;
-		color: rgba(255, 255, 255, 0.5);
-		line-height: 1.5;
+		color: rgba(255,255,255,0.45);
 	}
 
 	.facts strong {
 		color: var(--gold);
 	}
 
-	.hero .buttons {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
 
-	/* ─── SHARED BUTTONS ─── */
-	.cta {
-		display: inline-block;
-		padding: 0.875rem 2.25rem;
-		border-radius: 4px;
-		font-weight: 700;
-		font-size: 1rem;
-		text-decoration: none;
-		transition: all 0.2s ease;
-		background: var(--red);
-		color: var(--white);
-		line-height: 1.2;
-	}
-
-	.cta:hover {
-		background: #c4212f;
-	}
-
-	.cta.ghost {
-		background: transparent;
-		color: var(--white);
-		border: 2px solid rgba(255, 255, 255, 0.3);
-	}
-
-	.cta.ghost:hover {
-		border-color: var(--white);
-		background: rgba(255, 255, 255, 0.08);
-	}
-
-	.cta.ghost-light {
-		background: transparent;
-		color: var(--white);
-		border: 2px solid rgba(255, 255, 255, 0.35);
-	}
-
-	.cta.ghost-light:hover {
-		border-color: var(--white);
-		background: rgba(255, 255, 255, 0.1);
-	}
-
-	/* ═══════════════════════════════════════
-	   SECTION BACKGROUND PATTERNS (SVG)
-	   Subtle layered patterns inside sections.
-	   ═══════════════════════════════════════ */
-	.section-pattern {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-		z-index: 0;
-	}
-
-	.priorities-pattern {
-		color: var(--blue);
-		opacity: 0.045;
-	}
-
-	.parcours-pattern {
-		color: var(--navy);
-		opacity: 0.04;
-	}
-
-	.events-pattern {
-		color: var(--red);
-		opacity: 0.04;
-	}
-
-	/* ═══════════════════════════════════════
-	   STICKY CONTAINER & HEADERS
-	   All sticky headers live inside one
-	   shared parent so they stack/pile up.
-	   ═══════════════════════════════════════ */
-	.sticky-container {
-		position: relative;
-		z-index: 4; /* between hero(5) and cta(5) — scopes sticky z-indexes inside */
-	}
-
-	.section-block {
-		position: relative;
-	}
-
-	.sticky-header {
-		position: sticky;
-		background: rgba(250, 250, 250, 0.94);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		border-bottom: 1px solid var(--border);
-		z-index: 100;
-	}
-
-	/* Each header stacks below the previous ones */
-	.sticky-1 { top: 0; z-index: 100; }
-	.sticky-2 { top: var(--sticky-h); z-index: 101; }
-	.sticky-3 { top: calc(var(--sticky-h) * 2); z-index: 102; }
-
-	.sticky-header-inner {
-		max-width: 900px;
-		margin: 0 auto;
-		padding: 0.625rem 2rem;
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		height: calc(var(--sticky-h) - 3px); /* total - accent bar - border */
-		overflow: hidden;
-	}
-
-	.section-num {
-		font-size: 1.75rem;
-		font-weight: 700;
-		color: var(--blue);
-		opacity: 0.18;
-		line-height: 1;
-		letter-spacing: -0.02em;
-		flex-shrink: 0;
-	}
-
-	.sticky-header-text {
+	/* ═══════════════════════════════════════════════
+	   PRIORITIES
+	   Left: navy with giant faded 01 02 03
+	   Right: white/light with stacked cards
+	   ═══════════════════════════════════════════════ */
+	.priorities-deco {
+		background: var(--navy);
 		display: flex;
 		flex-direction: column;
-		gap: 0.0625rem;
-		min-width: 0; /* allow flex child to shrink for ellipsis */
+		align-items: center;
+		justify-content: center;
+		gap: 0;
+		padding: 4rem 2rem;
 	}
 
-	.section-label-sticky {
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		font-size: 0.625rem;
+	.deco-num {
+		font-size: clamp(7rem, 12vw, 11rem);
 		font-weight: 700;
-		color: var(--red);
-		line-height: 1.2;
-	}
-
-	.section-title-sticky {
-		font-size: 1rem;
-		font-weight: 700;
-		color: var(--blue);
-		line-height: 1.3;
-		letter-spacing: -0.01em;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	.accent-bar {
-		height: 2px;
-		background: linear-gradient(90deg, var(--blue), var(--red));
-	}
-
-	/* ═══════════════════════════════════════
-	   PRIORITIES — editorial single-column
-	   ═══════════════════════════════════════ */
-	.priorities-section {
-		background: var(--warm-white);
-	}
-
-	.section-content {
-		max-width: 640px;
-		margin: 0 auto;
-		padding: 3.5rem 2rem 5rem;
-		position: relative;
-		z-index: 1;
+		color: var(--white);
+		opacity: 0.06;
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+		user-select: none;
 	}
 
 	.priorities-content {
+		background: var(--white);
+		padding: 5rem 4rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.75rem;
+		justify-content: center;
+	}
+
+	.section-label {
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		font-size: 0.8125rem;
+		font-weight: 700;
+		color: var(--red);
+		margin-bottom: 0.625rem;
+	}
+
+	.priorities-content h2 {
+		font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+		color: var(--navy);
+		margin-bottom: 2.5rem;
+		line-height: 1.3;
+	}
+
+	.priority-stack {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
 	}
 
 	.priority-card {
-		display: flex;
-		background: var(--white);
-		border-radius: 8px;
-		overflow: hidden;
-		border: 1px solid var(--border);
-		transition: box-shadow 0.25s ease;
+		background: var(--offwhite);
+		padding: 2rem 2rem 2rem 2rem;
+		border-radius: 6px;
+		border-left: 4px solid var(--blue);
+		position: relative;
 	}
 
-	.priority-card:hover {
-		box-shadow: 0 4px 24px rgba(0, 35, 149, 0.06);
-	}
-
-	.card-left-accent {
-		width: 5px;
-		flex-shrink: 0;
-		background: linear-gradient(180deg, var(--blue), var(--red));
-	}
-
-	.card-inner {
-		padding: 2rem 2.25rem;
-	}
-
-	.card-number {
+	.card-num {
 		display: inline-block;
 		font-size: 0.75rem;
 		font-weight: 700;
-		color: var(--red);
-		letter-spacing: 0.08em;
+		color: var(--white);
+		background: var(--red);
+		padding: 0.2rem 0.6rem;
+		border-radius: 3px;
+		letter-spacing: 0.05em;
 		margin-bottom: 0.75rem;
-		text-transform: uppercase;
 	}
 
 	.priority-card h3 {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
+		color: var(--navy);
+		margin-bottom: 0.5rem;
 		font-weight: 700;
-		color: var(--blue);
-		margin-bottom: 0.625rem;
-		line-height: 1.3;
-		letter-spacing: -0.01em;
 	}
 
 	.priority-card p {
-		font-size: 1rem;
-		line-height: 1.85;
-		color: #555;
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		color: var(--muted);
 	}
 
-	/* ═══════════════════════════════════════
-	   QUOTE BAND — marks as pseudo-elements
-	   with diagonal stripe overlay
-	   ═══════════════════════════════════════ */
-	.quote-band {
-		background: var(--blue);
-		padding: 5rem 2rem;
-		position: relative;
-		z-index: 5;
-		overflow: hidden;
+
+	/* ═══════════════════════════════════════════════
+	   QUOTE
+	   Left: red with white text
+	   Right: blue with giant guillemets
+	   ═══════════════════════════════════════════════ */
+	.quote-red {
+		background: var(--red);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5rem 4rem;
 	}
 
-	.quote-band::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: repeating-linear-gradient(
-			-45deg,
-			transparent,
-			transparent 12px,
-			rgba(255, 255, 255, 0.03) 12px,
-			rgba(255, 255, 255, 0.03) 13px
-		);
-		pointer-events: none;
+	.quote-body {
+		max-width: 460px;
 	}
 
-	.quote-band-inner {
-		max-width: 640px;
-		margin: 0 auto;
-		text-align: center;
-		position: relative;
-	}
-
-	.quote-band blockquote {
-		font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-		font-style: italic;
-		line-height: 1.85;
+	.quote-mark {
+		font-size: 3.5rem;
+		font-weight: 700;
 		color: var(--white);
-		position: relative;
-		padding: 0 2.5rem;
-	}
-
-	.quote-band blockquote::before {
-		content: '\00AB';
-		position: absolute;
-		left: -0.25rem;
-		top: -0.15em;
-		font-size: 3rem;
-		color: var(--gold);
-		opacity: 0.5;
-		font-style: italic;
+		opacity: 0.4;
 		line-height: 1;
+		margin-bottom: 0.5rem;
 	}
 
-	.quote-band blockquote::after {
-		content: '\00BB';
-		position: absolute;
-		right: -0.25rem;
-		bottom: -0.15em;
-		font-size: 3rem;
-		color: var(--gold);
-		opacity: 0.5;
+	.quote-mark.close {
+		text-align: right;
+		margin-bottom: 0;
+		margin-top: 0.5rem;
+	}
+
+	.quote-body blockquote {
+		font-size: clamp(1.125rem, 2vw, 1.5rem);
 		font-style: italic;
-		line-height: 1;
+		line-height: 1.7;
+		color: var(--white);
+		font-weight: 400;
 	}
 
-	/* ═══════════════════════════════════════
-	   TIMELINE
-	   ═══════════════════════════════════════ */
-	.parcours-section {
-		background: var(--light);
+	.quote-blue {
+		background: var(--blue);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.guillemet-giant {
+		font-size: clamp(10rem, 16vw, 18rem);
+		font-weight: 700;
+		color: var(--white);
+		opacity: 0.08;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		user-select: none;
+	}
+
+
+	/* ═══════════════════════════════════════════════
+	   PARCOURS / TIMELINE
+	   Left: white/light with timeline
+	   Right: navy with vertical "PARCOURS" label
+	   ═══════════════════════════════════════════════ */
+	.parcours-content {
+		background: var(--offwhite);
+		padding: 5rem 3.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.parcours-content h2 {
+		font-size: clamp(1.5rem, 2.5vw, 2rem);
+		color: var(--navy);
+		margin-bottom: 3rem;
+		line-height: 1.3;
+	}
+
+	.parcours-deco {
+		background: var(--navy);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.vertical-label {
+		font-size: clamp(4rem, 8vw, 7.5rem);
+		font-weight: 700;
+		color: var(--white);
+		opacity: 0.07;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		user-select: none;
 	}
 
 	.timeline {
 		position: relative;
-		padding-left: 3.5rem;
+		padding-left: 3rem;
 	}
 
 	.timeline::before {
@@ -691,30 +548,31 @@ import '../../styles/fonts.css';
 
 	.tl-item {
 		position: relative;
-		padding-bottom: 2.75rem;
+		padding-bottom: 2.25rem;
 	}
 
 	.tl-item:last-child {
 		padding-bottom: 0;
 	}
 
-	.tl-marker {
+	.tl-item::before {
+		content: '';
 		position: absolute;
-		left: -3.5rem;
+		left: -3rem;
 		top: 6px;
-		width: 13px;
-		height: 13px;
+		width: 12px;
+		height: 12px;
 		border-radius: 50%;
-		background: var(--white);
+		background: var(--offwhite);
 		border: 3px solid var(--border);
-		transform: translateX(calc(6px - 50% + 1px));
+		transform: translateX(1px);
 		z-index: 1;
 	}
 
-	.tl-item.current .tl-marker {
+	.tl-item.current::before {
 		background: var(--red);
 		border-color: var(--red);
-		box-shadow: 0 0 0 5px rgba(237, 41, 57, 0.15);
+		box-shadow: 0 0 0 5px rgba(237,41,57,0.15);
 	}
 
 	.tl-year {
@@ -725,36 +583,79 @@ import '../../styles/fonts.css';
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		margin-bottom: 0.375rem;
-		line-height: 1.3;
 	}
 
-	.tl-item h4 {
+	.tl-body h4 {
 		font-size: 1.0625rem;
 		color: var(--text);
 		margin-bottom: 0.375rem;
 		font-weight: 700;
-		line-height: 1.4;
 	}
 
-	.tl-item p {
-		font-size: 1rem;
-		line-height: 1.85;
-		color: #666;
+	.tl-body p {
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		color: var(--muted);
 	}
 
-	/* ═══════════════════════════════════════
+
+	/* ═══════════════════════════════════════════════
 	   EVENTS
-	   ═══════════════════════════════════════ */
-	.events-section {
-		background: var(--warm-white);
+	   Left: blue with 2026 calendar deco
+	   Right: white with placeholder content
+	   ═══════════════════════════════════════════════ */
+	.events-deco {
+		background: var(--blue);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4rem;
+	}
+
+	.cal-deco {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		user-select: none;
+	}
+
+	.cal-year {
+		font-size: clamp(5rem, 9vw, 8rem);
+		font-weight: 700;
+		color: var(--white);
+		opacity: 0.1;
+		line-height: 1;
+		letter-spacing: 0.05em;
+	}
+
+	.cal-icon {
+		font-size: clamp(3rem, 5vw, 4.5rem);
+		color: var(--white);
+		opacity: 0.08;
+		line-height: 1;
+	}
+
+	.events-content {
+		background: var(--white);
+		padding: 5rem 4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.events-content h2 {
+		font-size: clamp(1.5rem, 2.5vw, 2rem);
+		color: var(--navy);
+		margin-bottom: 2.5rem;
+		line-height: 1.3;
 	}
 
 	.events-placeholder {
-		text-align: center;
 		border: 2px dashed var(--border);
-		border-radius: 12px;
-		padding: 4rem 2rem;
-		background: var(--light);
+		border-radius: 10px;
+		padding: 3rem 2rem;
+		text-align: center;
 	}
 
 	.coming-soon {
@@ -764,263 +665,292 @@ import '../../styles/fonts.css';
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		margin-bottom: 0.75rem;
-		line-height: 1.3;
 	}
 
 	.events-sub {
-		font-size: 1rem;
-		line-height: 1.85;
-		color: #888;
-		max-width: 400px;
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		color: var(--muted);
+		max-width: 360px;
 		margin: 0 auto;
 	}
 
-	/* ═══════════════════════════════════════
-	   CTA BOTTOM — with radial burst pattern
-	   ═══════════════════════════════════════ */
-	.cta-bottom {
-		background:
-			radial-gradient(ellipse at 30% 70%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
-			radial-gradient(ellipse at 70% 30%, rgba(237, 41, 57, 0.04) 0%, transparent 50%),
-			var(--navy);
-		padding: 6rem 0;
+
+	/* ═══════════════════════════════════════════════
+	   CTA (full-width break)
+	   ═══════════════════════════════════════════════ */
+	.cta-section {
+		background: var(--navy);
+		padding: 6rem 2rem;
 		text-align: center;
 		color: var(--white);
-		position: relative;
-		z-index: 5;
-		overflow: hidden;
 	}
 
-	.cta-bottom::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: repeating-linear-gradient(
-			45deg,
-			transparent,
-			transparent 18px,
-			rgba(255, 255, 255, 0.015) 18px,
-			rgba(255, 255, 255, 0.015) 19px
-		);
-		pointer-events: none;
-	}
-
-	.cta-top-accent {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, var(--blue), var(--red));
-	}
-
-	.cta-bottom-inner {
+	.cta-inner {
 		max-width: 640px;
 		margin: 0 auto;
-		padding: 0 2rem;
-		position: relative;
 	}
 
-	.cta-bottom h2 {
+	.cta-section h2 {
 		font-size: clamp(1.5rem, 3vw, 2.25rem);
 		margin-bottom: 1rem;
 		color: var(--white);
-		line-height: 1.2;
-		letter-spacing: -0.01em;
 	}
 
 	.cta-sub {
 		font-size: 1.125rem;
-		color: rgba(255, 255, 255, 0.6);
+		color: rgba(255,255,255,0.55);
 		margin-bottom: 2.5rem;
-		line-height: 1.85;
+		line-height: 1.65;
 	}
 
-	.cta-bottom .buttons {
+
+	/* ═══════════════════════════════════════════════
+	   BUTTONS
+	   ═══════════════════════════════════════════════ */
+	.btn {
+		display: inline-block;
+		padding: 0.875rem 2.25rem;
+		border-radius: 4px;
+		font-weight: 700;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: background 0.2s, border-color 0.2s, transform 0.15s;
+		cursor: pointer;
+	}
+
+	.btn-primary {
+		background: var(--red);
+		color: var(--white);
+	}
+
+	.btn-primary:hover {
+		background: #c4212f;
+		transform: translateY(-1px);
+	}
+
+	.btn-ghost {
+		background: transparent;
+		color: var(--white);
+		border: 2px solid rgba(255,255,255,0.3);
+	}
+
+	.btn-ghost:hover {
+		border-color: var(--white);
+		background: rgba(255,255,255,0.08);
+	}
+
+	.btn-row {
 		display: flex;
 		gap: 1rem;
-		justify-content: center;
 		flex-wrap: wrap;
 	}
 
-	/* ═══════════════════════════════════════
+	.btn-row-center {
+		justify-content: center;
+	}
+
+
+	/* ═══════════════════════════════════════════════
 	   FOOTER
-	   ═══════════════════════════════════════ */
+	   ═══════════════════════════════════════════════ */
 	footer {
 		text-align: center;
-		padding: 2.5rem 2rem;
+		padding: 0 2rem 3rem;
 		font-size: 0.875rem;
 		color: #999;
-		border-top: 1px solid var(--border);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		background: var(--white);
-		line-height: 1.5;
+	}
+
+	.footer-tricolore {
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(90deg, var(--blue) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--red) 66.66%);
+		margin-bottom: 1.5rem;
 	}
 
 	.footer-logo {
 		height: 36px;
 		width: auto;
-		opacity: 0.45;
+		opacity: 0.4;
 	}
 
-	/* ═══════════════════════════════════════
-	   RESPONSIVE — 900px
-	   ═══════════════════════════════════════ */
-	@media (max-width: 900px) {
-		.section-num {
-			font-size: 1.5rem;
+
+	/* ═══════════════════════════════════════════════
+	   RESPONSIVE — below 768px
+	   Splits collapse to single column.
+	   Decorative panels shrink or hide.
+	   ═══════════════════════════════════════════════ */
+	@media (max-width: 768px) {
+		/* Collapse all splits */
+		.split {
+			grid-template-columns: 1fr;
 		}
 
-		.section-title-sticky {
-			font-size: 0.9375rem;
+		/* ── HERO ── */
+		.hero-split {
+			min-height: auto;
 		}
 
-		.sticky-header-inner {
-			gap: 0.875rem;
-		}
-	}
-
-	/* ═══════════════════════════════════════
-	   RESPONSIVE — 640px
-	   ═══════════════════════════════════════ */
-	@media (max-width: 640px) {
-		/* Hero */
-		.hero-inner {
-			padding: 2.5rem 1.5rem 4rem;
+		.hero-photo {
+			min-height: 55vh;
+			max-height: 65vh;
 		}
 
-		.portrait {
-			width: 128px;
-			height: 128px;
+		.hero-content nav {
+			padding: 2rem 1.5rem 0;
 		}
 
-		.hero h1 {
-			font-size: 2.25rem;
+		.hero-body {
+			padding: 2.5rem 1.5rem 3.5rem;
 		}
 
-		.role {
-			font-size: 1rem;
+		.hero-body h1 {
+			font-size: 2.5rem;
 		}
+
+		.role { font-size: 1rem; }
 
 		.geo {
 			font-size: 0.75rem;
 			gap: 0.5rem;
+			margin-bottom: 2rem;
 		}
 
-		.hero .quote {
+		.hero-quote {
 			font-size: 1rem;
 		}
 
 		.facts {
 			flex-direction: column;
-			align-items: center;
 			gap: 0.375rem;
+			margin-bottom: 2rem;
 		}
 
-		.facts li {
-			font-size: 0.8125rem;
+		.facts li { font-size: 0.8125rem; }
+
+		.btn-row {
+			flex-direction: column;
 		}
 
-		.cta {
-			font-size: 0.9375rem;
-			padding: 0.8rem 1.75rem;
+		.btn {
 			width: 100%;
 			text-align: center;
+			padding: 0.85rem 1.5rem;
+			font-size: 0.9375rem;
 		}
 
-		.hero .buttons,
-		.cta-bottom .buttons {
+		/* ── PRIORITIES ── */
+		/* Deco panel: shrink to a compact bar */
+		.priorities-deco {
+			flex-direction: row;
+			gap: 1.5rem;
+			padding: 2rem 1.5rem;
+			min-height: auto;
+		}
+
+		.deco-num {
+			font-size: 4rem;
+		}
+
+		.priorities-content {
+			padding: 3rem 1.5rem 4rem;
+		}
+
+		/* ── QUOTE ── */
+		/* Hide the blue decorative panel on mobile */
+		.quote-blue {
+			display: none;
+		}
+
+		.quote-red {
+			padding: 3.5rem 1.5rem;
+		}
+
+		.quote-body blockquote {
+			font-size: 1.125rem;
+		}
+
+		/* ── PARCOURS ── */
+		/* Show content first, deco after (shrunk) */
+		.parcours-split {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.parcours-content {
+			padding: 3rem 1.5rem 4rem;
+			order: 1;
+		}
+
+		.parcours-content h2 {
+			margin-bottom: 2.5rem;
+		}
+
+		.parcours-deco {
+			order: 2;
+			min-height: 10vh;
+			padding: 2rem;
+		}
+
+		.vertical-label {
+			writing-mode: horizontal-tb;
+			transform: none;
+			font-size: 3rem;
+		}
+
+		.timeline {
+			padding-left: 2.5rem;
+		}
+
+		.tl-item::before {
+			left: -2.5rem;
+		}
+
+		.tl-item {
+			padding-bottom: 1.75rem;
+		}
+
+		/* ── EVENTS ── */
+		/* Deco first (shrunk), content second */
+		.events-split {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.events-deco {
+			min-height: auto;
+			padding: 2.5rem 1.5rem;
+		}
+
+		.cal-year {
+			font-size: 4rem;
+		}
+
+		.cal-icon {
+			font-size: 2.5rem;
+		}
+
+		.events-content {
+			padding: 3rem 1.5rem 4rem;
+		}
+
+		/* ── CTA ── */
+		.cta-section {
+			padding: 4rem 1.5rem;
+		}
+
+		.cta-section .btn-row {
 			flex-direction: column;
 			align-items: center;
 		}
 
-		/* Sticky headers — compact on mobile */
-		:root {
-			--sticky-h: 43px; /* smaller on mobile */
-		}
-
-		.sticky-header-inner {
-			padding: 0.5rem 1.25rem;
-			gap: 0.625rem;
-			height: calc(var(--sticky-h) - 3px);
-		}
-
-		.section-num {
-			font-size: 1.25rem;
-		}
-
-		.section-label-sticky {
-			font-size: 0.5625rem;
-		}
-
-		.section-title-sticky {
-			font-size: 0.8125rem;
-			line-height: 1.25;
-		}
-
-		.accent-bar {
-			height: 2px;
-		}
-
-		/* Section content */
-		.section-content {
-			padding: 2.5rem 1.5rem 4rem;
-		}
-
-		.priorities-content {
-			gap: 1.25rem;
-		}
-
-		.card-inner {
-			padding: 1.5rem 1.25rem;
-		}
-
-		.priority-card h3 {
-			font-size: 1.125rem;
-		}
-
-		/* Quote band */
-		.quote-band {
-			padding: 3.5rem 1.5rem;
-		}
-
-		.quote-band blockquote::before,
-		.quote-band blockquote::after {
-			font-size: 2rem;
-		}
-
-		.quote-band blockquote {
-			padding: 0 1.75rem;
-		}
-
-		/* Timeline */
-		.timeline {
-			padding-left: 2.75rem;
-		}
-
-		.tl-marker {
-			left: -2.75rem;
-		}
-
-		.tl-item {
-			padding-bottom: 2.25rem;
-		}
-
-		/* Events */
-		.events-placeholder {
-			padding: 3rem 1.5rem;
-		}
-
-		/* CTA bottom */
-		.cta-bottom {
-			padding: 4rem 0;
-		}
-
-		.cta-bottom-inner {
-			padding: 0 1.5rem;
+		/* ── FOOTER ── */
+		footer {
+			padding: 0 1.5rem 2.5rem;
 		}
 	}
 </style>
