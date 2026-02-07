@@ -1,0 +1,264 @@
+---
+import Head from '../../components/Head.astro';
+import '../../styles/fonts.css';
+---
+
+<html lang="fr">
+	<head>
+		<Head
+			title="Pascale Richard — Votre voix à New York"
+			description="Engagée depuis 2016 auprès des Français de New York, New Jersey et Connecticut. Ancienne suppléante de Roland Lescure, conseillère des Français de l'étranger."
+			path="/v/a"
+		/>
+	</head>
+	<body>
+		<div class="hero-banner">
+			<div class="overlay"></div>
+			<div class="hero-content">
+				<img
+					src="/assets/logos/RENAISSANCE_logo-complet_blanc.png"
+					alt="Renaissance"
+					class="top-logo"
+				/>
+				<h1>Pascale Richard</h1>
+				<p class="subtitle">Votre voix à New York, New Jersey &amp; Connecticut</p>
+				<div class="buttons">
+					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
+					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta ghost">Découvrir Pascale</a>
+				</div>
+			</div>
+		</div>
+
+		<section class="bio">
+			<div class="container">
+				<img src="/assets/images/pascale.jpg" alt="Pascale Richard" class="portrait" />
+				<div class="bio-text">
+					<h2>25 ans au service des Français d'Amérique</h2>
+					<p>New-Yorkaise depuis plus de 25 ans, Pascale Richard s'est engagée avec En Marche dès 2016. Ancienne suppléante du député Roland Lescure, elle a été élue conseillère des Français de l'étranger en 2021 pour la circonscription New York, New Jersey, Connecticut et les Bermudes.</p>
+					<p>Journaliste de formation et ancienne rédactrice en chef de France Amérique, elle siège à l'Assemblée des Français de l'étranger à la commission développement durable et commerce extérieur.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="priorities">
+			<div class="container">
+				<h2>Ses priorités</h2>
+				<div class="priority-grid">
+					<div class="priority-card">
+						<span class="icon">🤝</span>
+						<h3>Solidarité</h3>
+						<p>Accompagner les Français en difficulté — personnes âgées, malades, familles touchées par la vie chère aux États-Unis.</p>
+					</div>
+					<div class="priority-card">
+						<span class="icon">🔗</span>
+						<h3>Lien communautaire</h3>
+						<p>Créer des événements qui rassemblent les Français de toute la circonscription et renforcent notre réseau.</p>
+					</div>
+					<div class="priority-card">
+						<span class="icon">💻</span>
+						<h3>Services numériques</h3>
+						<p>Accompagner la dématérialisation avec France Consulaire et le vote par Internet pour simplifier vos démarches.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<img
+				src="/assets/logos/RENAISSANCE_logo-complet_marine.png"
+				alt="Renaissance"
+				class="footer-logo"
+			/>
+			<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	:root {
+		--blue: #002395;
+		--red: #ED2939;
+		--white: #FFFFFF;
+		--text: #1A1A2E;
+		--light: #F5F6FA;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html {
+		font-family: 'Maax', system-ui, sans-serif;
+		color: var(--text);
+		scroll-behavior: smooth;
+	}
+
+	.hero-banner {
+		position: relative;
+		min-height: 80vh;
+		background: url('/assets/images/pascale.jpg') center top / cover no-repeat;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to top, rgba(0,35,149,0.92) 0%, rgba(0,35,149,0.4) 50%, transparent 100%);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		padding: 4rem 2rem;
+		max-width: 700px;
+	}
+
+	.top-logo {
+		height: 24px;
+		margin-bottom: 2rem;
+		opacity: 0.85;
+	}
+
+	.hero-content h1 {
+		font-size: clamp(2.5rem, 7vw, 5rem);
+		font-weight: 700;
+		color: var(--white);
+		line-height: 1.05;
+		margin-bottom: 0.75rem;
+	}
+
+	.subtitle {
+		font-size: clamp(1rem, 2.5vw, 1.375rem);
+		color: rgba(255,255,255,0.85);
+		margin-bottom: 2.5rem;
+	}
+
+	.buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+	.cta {
+		display: inline-block;
+		padding: 0.875rem 2.25rem;
+		border-radius: 4px;
+		font-weight: 700;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.2s;
+		background: var(--red);
+		color: var(--white);
+	}
+
+	.cta:hover { background: #c4212f; }
+
+	.cta.ghost {
+		background: transparent;
+		color: var(--white);
+		border: 2px solid rgba(255,255,255,0.6);
+	}
+
+	.cta.ghost:hover {
+		background: var(--white);
+		color: var(--blue);
+		border-color: var(--white);
+	}
+
+	/* Bio section */
+	.bio {
+		padding: 5rem 2rem;
+	}
+
+	.bio .container {
+		max-width: 900px;
+		margin: 0 auto;
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.portrait {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center top;
+		border: 4px solid var(--blue);
+		flex-shrink: 0;
+	}
+
+	.bio-text h2 {
+		font-size: 1.75rem;
+		color: var(--blue);
+		margin-bottom: 1rem;
+	}
+
+	.bio-text p {
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: #444;
+		margin-bottom: 0.75rem;
+	}
+
+	/* Priorities */
+	.priorities {
+		background: var(--light);
+		padding: 5rem 2rem;
+	}
+
+	.priorities .container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.priorities h2 {
+		text-align: center;
+		font-size: 1.75rem;
+		color: var(--blue);
+		margin-bottom: 3rem;
+	}
+
+	.priority-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 2rem;
+	}
+
+	.priority-card {
+		background: var(--white);
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+	}
+
+	.icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+
+	.priority-card h3 {
+		font-size: 1.125rem;
+		color: var(--blue);
+		margin-bottom: 0.5rem;
+	}
+
+	.priority-card p {
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: #555;
+	}
+
+	footer {
+		text-align: center;
+		padding: 2rem;
+		font-size: 0.8125rem;
+		color: #888;
+		border-top: 1px solid #eee;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.footer-logo { height: 28px; width: auto; opacity: 0.7; }
+
+	@media (max-width: 640px) {
+		.bio .container { flex-direction: column; text-align: center; }
+		.portrait { width: 150px; height: 150px; }
+	}
+</style>

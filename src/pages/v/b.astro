@@ -1,0 +1,196 @@
+---
+import Head from '../../components/Head.astro';
+import '../../styles/fonts.css';
+---
+
+<html lang="fr">
+	<head>
+		<Head
+			title="Pascale Richard — Renaissance · New York 2026"
+			description="Conseillère des Français de l'étranger, engagée pour les Français de New York, New Jersey et Connecticut depuis 2016."
+			path="/v/b"
+		/>
+	</head>
+	<body>
+		<header>
+			<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="RE" class="monogram" />
+			<span class="header-label">Ensemble pour NY 2026</span>
+		</header>
+
+		<main>
+			<section class="split">
+				<div class="photo-side">
+					<img src="/assets/images/pascale.jpg" alt="Pascale Richard" />
+				</div>
+				<div class="text-side">
+					<p class="overline">Candidate Renaissance</p>
+					<h1>Pascale<br/>Richard</h1>
+					<p class="intro">New-Yorkaise depuis plus de 25 ans, engagée avec En Marche dès 2016, ancienne suppléante du député Roland Lescure. Élue conseillère des Français de l'étranger en 2021.</p>
+					<blockquote>
+						« Le plus satisfaisant est d'aider mes concitoyens. Conseiller des Français de l'étranger est une fonction méconnue, mais les conseillers font un travail important. »
+					</blockquote>
+					<div class="buttons">
+						<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
+						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta outline">Découvrir Pascale</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<img src="/assets/logos/RENAISSANCE_logo-complet_marine.png" alt="Renaissance" class="footer-logo" />
+			<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	:root {
+		--blue: #002395;
+		--red: #ED2939;
+		--white: #FFFFFF;
+		--text: #1A1A2E;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html {
+		font-family: 'Maax', system-ui, sans-serif;
+		color: var(--text);
+	}
+
+	body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1.25rem 2rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	.monogram { height: 32px; }
+
+	.header-label {
+		font-size: 0.8125rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--blue);
+	}
+
+	main { flex: 1; display: flex; }
+
+	.split {
+		display: flex;
+		flex: 1;
+		min-height: 0;
+	}
+
+	.photo-side {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.photo-side img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		display: block;
+	}
+
+	.text-side {
+		flex: 1;
+		padding: 4rem 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 560px;
+	}
+
+	.overline {
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		font-size: 0.8125rem;
+		color: var(--red);
+		font-weight: 700;
+		margin-bottom: 0.75rem;
+	}
+
+	h1 {
+		font-size: clamp(2.25rem, 5vw, 3.5rem);
+		font-weight: 700;
+		line-height: 1.05;
+		color: var(--blue);
+		margin-bottom: 1.5rem;
+	}
+
+	.intro {
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: #444;
+		margin-bottom: 1.5rem;
+	}
+
+	blockquote {
+		font-size: 1rem;
+		font-style: italic;
+		line-height: 1.6;
+		color: var(--blue);
+		border-left: 3px solid var(--red);
+		padding-left: 1.25rem;
+		margin-bottom: 2rem;
+	}
+
+	.buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+	.cta {
+		display: inline-block;
+		padding: 0.8rem 2rem;
+		border-radius: 4px;
+		font-weight: 700;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.2s;
+		background: var(--red);
+		color: var(--white);
+	}
+
+	.cta:hover { background: #c4212f; }
+
+	.cta.outline {
+		background: transparent;
+		color: var(--blue);
+		border: 2px solid var(--blue);
+	}
+
+	.cta.outline:hover {
+		background: var(--blue);
+		color: var(--white);
+	}
+
+	footer {
+		text-align: center;
+		padding: 2rem;
+		font-size: 0.8125rem;
+		color: #888;
+		border-top: 1px solid #eee;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.footer-logo { height: 28px; opacity: 0.7; }
+
+	@media (max-width: 768px) {
+		.split { flex-direction: column; }
+		.photo-side { max-height: 50vh; }
+		.text-side { padding: 2.5rem 1.5rem; max-width: 100%; }
+	}
+</style>

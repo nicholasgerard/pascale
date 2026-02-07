@@ -1,0 +1,195 @@
+---
+import Head from '../../components/Head.astro';
+import '../../styles/fonts.css';
+---
+
+<html lang="fr">
+	<head>
+		<Head
+			title="Pascale Richard — Ensemble pour NY 2026"
+			description="Candidate Renaissance pour les Français de New York, New Jersey et Connecticut. Construisons l'avenir ensemble."
+			path="/v/c"
+		/>
+	</head>
+	<body>
+		<div class="page">
+			<nav>
+				<img src="/assets/logos/RENAISSANCE_logo-complet_blanc.png" alt="Renaissance" class="nav-logo" />
+			</nav>
+
+			<main>
+				<div class="portrait-wrapper">
+					<img src="/assets/images/pascale.jpg" alt="Pascale Richard" class="portrait" />
+				</div>
+				<h1>Pascale Richard</h1>
+				<p class="role">Conseillère des Français de l'étranger<br/>New York · New Jersey · Connecticut</p>
+
+				<div class="divider"></div>
+
+				<p class="quote">« J'ai la chance d'être restée proche du terrain. Ce qui me motive, c'est d'aider mes concitoyens au quotidien. »</p>
+
+				<ul class="facts">
+					<li><strong>25+ ans</strong> à New York</li>
+					<li><strong>Engagée</strong> depuis 2016 avec En Marche</li>
+					<li><strong>Élue</strong> conseillère en 2021</li>
+					<li><strong>Ancienne suppléante</strong> de Roland Lescure</li>
+				</ul>
+
+				<div class="buttons">
+					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="cta">Suivez-nous sur Instagram</a>
+					<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="cta light">Découvrir Pascale</a>
+				</div>
+			</main>
+
+			<footer>
+				<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
+			</footer>
+		</div>
+	</body>
+</html>
+
+<style>
+	:root {
+		--navy: #001B6E;
+		--blue: #002395;
+		--red: #ED2939;
+		--white: #FFFFFF;
+		--gold: #C9A84C;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html {
+		font-family: 'Maax', system-ui, sans-serif;
+	}
+
+	body {
+		background: var(--navy);
+		color: var(--white);
+		min-height: 100vh;
+	}
+
+	.page {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		background: linear-gradient(170deg, #001050 0%, var(--navy) 40%, #0a1e5c 100%);
+	}
+
+	nav {
+		padding: 1.5rem 2rem;
+		text-align: center;
+	}
+
+	.nav-logo { height: 22px; opacity: 0.7; }
+
+	main {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		text-align: center;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	.portrait-wrapper {
+		margin-bottom: 2rem;
+	}
+
+	.portrait {
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center top;
+		border: 3px solid var(--gold);
+		box-shadow: 0 0 40px rgba(201,168,76,0.2);
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		font-weight: 700;
+		line-height: 1.1;
+		margin-bottom: 0.75rem;
+	}
+
+	.role {
+		font-size: 1rem;
+		color: rgba(255,255,255,0.65);
+		line-height: 1.5;
+		margin-bottom: 2rem;
+	}
+
+	.divider {
+		width: 60px;
+		height: 3px;
+		background: var(--gold);
+		margin-bottom: 2rem;
+		border-radius: 2px;
+	}
+
+	.quote {
+		font-size: 1.125rem;
+		font-style: italic;
+		line-height: 1.6;
+		color: rgba(255,255,255,0.8);
+		margin-bottom: 2rem;
+		max-width: 480px;
+	}
+
+	.facts {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+		justify-content: center;
+		margin-bottom: 2.5rem;
+	}
+
+	.facts li {
+		font-size: 0.875rem;
+		color: rgba(255,255,255,0.6);
+	}
+
+	.facts strong {
+		color: var(--gold);
+	}
+
+	.buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+	.cta {
+		display: inline-block;
+		padding: 0.8rem 2rem;
+		border-radius: 4px;
+		font-weight: 700;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.2s;
+		background: var(--red);
+		color: var(--white);
+	}
+
+	.cta:hover { background: #c4212f; }
+
+	.cta.light {
+		background: transparent;
+		color: var(--white);
+		border: 2px solid rgba(255,255,255,0.35);
+	}
+
+	.cta.light:hover {
+		border-color: var(--white);
+		background: rgba(255,255,255,0.1);
+	}
+
+	footer {
+		text-align: center;
+		padding: 2rem;
+		font-size: 0.75rem;
+		color: rgba(255,255,255,0.3);
+		border-top: 1px solid rgba(255,255,255,0.08);
+	}
+</style>

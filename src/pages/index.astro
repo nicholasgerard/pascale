@@ -1,28 +1,11 @@
 ---
-const title = "Pascale Richard — Ensemble pour NY 2026";
-const description = "Pascale Richard, candidate aux élections législatives 2026. Ensemble, construisons l'avenir de notre circonscription.";
+import Head from '../components/Head.astro';
+import '../styles/fonts.css';
 ---
 
 <html lang="fr">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content={description} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://ensembleny2026.org" />
-		<title>{title}</title>
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXEPJP15RG" is:inline></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-GXEPJP15RG');
-		</script>
+		<Head path="/" />
 	</head>
 	<body>
 		<main>
@@ -53,38 +36,6 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 </html>
 
 <style>
-	@font-face {
-		font-family: 'Maax';
-		src: url('/assets/fonts/Maax-Regular.otf') format('opentype');
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Maax';
-		src: url('/assets/fonts/Maax-Italic.otf') format('opentype');
-		font-weight: 400;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Maax';
-		src: url('/assets/fonts/Maax-Bold.otf') format('opentype');
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Maax';
-		src: url('/assets/fonts/Maax-BoldItalic.otf') format('opentype');
-		font-weight: 700;
-		font-style: italic;
-		font-display: swap;
-	}
-
 	:root {
 		--blue: #002395;
 		--red: #ED2939;
