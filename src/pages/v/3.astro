@@ -50,17 +50,13 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ PRIORITIES (sticky header #1 — stacks at top) ═══ -->
-		<section class="section-block priorities-section">
-			<!-- Dot grid pattern background -->
-			<svg class="section-pattern priorities-pattern" aria-hidden="true">
-				<defs>
-					<pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-						<circle cx="2" cy="2" r="1" fill="currentColor" />
-					</pattern>
-				</defs>
-				<rect width="100%" height="100%" fill="url(#dot-grid)" />
-			</svg>
+		<!-- ═══════════════════════════════════════════════════════
+		     STICKY CONTAINER — single parent so all sticky
+		     headers share the same scroll context and pile up.
+		     ═══════════════════════════════════════════════════════ -->
+		<div class="sticky-container">
+
+			<!-- ── STICKY HEADER #1 ── -->
 			<div class="sticky-header sticky-1">
 				<div class="sticky-header-inner">
 					<span class="section-num">01</span>
@@ -71,56 +67,55 @@ import '../../styles/fonts.css';
 				</div>
 				<div class="accent-bar"></div>
 			</div>
-			<div class="section-content priorities-content">
-				<div class="priority-card">
-					<div class="card-left-accent"></div>
-					<div class="card-inner">
-						<span class="card-number">01</span>
-						<h3>Solidarité</h3>
-						<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
+
+			<!-- ── PRIORITIES CONTENT ── -->
+			<div class="section-block priorities-section">
+				<svg class="section-pattern priorities-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+							<circle cx="2" cy="2" r="1" fill="currentColor" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#dot-grid)" />
+				</svg>
+				<div class="section-content priorities-content">
+					<div class="priority-card">
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">01</span>
+							<h3>Solidarité</h3>
+							<p>Accompagner les Français en difficulté aux États-Unis — personnes âgées isolées, malades, familles touchées par la vie chère. Orienter chacun vers les bons interlocuteurs.</p>
+						</div>
 					</div>
-				</div>
-				<div class="priority-card">
-					<div class="card-left-accent"></div>
-					<div class="card-inner">
-						<span class="card-number">02</span>
-						<h3>Lien &amp; événements</h3>
-						<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
+					<div class="priority-card">
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">02</span>
+							<h3>Lien &amp; événements</h3>
+							<p>Soutenir les associations et événements qui créent du lien — de Bastille Day aux salons de l'éducation bilingue — et rassembler les Français de toute la circonscription.</p>
+						</div>
 					</div>
-				</div>
-				<div class="priority-card">
-					<div class="card-left-accent"></div>
-					<div class="card-inner">
-						<span class="card-number">03</span>
-						<h3>Services numériques</h3>
-						<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
+					<div class="priority-card">
+						<div class="card-left-accent"></div>
+						<div class="card-inner">
+							<span class="card-number">03</span>
+							<h3>Services numériques</h3>
+							<p>Accompagner la mise en place de France Consulaire et le vote par Internet. Tenir les Français informés, simplifier les démarches administratives à distance.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- ═══ QUOTE BAND ═══ -->
-		<section class="quote-band">
-			<div class="quote-band-inner">
-				<blockquote>
-					Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer.
-				</blockquote>
+			<!-- ── QUOTE BAND ── -->
+			<div class="quote-band">
+				<div class="quote-band-inner">
+					<blockquote>
+						Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer.
+					</blockquote>
+				</div>
 			</div>
-		</section>
 
-		<!-- ═══ TIMELINE (sticky header #2 — stacks below #1) ═══ -->
-		<section class="section-block parcours-section">
-			<!-- Concentric circles pattern background -->
-			<svg class="section-pattern parcours-pattern" aria-hidden="true">
-				<defs>
-					<pattern id="concentric-rings" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-						<circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
-						<circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" />
-						<circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" />
-					</pattern>
-				</defs>
-				<rect width="100%" height="100%" fill="url(#concentric-rings)" />
-			</svg>
+			<!-- ── STICKY HEADER #2 ── -->
 			<div class="sticky-header sticky-2">
 				<div class="sticky-header-inner">
 					<span class="section-num">02</span>
@@ -131,53 +126,56 @@ import '../../styles/fonts.css';
 				</div>
 				<div class="accent-bar"></div>
 			</div>
-			<div class="section-content timeline-content">
-				<div class="timeline">
-					<div class="tl-item">
-						<div class="tl-marker"></div>
-						<span class="tl-year">Années 2000</span>
-						<h4>Installation à New York</h4>
-						<p>Carrière de journaliste. Rédactrice en chef de France Amérique. Directrice des événements culturels au Lycée Français de New York.</p>
-					</div>
-					<div class="tl-item">
-						<div class="tl-marker"></div>
-						<span class="tl-year">2016</span>
-						<h4>Engagement avec En Marche</h4>
-						<p>S'engage dès la première heure avec le mouvement d'Emmanuel Macron. Campagne aux côtés de Roland Lescure pour l'Amérique du Nord.</p>
-					</div>
-					<div class="tl-item">
-						<div class="tl-marker"></div>
-						<span class="tl-year">2017</span>
-						<h4>Suppléante du député Lescure</h4>
-						<p>Suppléante pendant la première mandature du député de la 1ère circonscription des Français établis hors de France.</p>
-					</div>
-					<div class="tl-item">
-						<div class="tl-marker"></div>
-						<span class="tl-year">2021</span>
-						<h4>Élue conseillère des Français de l'étranger</h4>
-						<p>Tête de liste En Marche pour NY, NJ, CT et les Bermudes. Élue à l'Assemblée des Français de l'étranger, commission développement durable.</p>
-					</div>
-					<div class="tl-item current">
-						<div class="tl-marker"></div>
-						<span class="tl-year">2026</span>
-						<h4>Candidate aux législatives</h4>
-						<p>Candidate Renaissance aux élections législatives pour représenter les Français de la circonscription tri-state.</p>
+
+			<!-- ── TIMELINE CONTENT ── -->
+			<div class="section-block parcours-section">
+				<svg class="section-pattern parcours-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="concentric-rings" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+							<circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
+							<circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" />
+							<circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#concentric-rings)" />
+				</svg>
+				<div class="section-content timeline-content">
+					<div class="timeline">
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">Années 2000</span>
+							<h4>Installation à New York</h4>
+							<p>Carrière de journaliste. Rédactrice en chef de France Amérique. Directrice des événements culturels au Lycée Français de New York.</p>
+						</div>
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2016</span>
+							<h4>Engagement avec En Marche</h4>
+							<p>S'engage dès la première heure avec le mouvement d'Emmanuel Macron. Campagne aux côtés de Roland Lescure pour l'Amérique du Nord.</p>
+						</div>
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2017</span>
+							<h4>Suppléante du député Lescure</h4>
+							<p>Suppléante pendant la première mandature du député de la 1ère circonscription des Français établis hors de France.</p>
+						</div>
+						<div class="tl-item">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2021</span>
+							<h4>Élue conseillère des Français de l'étranger</h4>
+							<p>Tête de liste En Marche pour NY, NJ, CT et les Bermudes. Élue à l'Assemblée des Français de l'étranger, commission développement durable.</p>
+						</div>
+						<div class="tl-item current">
+							<div class="tl-marker"></div>
+							<span class="tl-year">2026</span>
+							<h4>Candidate aux législatives</h4>
+							<p>Candidate Renaissance aux élections législatives pour représenter les Français de la circonscription tri-state.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- ═══ EVENTS (sticky header #3 — stacks below #1 & #2) ═══ -->
-		<section class="section-block events-section">
-			<!-- Diamond/cross repeating pattern background -->
-			<svg class="section-pattern events-pattern" aria-hidden="true">
-				<defs>
-					<pattern id="cross-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-						<path d="M20 16 L24 20 L20 24 L16 20 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
-					</pattern>
-				</defs>
-				<rect width="100%" height="100%" fill="url(#cross-pattern)" />
-			</svg>
+			<!-- ── STICKY HEADER #3 ── -->
 			<div class="sticky-header sticky-3">
 				<div class="sticky-header-inner">
 					<span class="section-num">03</span>
@@ -188,13 +186,26 @@ import '../../styles/fonts.css';
 				</div>
 				<div class="accent-bar"></div>
 			</div>
-			<div class="section-content events-content">
-				<div class="events-placeholder">
-					<p class="coming-soon">À venir</p>
-					<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informé.</p>
+
+			<!-- ── EVENTS CONTENT ── -->
+			<div class="section-block events-section">
+				<svg class="section-pattern events-pattern" aria-hidden="true">
+					<defs>
+						<pattern id="cross-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+							<path d="M20 16 L24 20 L20 24 L16 20 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
+						</pattern>
+					</defs>
+					<rect width="100%" height="100%" fill="url(#cross-pattern)" />
+				</svg>
+				<div class="section-content events-content">
+					<div class="events-placeholder">
+						<p class="coming-soon">À venir</p>
+						<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informé.</p>
+					</div>
 				</div>
 			</div>
-		</section>
+
+		</div><!-- /.sticky-container -->
 
 		<!-- ═══ CTA BOTTOM ═══ -->
 		<section class="cta-bottom">
@@ -441,10 +452,15 @@ import '../../styles/fonts.css';
 	}
 
 	/* ═══════════════════════════════════════
-	   STICKY SECTION HEADERS
-	   Headers stack/pile up at top. Each one
-	   stops below the previous ones.
+	   STICKY CONTAINER & HEADERS
+	   All sticky headers live inside one
+	   shared parent so they stack/pile up.
 	   ═══════════════════════════════════════ */
+	.sticky-container {
+		position: relative;
+		z-index: 4; /* between hero(5) and cta(5) — scopes sticky z-indexes inside */
+	}
+
 	.section-block {
 		position: relative;
 	}
@@ -455,13 +471,13 @@ import '../../styles/fonts.css';
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--border);
-		z-index: 10;
+		z-index: 100;
 	}
 
 	/* Each header stacks below the previous ones */
-	.sticky-1 { top: 0; }
-	.sticky-2 { top: var(--sticky-h); }
-	.sticky-3 { top: calc(var(--sticky-h) * 2); }
+	.sticky-1 { top: 0; z-index: 100; }
+	.sticky-2 { top: var(--sticky-h); z-index: 101; }
+	.sticky-3 { top: calc(var(--sticky-h) * 2); z-index: 102; }
 
 	.sticky-header-inner {
 		max-width: 900px;
