@@ -50,7 +50,7 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ PRIORITIES (sticky header — top: 0) ═══ -->
+		<!-- ═══ PRIORITIES (sticky header #1 — stacks at top) ═══ -->
 		<section class="section-block priorities-section">
 			<!-- Dot grid pattern background -->
 			<svg class="section-pattern priorities-pattern" aria-hidden="true">
@@ -108,7 +108,7 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ TIMELINE (sticky header — top: 54px) ═══ -->
+		<!-- ═══ TIMELINE (sticky header #2 — stacks below #1) ═══ -->
 		<section class="section-block parcours-section">
 			<!-- Concentric circles pattern background -->
 			<svg class="section-pattern parcours-pattern" aria-hidden="true">
@@ -167,7 +167,7 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ EVENTS (sticky header — top: 108px) ═══ -->
+		<!-- ═══ EVENTS (sticky header #3 — stacks below #1 & #2) ═══ -->
 		<section class="section-block events-section">
 			<!-- Diamond/cross repeating pattern background -->
 			<svg class="section-pattern events-pattern" aria-hidden="true">
@@ -229,7 +229,7 @@ import '../../styles/fonts.css';
 		--text: #1A1A2E;
 		--light: #F0F0F5;
 		--border: #E2E2EA;
-		/* sticky headers all use top:0, no offset var needed */
+		--sticky-h: 51px; /* fixed header height: 48px inner + 2px accent + 1px border */
 	}
 
 	/* ─── RESET ─── */
@@ -442,9 +442,8 @@ import '../../styles/fonts.css';
 
 	/* ═══════════════════════════════════════
 	   STICKY SECTION HEADERS
-	   All headers stick at top: 0. Higher
-	   z-index on later headers means they
-	   slide over previous ones as you scroll.
+	   Headers stack/pile up at top. Each one
+	   stops below the previous ones.
 	   ═══════════════════════════════════════ */
 	.section-block {
 		position: relative;
@@ -452,17 +451,17 @@ import '../../styles/fonts.css';
 
 	.sticky-header {
 		position: sticky;
-		top: 0;
 		background: rgba(250, 250, 250, 0.94);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--border);
+		z-index: 10;
 	}
 
-	/* Each header slides over the previous one */
-	.sticky-1 { z-index: 10; }
-	.sticky-2 { z-index: 11; }
-	.sticky-3 { z-index: 12; }
+	/* Each header stacks below the previous ones */
+	.sticky-1 { top: 0; }
+	.sticky-2 { top: var(--sticky-h); }
+	.sticky-3 { top: calc(var(--sticky-h) * 2); }
 
 	.sticky-header-inner {
 		max-width: 900px;
@@ -471,6 +470,8 @@ import '../../styles/fonts.css';
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+		height: calc(var(--sticky-h) - 3px); /* total - accent bar - border */
+		overflow: hidden;
 	}
 
 	.section-num {
@@ -487,6 +488,7 @@ import '../../styles/fonts.css';
 		display: flex;
 		flex-direction: column;
 		gap: 0.0625rem;
+		min-width: 0; /* allow flex child to shrink for ellipsis */
 	}
 
 	.section-label-sticky {
@@ -504,6 +506,9 @@ import '../../styles/fonts.css';
 		color: var(--blue);
 		line-height: 1.3;
 		letter-spacing: -0.01em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.accent-bar {
@@ -917,9 +922,14 @@ import '../../styles/fonts.css';
 		}
 
 		/* Sticky headers — compact on mobile */
+		:root {
+			--sticky-h: 43px; /* smaller on mobile */
+		}
+
 		.sticky-header-inner {
 			padding: 0.5rem 1.25rem;
 			gap: 0.625rem;
+			height: calc(var(--sticky-h) - 3px);
 		}
 
 		.section-num {
