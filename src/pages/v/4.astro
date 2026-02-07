@@ -18,7 +18,7 @@ import '../../styles/fonts.css';
 			<nav>
 				<img src="/assets/logos/RENAISSANCE_logo-complet_blanc.png" alt="Renaissance" class="nav-logo" />
 				<button class="lang-toggle" id="langToggle" aria-label="Switch language">
-					<span class="lang-option" data-l="fr">FR</span>
+					<span class="lang-option active" data-l="fr">FR</span>
 					<span class="lang-sep">|</span>
 					<span class="lang-option" data-l="en">EN</span>
 				</button>
@@ -441,10 +441,6 @@ import '../../styles/fonts.css';
 		color: rgba(255, 255, 255, 0.2);
 	}
 
-	/* Initialize FR as active by default */
-	.lang-option[data-l="fr"] {
-		color: var(--white);
-	}
 
 	.hero-inner {
 		max-width: 660px;
