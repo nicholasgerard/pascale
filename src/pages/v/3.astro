@@ -229,7 +229,7 @@ import '../../styles/fonts.css';
 		--text: #1A1A2E;
 		--light: #F0F0F5;
 		--border: #E2E2EA;
-		--sticky-h: 54px;
+		/* sticky headers all use top:0, no offset var needed */
 	}
 
 	/* ─── RESET ─── */
@@ -442,12 +442,9 @@ import '../../styles/fonts.css';
 
 	/* ═══════════════════════════════════════
 	   STICKY SECTION HEADERS
-	   Core design pattern: each section has
-	   a pinned header that stacks visually.
-	   Headers are ~54px tall (compact padding
-	   + single-line content); each subsequent
-	   header offsets by 54px so they pile up
-	   tightly with almost no gap.
+	   All headers stick at top: 0. Higher
+	   z-index on later headers means they
+	   slide over previous ones as you scroll.
 	   ═══════════════════════════════════════ */
 	.section-block {
 		position: relative;
@@ -455,17 +452,17 @@ import '../../styles/fonts.css';
 
 	.sticky-header {
 		position: sticky;
-		z-index: 10;
+		top: 0;
 		background: rgba(250, 250, 250, 0.94);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--border);
 	}
 
-	/* Stacking offsets */
-	.sticky-1 { top: 0; }
-	.sticky-2 { top: var(--sticky-h); }
-	.sticky-3 { top: calc(var(--sticky-h) * 2); }
+	/* Each header slides over the previous one */
+	.sticky-1 { z-index: 10; }
+	.sticky-2 { z-index: 11; }
+	.sticky-3 { z-index: 12; }
 
 	.sticky-header-inner {
 		max-width: 900px;
@@ -869,11 +866,6 @@ import '../../styles/fonts.css';
 	   RESPONSIVE — 640px
 	   ═══════════════════════════════════════ */
 	@media (max-width: 640px) {
-		/* Reduce sticky header height for mobile stacking */
-		:root {
-			--sticky-h: 48px;
-		}
-
 		/* Hero */
 		.hero-inner {
 			padding: 2.5rem 1.5rem 4rem;
