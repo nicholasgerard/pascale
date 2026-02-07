@@ -18,6 +18,11 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 	<body>
 		<main>
 			<div class="hero">
+				<img
+					src="/assets/images/pascale.jpg"
+					alt="Pascale Richard"
+					class="portrait"
+				/>
 				<p class="overline">Ensemble pour NY 2026</p>
 				<h1>Pascale Richard</h1>
 				<p class="tagline">Construisons l'avenir, ensemble.</p>
@@ -28,12 +33,49 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 			</div>
 		</main>
 		<footer>
+			<img
+				src="/assets/logos/RENAISSANCE_logo-complet_marine.png"
+				alt="Renaissance — Française et Européenne"
+				class="footer-logo"
+			/>
 			<p>&copy; 2026 Pascale Richard &mdash; Ensemble pour NY 2026</p>
 		</footer>
 	</body>
 </html>
 
 <style>
+	@font-face {
+		font-family: 'Maax';
+		src: url('/assets/fonts/Maax-Regular.otf') format('opentype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Maax';
+		src: url('/assets/fonts/Maax-Italic.otf') format('opentype');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Maax';
+		src: url('/assets/fonts/Maax-Bold.otf') format('opentype');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Maax';
+		src: url('/assets/fonts/Maax-BoldItalic.otf') format('opentype');
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
+	}
+
 	:root {
 		--blue: #002395;
 		--red: #ED2939;
@@ -49,7 +91,7 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 	}
 
 	html {
-		font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+		font-family: 'Maax', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 		color: var(--text);
 		scroll-behavior: smooth;
 	}
@@ -73,18 +115,30 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 		max-width: 640px;
 	}
 
+	.portrait {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center top;
+		margin-bottom: 1.5rem;
+		border: 4px solid var(--blue);
+		box-shadow: 0 4px 24px rgba(0, 35, 149, 0.15);
+	}
+
 	.overline {
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		font-size: 0.875rem;
 		color: var(--blue);
-		font-weight: 600;
+		font-weight: 700;
 		margin-bottom: 1rem;
 	}
 
 	h1 {
+		font-family: 'Maax', system-ui, sans-serif;
 		font-size: clamp(2.5rem, 6vw, 4.5rem);
-		font-weight: 800;
+		font-weight: 700;
 		line-height: 1.1;
 		color: var(--blue);
 		margin-bottom: 1rem;
@@ -103,9 +157,9 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 		padding: 0.875rem 2.5rem;
 		border-radius: 4px;
 		text-decoration: none;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1.0625rem;
-		transition: background 0.2s;
+		transition: background 0.2s, color 0.2s;
 	}
 
 	.cta:hover {
@@ -136,5 +190,15 @@ const description = "Pascale Richard, candidate aux élections législatives 202
 		font-size: 0.8125rem;
 		color: #888;
 		border-top: 1px solid #eee;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.footer-logo {
+		height: 28px;
+		width: auto;
+		opacity: 0.7;
 	}
 </style>
