@@ -132,6 +132,18 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
+		<!-- ═══ EVENTS ═══ -->
+		<section class="events">
+			<div class="container">
+				<p class="section-label">Événements</p>
+				<h2>Rencontrons-nous</h2>
+				<div class="events-placeholder">
+					<p class="coming-soon">À venir</p>
+					<p class="events-sub">Le calendrier des événements et rencontres sera bientôt disponible. Suivez-nous sur Instagram pour rester informé.</p>
+				</div>
+			</div>
+		</section>
+
 		<!-- ═══ CTA BOTTOM ═══ -->
 		<section class="cta-bottom">
 			<div class="container">
@@ -512,6 +524,46 @@ import '../../styles/fonts.css';
 		font-size: 1rem;
 		line-height: 1.7;
 		color: #666;
+	}
+
+	/* ─── EVENTS ─── */
+	.events {
+		padding: 6rem 0;
+		background: var(--white);
+	}
+
+	.events h2 {
+		text-align: center;
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		color: var(--blue);
+		margin-bottom: 3rem;
+		line-height: 1.3;
+	}
+
+	.events-placeholder {
+		text-align: center;
+		border: 2px dashed var(--border);
+		border-radius: 12px;
+		padding: 4rem 2rem;
+		max-width: 560px;
+		margin: 0 auto;
+	}
+
+	.coming-soon {
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--blue);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.75rem;
+	}
+
+	.events-sub {
+		font-size: 1rem;
+		line-height: 1.7;
+		color: #888;
+		max-width: 400px;
+		margin: 0 auto;
 	}
 
 	/* ─── CTA BOTTOM ─── */
