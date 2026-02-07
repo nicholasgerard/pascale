@@ -90,8 +90,8 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ TIMELINE — WHITE BAND ═══ -->
-		<section class="band band-white parcours">
+		<!-- ═══ TIMELINE — LIGHT BLUE BAND ═══ -->
+		<section class="band band-light-blue parcours">
 			<div class="container narrow">
 				<p class="section-label">Parcours</p>
 				<h2>D'une carrière dans les médias à l'engagement politique</h2>
@@ -175,6 +175,8 @@ import '../../styles/fonts.css';
 		--white: #FFFFFF;
 		--text: #1A1A2E;
 		--light: #F5F5FA;
+		--light-blue: #F5F7FC;
+		--card-bg: #EEF0F8;
 		--border: #E4E4EC;
 	}
 
@@ -192,12 +194,13 @@ import '../../styles/fonts.css';
 	}
 
 	/* ─── VERTICAL TRICOLORE LEFT STRIPE ─── */
+	/* FIX #9: 4px width + subtle depth shadow */
 	.tricolore-stripe {
 		position: fixed;
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 3px;
+		width: 4px;
 		z-index: 100;
 		background: linear-gradient(
 			to bottom,
@@ -208,6 +211,7 @@ import '../../styles/fonts.css';
 			var(--red) 66.66%,
 			var(--red) 100%
 		);
+		box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
 	}
 
 	/* ─── BAND SYSTEM ─── */
@@ -218,6 +222,12 @@ import '../../styles/fonts.css';
 
 	.band-white {
 		background: var(--white);
+		color: var(--text);
+	}
+
+	/* FIX #4: Light blue tint band for parcours */
+	.band-light-blue {
+		background: var(--light-blue);
 		color: var(--text);
 	}
 
@@ -262,17 +272,15 @@ import '../../styles/fonts.css';
 		margin-bottom: 2rem;
 	}
 
+	/* FIX #1: Simple gold border instead of invisible tricolore rings on blue */
 	.portrait {
 		width: 152px;
 		height: 152px;
 		border-radius: 50%;
 		object-fit: cover;
 		object-position: center top;
-		border: none;
-		box-shadow:
-			0 0 0 3px var(--blue),
-			0 0 0 6px var(--white),
-			0 0 0 9px var(--red);
+		border: 3px solid #C9A84C;
+		box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.2);
 	}
 
 	.hero h1 {
@@ -301,11 +309,12 @@ import '../../styles/fonts.css';
 		margin-bottom: 2.5rem;
 	}
 
+	/* FIX #2: Red tricolore accent dots instead of invisible gray */
 	.dot {
 		width: 4px;
 		height: 4px;
 		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.5);
+		background: var(--red);
 	}
 
 	.divider {
@@ -365,7 +374,7 @@ import '../../styles/fonts.css';
 		border: 2px solid transparent;
 	}
 
-	/* White button (on blue band) */
+	/* FIX #10: White button on blue — proper hover with scale + shadow */
 	.cta-white {
 		background: var(--white);
 		color: var(--blue);
@@ -373,7 +382,9 @@ import '../../styles/fonts.css';
 	}
 
 	.cta-white:hover {
-		background: rgba(255, 255, 255, 0.9);
+		background: var(--white);
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	}
 
 	/* Ghost on blue */
@@ -388,7 +399,7 @@ import '../../styles/fonts.css';
 		background: rgba(255, 255, 255, 0.1);
 	}
 
-	/* White button on red band */
+	/* FIX #10: White button on red — proper hover with scale + shadow */
 	.cta-white-on-red {
 		background: var(--white);
 		color: var(--red);
@@ -396,14 +407,16 @@ import '../../styles/fonts.css';
 	}
 
 	.cta-white-on-red:hover {
-		background: rgba(255, 255, 255, 0.9);
+		background: var(--white);
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	}
 
-	/* Ghost on red */
+	/* FIX #7: Ghost on red — increased border opacity from 0.4 to 0.6 */
 	.cta-ghost-on-red {
 		background: transparent;
 		color: var(--white);
-		border-color: rgba(255, 255, 255, 0.4);
+		border-color: rgba(255, 255, 255, 0.6);
 	}
 
 	.cta-ghost-on-red:hover {
@@ -444,9 +457,10 @@ import '../../styles/fonts.css';
 		gap: 1.75rem;
 	}
 
+	/* FIX #5: Blue-tinted card background for visibility on white */
 	.priority-card {
 		position: relative;
-		background: var(--light);
+		background: var(--card-bg);
 		padding: 2.5rem 2rem;
 		border-radius: 10px;
 		overflow: hidden;
@@ -482,20 +496,10 @@ import '../../styles/fonts.css';
 	}
 
 	/* ─── QUOTE BAND (RED) ─── */
+	/* FIX #3: Removed invisible ::before divider — color transition is enough */
 	.quote-band {
 		padding: 5rem 0;
 		position: relative;
-	}
-
-	/* Top thin stripe divider */
-	.quote-band::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: rgba(255, 255, 255, 0.15);
 	}
 
 	.quote-band blockquote {
@@ -510,32 +514,22 @@ import '../../styles/fonts.css';
 		padding: 0 2rem;
 	}
 
+	/* FIX #12: Tricolore gradient bar instead of gold bar */
 	.quote-band blockquote::before {
 		content: '';
 		display: block;
 		width: 40px;
 		height: 3px;
-		background: var(--white);
+		background: linear-gradient(90deg, var(--blue), var(--white), var(--red));
 		margin: 0 auto 1.5rem;
 		border-radius: 2px;
-		opacity: 0.5;
 	}
 
-	/* ─── TIMELINE (WHITE BAND) ─── */
+	/* ─── TIMELINE (LIGHT BLUE BAND) ─── */
+	/* FIX #3 + #4: Removed invisible ::before divider, light blue background */
 	.parcours {
 		padding: 6rem 0;
 		position: relative;
-	}
-
-	/* Top thin stripe divider */
-	.parcours::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: var(--border);
 	}
 
 	.parcours .section-label {
@@ -582,7 +576,7 @@ import '../../styles/fonts.css';
 		width: 13px;
 		height: 13px;
 		border-radius: 50%;
-		background: var(--white);
+		background: var(--light-blue);
 		border: 3px solid var(--border);
 		transform: translateX(calc(0.5625rem - 50% + 1px));
 		z-index: 1;
@@ -617,19 +611,10 @@ import '../../styles/fonts.css';
 	}
 
 	/* ─── EVENTS (BLUE BAND) ─── */
+	/* FIX #3: Removed invisible ::before divider */
 	.events {
 		padding: 6rem 0;
 		position: relative;
-	}
-
-	.events::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: rgba(255, 255, 255, 0.1);
 	}
 
 	.events h2 {
@@ -640,6 +625,7 @@ import '../../styles/fonts.css';
 		line-height: 1.3;
 	}
 
+	/* FIX #6: Frosted glass effect + better centering */
 	.events-placeholder {
 		text-align: center;
 		border: 2px dashed rgba(255, 255, 255, 0.25);
@@ -647,6 +633,13 @@ import '../../styles/fonts.css';
 		padding: 4rem 2rem;
 		max-width: 560px;
 		margin: 0 auto;
+		background: rgba(255, 255, 255, 0.06);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.coming-soon {
@@ -667,20 +660,11 @@ import '../../styles/fonts.css';
 	}
 
 	/* ─── CTA BOTTOM (RED BAND) ─── */
+	/* FIX #3: Removed invisible ::before divider */
 	.cta-bottom {
 		padding: 6rem 0;
 		text-align: center;
 		position: relative;
-	}
-
-	.cta-bottom::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: rgba(255, 255, 255, 0.15);
 	}
 
 	.cta-bottom h2 {
@@ -704,12 +688,12 @@ import '../../styles/fonts.css';
 	}
 
 	/* ─── FOOTER (WHITE BAND) ─── */
+	/* FIX #8: Removed border-top — red-to-white band transition is the separator */
 	footer {
 		text-align: center;
 		padding: 2.5rem 2rem;
 		font-size: 0.875rem;
 		color: #999;
-		border-top: 1px solid #eee;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -733,6 +717,15 @@ import '../../styles/fonts.css';
 
 	/* ─── RESPONSIVE 640px ─── */
 	@media (max-width: 640px) {
+		/* FIX #11: Thinner stripe on mobile + body padding to avoid content hugging */
+		.tricolore-stripe {
+			width: 3px;
+		}
+
+		body {
+			padding-left: 8px;
+		}
+
 		.hero-inner {
 			padding: 2.5rem 1.5rem 4rem;
 		}
