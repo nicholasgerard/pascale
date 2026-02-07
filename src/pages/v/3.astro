@@ -52,6 +52,15 @@ import '../../styles/fonts.css';
 
 		<!-- ═══ PRIORITIES (sticky header — top: 0) ═══ -->
 		<section class="section-block priorities-section">
+			<!-- Dot grid pattern background -->
+			<svg class="section-pattern priorities-pattern" aria-hidden="true">
+				<defs>
+					<pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+						<circle cx="2" cy="2" r="1" fill="currentColor" />
+					</pattern>
+				</defs>
+				<rect width="100%" height="100%" fill="url(#dot-grid)" />
+			</svg>
 			<div class="sticky-header sticky-1">
 				<div class="sticky-header-inner">
 					<span class="section-num">01</span>
@@ -99,8 +108,19 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ TIMELINE (sticky header — top: 70px) ═══ -->
+		<!-- ═══ TIMELINE (sticky header — top: 54px) ═══ -->
 		<section class="section-block parcours-section">
+			<!-- Concentric circles pattern background -->
+			<svg class="section-pattern parcours-pattern" aria-hidden="true">
+				<defs>
+					<pattern id="concentric-rings" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+						<circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
+						<circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" />
+						<circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" />
+					</pattern>
+				</defs>
+				<rect width="100%" height="100%" fill="url(#concentric-rings)" />
+			</svg>
 			<div class="sticky-header sticky-2">
 				<div class="sticky-header-inner">
 					<span class="section-num">02</span>
@@ -147,8 +167,17 @@ import '../../styles/fonts.css';
 			</div>
 		</section>
 
-		<!-- ═══ EVENTS (sticky header — top: 140px) ═══ -->
+		<!-- ═══ EVENTS (sticky header — top: 108px) ═══ -->
 		<section class="section-block events-section">
+			<!-- Diamond/cross repeating pattern background -->
+			<svg class="section-pattern events-pattern" aria-hidden="true">
+				<defs>
+					<pattern id="cross-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+						<path d="M20 16 L24 20 L20 24 L16 20 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
+					</pattern>
+				</defs>
+				<rect width="100%" height="100%" fill="url(#cross-pattern)" />
+			</svg>
 			<div class="sticky-header sticky-3">
 				<div class="sticky-header-inner">
 					<span class="section-num">03</span>
@@ -200,7 +229,7 @@ import '../../styles/fonts.css';
 		--text: #1A1A2E;
 		--light: #F0F0F5;
 		--border: #E2E2EA;
-		--sticky-h: 70px;
+		--sticky-h: 54px;
 	}
 
 	/* ─── RESET ─── */
@@ -384,11 +413,41 @@ import '../../styles/fonts.css';
 	}
 
 	/* ═══════════════════════════════════════
+	   SECTION BACKGROUND PATTERNS (SVG)
+	   Subtle layered patterns inside sections.
+	   ═══════════════════════════════════════ */
+	.section-pattern {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.priorities-pattern {
+		color: var(--blue);
+		opacity: 0.045;
+	}
+
+	.parcours-pattern {
+		color: var(--navy);
+		opacity: 0.04;
+	}
+
+	.events-pattern {
+		color: var(--red);
+		opacity: 0.04;
+	}
+
+	/* ═══════════════════════════════════════
 	   STICKY SECTION HEADERS
 	   Core design pattern: each section has
 	   a pinned header that stacks visually.
-	   Headers are ~70px tall; each subsequent
-	   header offsets by 70px so they pile up.
+	   Headers are ~54px tall (compact padding
+	   + single-line content); each subsequent
+	   header offsets by 54px so they pile up
+	   tightly with almost no gap.
 	   ═══════════════════════════════════════ */
 	.section-block {
 		position: relative;
@@ -397,7 +456,7 @@ import '../../styles/fonts.css';
 	.sticky-header {
 		position: sticky;
 		z-index: 10;
-		background: rgba(250, 250, 250, 0.92);
+		background: rgba(250, 250, 250, 0.94);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--border);
@@ -411,14 +470,14 @@ import '../../styles/fonts.css';
 	.sticky-header-inner {
 		max-width: 900px;
 		margin: 0 auto;
-		padding: 1.125rem 2rem;
+		padding: 0.625rem 2rem;
 		display: flex;
 		align-items: center;
-		gap: 1.25rem;
+		gap: 1rem;
 	}
 
 	.section-num {
-		font-size: 2.5rem;
+		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--blue);
 		opacity: 0.18;
@@ -430,20 +489,20 @@ import '../../styles/fonts.css';
 	.sticky-header-text {
 		display: flex;
 		flex-direction: column;
-		gap: 0.125rem;
+		gap: 0.0625rem;
 	}
 
 	.section-label-sticky {
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		font-size: 0.6875rem;
+		font-size: 0.625rem;
 		font-weight: 700;
 		color: var(--red);
 		line-height: 1.2;
 	}
 
 	.section-title-sticky {
-		font-size: 1.125rem;
+		font-size: 1rem;
 		font-weight: 700;
 		color: var(--blue);
 		line-height: 1.3;
@@ -451,7 +510,7 @@ import '../../styles/fonts.css';
 	}
 
 	.accent-bar {
-		height: 3px;
+		height: 2px;
 		background: linear-gradient(90deg, var(--blue), var(--red));
 	}
 
@@ -466,6 +525,8 @@ import '../../styles/fonts.css';
 		max-width: 640px;
 		margin: 0 auto;
 		padding: 3.5rem 2rem 5rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	.priorities-content {
@@ -524,12 +585,28 @@ import '../../styles/fonts.css';
 
 	/* ═══════════════════════════════════════
 	   QUOTE BAND — marks as pseudo-elements
+	   with diagonal stripe overlay
 	   ═══════════════════════════════════════ */
 	.quote-band {
 		background: var(--blue);
 		padding: 5rem 2rem;
 		position: relative;
 		z-index: 5;
+		overflow: hidden;
+	}
+
+	.quote-band::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: repeating-linear-gradient(
+			-45deg,
+			transparent,
+			transparent 12px,
+			rgba(255, 255, 255, 0.03) 12px,
+			rgba(255, 255, 255, 0.03) 13px
+		);
+		pointer-events: none;
 	}
 
 	.quote-band-inner {
@@ -681,15 +758,33 @@ import '../../styles/fonts.css';
 	}
 
 	/* ═══════════════════════════════════════
-	   CTA BOTTOM
+	   CTA BOTTOM — with radial burst pattern
 	   ═══════════════════════════════════════ */
 	.cta-bottom {
-		background: var(--navy);
+		background:
+			radial-gradient(ellipse at 30% 70%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+			radial-gradient(ellipse at 70% 30%, rgba(237, 41, 57, 0.04) 0%, transparent 50%),
+			var(--navy);
 		padding: 6rem 0;
 		text-align: center;
 		color: var(--white);
 		position: relative;
 		z-index: 5;
+		overflow: hidden;
+	}
+
+	.cta-bottom::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: repeating-linear-gradient(
+			45deg,
+			transparent,
+			transparent 18px,
+			rgba(255, 255, 255, 0.015) 18px,
+			rgba(255, 255, 255, 0.015) 19px
+		);
+		pointer-events: none;
 	}
 
 	.cta-top-accent {
@@ -705,6 +800,7 @@ import '../../styles/fonts.css';
 		max-width: 640px;
 		margin: 0 auto;
 		padding: 0 2rem;
+		position: relative;
 	}
 
 	.cta-bottom h2 {
@@ -757,15 +853,15 @@ import '../../styles/fonts.css';
 	   ═══════════════════════════════════════ */
 	@media (max-width: 900px) {
 		.section-num {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 
 		.section-title-sticky {
-			font-size: 1rem;
+			font-size: 0.9375rem;
 		}
 
 		.sticky-header-inner {
-			gap: 1rem;
+			gap: 0.875rem;
 		}
 	}
 
@@ -775,7 +871,7 @@ import '../../styles/fonts.css';
 	@media (max-width: 640px) {
 		/* Reduce sticky header height for mobile stacking */
 		:root {
-			--sticky-h: 60px;
+			--sticky-h: 48px;
 		}
 
 		/* Hero */
@@ -828,22 +924,27 @@ import '../../styles/fonts.css';
 			align-items: center;
 		}
 
-		/* Sticky headers — thinner on mobile */
+		/* Sticky headers — compact on mobile */
 		.sticky-header-inner {
-			padding: 0.75rem 1.5rem;
-			gap: 0.75rem;
+			padding: 0.5rem 1.25rem;
+			gap: 0.625rem;
 		}
 
 		.section-num {
-			font-size: 1.375rem;
+			font-size: 1.25rem;
 		}
 
 		.section-label-sticky {
-			font-size: 0.625rem;
+			font-size: 0.5625rem;
 		}
 
 		.section-title-sticky {
-			font-size: 0.875rem;
+			font-size: 0.8125rem;
+			line-height: 1.25;
+		}
+
+		.accent-bar {
+			height: 2px;
 		}
 
 		/* Section content */
