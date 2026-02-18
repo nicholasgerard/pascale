@@ -12,12 +12,12 @@ There are **6 pages**:
 
 | Page | URL path | What it does |
 |------|----------|-------------|
-| **Accueil** (Home) | `/v2/` | Hero banner with group photo, your bio, 3 priorities preview, supporters preview, CTA |
-| **La Liste** (The Team) | `/v2/la-liste` | Group photo banner, your featured profile, grid of all 14 candidates with headshots |
-| **Programme** (Platform) | `/v2/programme` | The 3 priorities (Éducation, Social, Santé) with full detail + your candid photo from the AFE |
-| **Soutiens** (Supporters) | `/v2/soutiens` | Grid of 8 supporters with names and titles |
-| **Événements** (Events) | `/v2/evenements` | Currently a "coming soon" placeholder, ready to be filled in |
-| **Contact** | `/v2/contact` | Email + Instagram cards, message text, CTA |
+| **Accueil** (Home) | `/` | Hero banner with group photo, your bio, 3 priorities preview, supporters preview, CTA |
+| **La Liste** (The Team) | `/la-liste` | Group photo banner, your featured profile, grid of all 14 candidates with headshots |
+| **Programme** (Platform) | `/programme` | The 3 priorities (Éducation, Social, Santé) with full detail + your candid photo from the AFE |
+| **Soutiens** (Supporters) | `/soutiens` | Grid of 8 supporters with names and titles |
+| **Événements** (Events) | `/evenements` | Currently a "coming soon" placeholder, ready to be filled in |
+| **Contact** | `/contact` | Email + Instagram cards, message text, CTA |
 
 ---
 
@@ -111,7 +111,7 @@ Every piece of visible text has been translated. The campaign name "Agissons Ens
 - **Hosting**: Cloudflare Pages
 - **Fonts**: Maax (custom)
 - **Dev command**: `npm run dev` (runs locally on localhost:4321)
-- **All pages live under `/v2/`** — this allows running alongside any existing site
+- **All pages live at the root** (`/`, `/la-liste`, `/programme`, etc.) — the old site has been archived under `/old/`
 - **Images**: stored in `public/assets/images/` (headshots in `public/assets/images/headshots/`)
 - **Logos**: stored in `public/assets/logos/`
 

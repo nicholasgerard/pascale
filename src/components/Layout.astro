@@ -1,6 +1,6 @@
 ---
-import Head from '../Head.astro';
-import '../../styles/fonts.css';
+import Head from './Head.astro';
+import '../styles/fonts.css';
 
 interface Props {
 	title?: string;
@@ -12,17 +12,17 @@ interface Props {
 const {
 	title = "Agissons Ensemble avec Pascale Richard",
 	description = "Pascale Richard, conseillère des Français de l'étranger. Candidate aux élections consulaires 2026 pour NY-NJ-CT-Bermuda.",
-	path = "/v2/",
+	path = "/",
 	currentPage = "accueil",
 } = Astro.props;
 
 const navItems = [
-	{ href: "/v2/", label: "Accueil", labelEn: "Home", id: "accueil" },
-	{ href: "/v2/la-liste", label: "La Liste", labelEn: "The Team", id: "la-liste" },
-	{ href: "/v2/programme", label: "Programme", labelEn: "Platform", id: "programme" },
-	{ href: "/v2/soutiens", label: "Soutiens", labelEn: "Supporters", id: "soutiens" },
-	{ href: "/v2/evenements", label: "Événements", labelEn: "Events", id: "evenements" },
-	{ href: "/v2/contact", label: "Contact", labelEn: "Contact", id: "contact" },
+	{ href: "/", label: "Accueil", labelEn: "Home", id: "accueil" },
+	{ href: "/la-liste", label: "La Liste", labelEn: "The Team", id: "la-liste" },
+	{ href: "/programme", label: "Programme", labelEn: "Platform", id: "programme" },
+	{ href: "/soutiens", label: "Soutiens", labelEn: "Supporters", id: "soutiens" },
+	{ href: "/evenements", label: "Événements", labelEn: "Events", id: "evenements" },
+	{ href: "/contact", label: "Contact", labelEn: "Contact", id: "contact" },
 ];
 ---
 
@@ -37,7 +37,7 @@ const navItems = [
 
 		<header role="banner">
 			<div class="header-inner">
-				<a href="/v2/" class="logo-group" aria-label="Agissons Ensemble avec Pascale Richard — Accueil">
+				<a href="/" class="logo-group" aria-label="Agissons Ensemble avec Pascale Richard — Accueil">
 					<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="" class="header-logo" role="presentation" />
 					<div class="logo-text">
 						<span class="logo-title">Agissons Ensemble</span>
@@ -76,11 +76,11 @@ const navItems = [
 					<p class="footer-subtitle">avec Pascale Richard</p>
 				</div>
 				<nav class="footer-nav" aria-label="Navigation pied de page">
-					<a href="/v2/la-liste" data-i18n data-i18n-fr="La Liste" data-i18n-en="The Team">La Liste</a>
-					<a href="/v2/programme" data-i18n data-i18n-fr="Programme" data-i18n-en="Platform">Programme</a>
-					<a href="/v2/soutiens" data-i18n data-i18n-fr="Soutiens" data-i18n-en="Supporters">Soutiens</a>
-					<a href="/v2/evenements" data-i18n data-i18n-fr="Événements" data-i18n-en="Events">Événements</a>
-					<a href="/v2/contact">Contact</a>
+					<a href="/la-liste" data-i18n data-i18n-fr="La Liste" data-i18n-en="The Team">La Liste</a>
+					<a href="/programme" data-i18n data-i18n-fr="Programme" data-i18n-en="Platform">Programme</a>
+					<a href="/soutiens" data-i18n data-i18n-fr="Soutiens" data-i18n-en="Supporters">Soutiens</a>
+					<a href="/evenements" data-i18n data-i18n-fr="Événements" data-i18n-en="Events">Événements</a>
+					<a href="/contact">Contact</a>
 					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" aria-label="Instagram (nouvelle fenêtre)">Instagram<span class="sr-only" data-i18n data-i18n-fr=" (ouvre dans une nouvelle fenêtre)" data-i18n-en=" (opens in a new window)"> (ouvre dans une nouvelle fenêtre)</span></a>
 				</nav>
 				<div class="footer-bottom">
@@ -131,7 +131,7 @@ const navItems = [
 				document.querySelectorAll('.lang-option').forEach(opt => {
 					opt.classList.toggle('active', opt.getAttribute('data-l') === lang);
 				});
-				try { localStorage.setItem('v2-lang', lang); } catch(e) {}
+				try { localStorage.setItem('site-lang', lang); } catch(e) {}
 			}
 
 			document.getElementById('langToggle')?.addEventListener('click', () => {
@@ -139,7 +139,7 @@ const navItems = [
 			});
 
 			try {
-				const saved = localStorage.getItem('v2-lang');
+				const saved = localStorage.getItem('site-lang');
 				if (saved === 'en') setLang('en');
 			} catch(e) {}
 		</script>
