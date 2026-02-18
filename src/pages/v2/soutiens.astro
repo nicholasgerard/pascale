@@ -5,41 +5,49 @@ const supporters = [
 	{
 		name: "Eléonore Caroit",
 		title: "Ministre des Français de l'Étranger",
+		titleEn: "Minister for French Citizens Abroad",
 		initials: "EC",
 	},
 	{
 		name: "Olivier Cassegrain",
 		title: "CEO, Longchamp",
+		titleEn: "CEO, Longchamp",
 		initials: "OC",
 	},
 	{
 		name: "François Château",
 		title: "Avocat",
+		titleEn: "Lawyer",
 		initials: "FC",
 	},
 	{
 		name: "Christian Deseglise",
 		title: "Fondateur de Mundi Ventures et Professeur à Columbia University",
+		titleEn: "Founder of Mundi Ventures and Professor at Columbia University",
 		initials: "CD",
 	},
 	{
 		name: "Gwendoline Finaz de Villaine",
 		title: "Artiste",
+		titleEn: "Artist",
 		initials: "GF",
 	},
 	{
 		name: "Roland Lescure",
 		title: "Ministre de l'Économie",
+		titleEn: "Minister of Economy",
 		initials: "RL",
 	},
 	{
 		name: "Jean Rosanvallon",
 		title: "Président de Corporate Angel Network",
+		titleEn: "President of Corporate Angel Network",
 		initials: "JR",
 	},
 	{
 		name: "Christopher Weissberg",
 		title: "Député des Français d'Amérique du Nord",
+		titleEn: "Member of Parliament for French Citizens in North America",
 		initials: "CW",
 	},
 ];
@@ -54,9 +62,9 @@ const supporters = [
 	<!-- ═══ PAGE HEADER ═══ -->
 	<section class="page-header">
 		<div class="container">
-			<p class="election-label">Élections consulaires 2026</p>
-			<h1>Ils nous soutiennent</h1>
-			<p class="page-subtitle">Des personnalités engagées aux côtés de notre liste</p>
+			<p class="election-label" data-i18n data-i18n-fr="Élections consulaires 2026" data-i18n-en="Consular Elections 2026">Élections consulaires 2026</p>
+			<h1 data-i18n data-i18n-fr="Ils nous soutiennent" data-i18n-en="They support us">Ils nous soutiennent</h1>
+			<p class="page-subtitle" data-i18n data-i18n-fr="Des personnalités engagées aux côtés de notre liste" data-i18n-en="Prominent figures standing with our team">Des personnalités engagées aux côtés de notre liste</p>
 		</div>
 	</section>
 
@@ -71,7 +79,7 @@ const supporters = [
 						</div>
 						<div class="supporter-info">
 							<h3>{supporter.name}</h3>
-							<p class="supporter-title">{supporter.title}</p>
+							<p class="supporter-title" data-i18n data-i18n-fr={supporter.title} data-i18n-en={supporter.titleEn}>{supporter.title}</p>
 						</div>
 					</div>
 				))}
@@ -82,11 +90,11 @@ const supporters = [
 	<!-- ═══ CTA ═══ -->
 	<section class="cta-section">
 		<div class="container">
-			<h2>Rejoignez le mouvement</h2>
-			<p>Ensemble, construisons l'avenir de notre communauté française aux États-Unis.</p>
+			<h2 data-i18n data-i18n-fr="Rejoignez le mouvement" data-i18n-en="Join the movement">Rejoignez le mouvement</h2>
+			<p data-i18n data-i18n-fr="Ensemble, construisons l'avenir de notre communauté française aux États-Unis." data-i18n-en="Together, let's build the future of our French community in the United States.">Ensemble, construisons l'avenir de notre communauté française aux États-Unis.</p>
 			<div class="cta-buttons">
-				<a href="/v2/la-liste" class="btn btn-primary">Découvrir la liste</a>
-				<a href="/v2/programme" class="btn btn-ghost-light">Notre programme</a>
+				<a href="/v2/la-liste" class="btn btn-primary" data-i18n data-i18n-fr="Découvrir la liste" data-i18n-en="Meet the team">Découvrir la liste</a>
+				<a href="/v2/programme" class="btn btn-ghost-light" data-i18n data-i18n-fr="Notre programme" data-i18n-en="Our platform">Notre programme</a>
 			</div>
 		</div>
 	</section>
