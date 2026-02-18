@@ -1,0 +1,268 @@
+---
+import Layout from '../../components/v2/Layout.astro';
+
+const supporters = [
+	{
+		name: "Eléonore Caroit",
+		title: "Ministre des Français de l'Étranger",
+		initials: "EC",
+	},
+	{
+		name: "Olivier Cassegrain",
+		title: "CEO, Longchamp",
+		initials: "OC",
+	},
+	{
+		name: "François Château",
+		title: "Avocat",
+		initials: "FC",
+	},
+	{
+		name: "Christian Deseglise",
+		title: "Fondateur de Mundi Ventures et Professeur à Columbia University",
+		initials: "CD",
+	},
+	{
+		name: "Gwendoline Finaz de Villaine",
+		title: "Artiste",
+		initials: "GF",
+	},
+	{
+		name: "Roland Lescure",
+		title: "Ministre de l'Économie",
+		initials: "RL",
+	},
+	{
+		name: "Jean Rosanvallon",
+		title: "Président de Corporate Angel Network",
+		initials: "JR",
+	},
+	{
+		name: "Christopher Weissberg",
+		title: "Député des Français d'Amérique du Nord",
+		initials: "CW",
+	},
+];
+---
+
+<Layout
+	title="Nos Soutiens — Agissons Ensemble avec Pascale Richard"
+	description="Personnalités et figures publiques qui soutiennent la liste Agissons Ensemble de Pascale Richard pour les élections consulaires 2026."
+	path="/v2/soutiens"
+	currentPage="soutiens"
+>
+	<!-- ═══ PAGE HEADER ═══ -->
+	<section class="page-header">
+		<div class="container">
+			<p class="election-label">Élections consulaires 2026</p>
+			<h1>Ils nous soutiennent</h1>
+			<p class="page-subtitle">Des personnalités engagées aux côtés de notre liste</p>
+		</div>
+	</section>
+
+	<!-- ═══ SUPPORTERS GRID ═══ -->
+	<section class="supporters-section">
+		<div class="container">
+			<div class="supporters-grid">
+				{supporters.map((supporter) => (
+					<div class="supporter-card">
+						<div class="supporter-avatar">
+							<span class="avatar-initials">{supporter.initials}</span>
+						</div>
+						<div class="supporter-info">
+							<h3>{supporter.name}</h3>
+							<p class="supporter-title">{supporter.title}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ QUOTE ═══ -->
+	<section class="quote-band">
+		<div class="container">
+			<blockquote>
+				« Agissons ensemble pour défendre les intérêts de notre communauté française en Amérique du Nord. »
+			</blockquote>
+		</div>
+	</section>
+
+	<!-- ═══ CTA ═══ -->
+	<section class="cta-section">
+		<div class="container">
+			<h2>Rejoignez le mouvement</h2>
+			<p>Ensemble, construisons l'avenir de notre communauté française aux États-Unis.</p>
+			<div class="cta-buttons">
+				<a href="/v2/la-liste" class="btn btn-primary">Découvrir la liste</a>
+				<a href="/v2/programme" class="btn btn-ghost-light">Notre programme</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* ─── PAGE HEADER ─── */
+	.page-header {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 2rem 3.5rem;
+	}
+
+	.election-label {
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-size: 0.6875rem;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.4);
+		margin-bottom: 1rem;
+	}
+
+	.page-header h1 {
+		font-size: clamp(2.25rem, 5vw, 3.5rem);
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
+
+	.page-subtitle {
+		font-size: 1.0625rem;
+		color: rgba(255, 255, 255, 0.6);
+		font-style: italic;
+	}
+
+	/* ─── SUPPORTERS ─── */
+	.supporters-section {
+		padding: 5rem 0;
+		background: var(--off-white);
+	}
+
+	.supporters-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.supporter-card {
+		background: var(--white);
+		border: 1px solid var(--border);
+		padding: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.supporter-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+	}
+
+	.supporter-avatar {
+		width: 72px;
+		height: 72px;
+		min-width: 72px;
+		border-radius: 50%;
+		background: var(--light);
+		border: 2px solid var(--border);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.avatar-initials {
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--navy);
+		letter-spacing: 0.04em;
+	}
+
+	.supporter-info h3 {
+		font-size: 1.0625rem;
+		color: var(--navy);
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+		line-height: 1.3;
+	}
+
+	.supporter-title {
+		font-size: 0.875rem;
+		color: var(--muted);
+		line-height: 1.5;
+		font-style: italic;
+	}
+
+	/* ─── QUOTE BAND ─── */
+	.quote-band {
+		background: var(--red);
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+
+	.quote-band blockquote {
+		max-width: 600px;
+		margin: 0 auto;
+		font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+		font-style: italic;
+		line-height: 1.8;
+		color: var(--white);
+		padding: 0 1rem;
+	}
+
+	/* ─── CTA ─── */
+	.cta-section {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 0;
+	}
+
+	.cta-section h2 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.cta-section p {
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 1rem;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* ─── RESPONSIVE ─── */
+	@media (max-width: 768px) {
+		.supporters-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.supporter-card {
+			flex-direction: column;
+			text-align: center;
+			padding: 1.75rem;
+		}
+
+		.page-header {
+			padding: 3rem 1.5rem 2.5rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>

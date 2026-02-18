@@ -1,0 +1,337 @@
+---
+import Layout from '../../components/v2/Layout.astro';
+---
+
+<Layout
+	title="Programme — Agissons Ensemble avec Pascale Richard"
+	description="Nos engagements pour les élections consulaires 2026 : Éducation, Social et Santé. Trois priorités pour les Français de NY-NJ-CT-Bermuda."
+	path="/v2/programme"
+	currentPage="programme"
+>
+	<!-- ═══ PAGE HEADER ═══ -->
+	<section class="page-header">
+		<div class="container">
+			<p class="election-label">Élections consulaires 2026</p>
+			<h1>Programme</h1>
+			<p class="page-subtitle">Nos engagements pour la communauté</p>
+		</div>
+	</section>
+
+	<!-- ═══ INTRO ═══ -->
+	<section class="intro">
+		<div class="container narrow">
+			<div class="section-header">
+				<span class="section-rule"></span>
+				<p class="section-label">Engagements</p>
+				<span class="section-rule"></span>
+			</div>
+			<h2 class="section-title">Trois priorités pour notre communauté</h2>
+			<p class="intro-text">
+				Notre liste s'engage autour de trois axes fondamentaux pour améliorer le quotidien des Français établis à New York, au New Jersey, au Connecticut et aux Bermudes.
+			</p>
+		</div>
+	</section>
+
+	<!-- ═══ PRIORITY 1: ÉDUCATION ═══ -->
+	<section class="priority-section" id="education">
+		<div class="container">
+			<div class="priority-block">
+				<div class="priority-number">
+					<span>01</span>
+				</div>
+				<div class="priority-content">
+					<h2>Éducation</h2>
+					<div class="priority-rule"></div>
+					<p class="priority-lead">Garantir l'accès à une éducation française de qualité pour tous nos enfants.</p>
+					<ul class="priority-points">
+						<li>Soutenir et développer le réseau des écoles françaises et bilingues dans la circonscription</li>
+						<li>Renforcer l'accès aux bourses scolaires pour les familles françaises</li>
+						<li>Accompagner les familles dans le système éducatif américain et les passerelles avec le système français</li>
+						<li>Promouvoir les échanges culturels et linguistiques pour les jeunes Français de l'étranger</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ PRIORITY 2: SOCIAL ═══ -->
+	<section class="priority-section alt" id="social">
+		<div class="container">
+			<div class="priority-block">
+				<div class="priority-number">
+					<span>02</span>
+				</div>
+				<div class="priority-content">
+					<h2>Social</h2>
+					<div class="priority-rule"></div>
+					<p class="priority-lead">Accompagner les Français en difficulté et renforcer le lien communautaire.</p>
+					<ul class="priority-points">
+						<li>Accompagner les Français en difficulté — personnes âgées isolées, malades, familles touchées par la vie chère</li>
+						<li>Orienter chacun vers les bons interlocuteurs et les dispositifs d'aide existants</li>
+						<li>Soutenir les associations et événements qui créent du lien communautaire</li>
+						<li>Rassembler les Français de toute la circonscription autour d'initiatives solidaires</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ PRIORITY 3: SANTÉ ═══ -->
+	<section class="priority-section" id="sante">
+		<div class="container">
+			<div class="priority-block">
+				<div class="priority-number">
+					<span>03</span>
+				</div>
+				<div class="priority-content">
+					<h2>Santé</h2>
+					<div class="priority-rule"></div>
+					<p class="priority-lead">Faciliter l'accès aux soins pour les Français de l'étranger.</p>
+					<ul class="priority-points">
+						<li>Améliorer la couverture santé des Français établis hors de France</li>
+						<li>Faciliter les démarches médicales transfrontalières et l'accès à la CFE</li>
+						<li>Informer sur les droits et les dispositifs de protection sociale disponibles</li>
+						<li>Accompagner les familles face au coût des soins de santé aux États-Unis</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ QUOTE BAND ═══ -->
+	<section class="quote-band">
+		<div class="container">
+			<blockquote>
+				« Il y a une résilience des gens qui n'attendent pas tout de leur gouvernement. C'est notre relation à l'État qui doit évoluer. »
+			</blockquote>
+			<cite>— Pascale Richard</cite>
+		</div>
+	</section>
+
+	<!-- ═══ CTA ═══ -->
+	<section class="cta-section">
+		<div class="container">
+			<h2>Agissons ensemble</h2>
+			<p>Découvrez notre liste et rejoignez le mouvement.</p>
+			<div class="cta-buttons">
+				<a href="/v2/la-liste" class="btn btn-primary">Découvrir la liste</a>
+				<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-light">Suivez-nous</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* ─── PAGE HEADER ─── */
+	.page-header {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 2rem 3.5rem;
+	}
+
+	.election-label {
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-size: 0.6875rem;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.4);
+		margin-bottom: 1rem;
+	}
+
+	.page-header h1 {
+		font-size: clamp(2.25rem, 5vw, 3.5rem);
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
+
+	.page-subtitle {
+		font-size: 1.0625rem;
+		color: rgba(255, 255, 255, 0.6);
+		font-style: italic;
+	}
+
+	/* ─── INTRO ─── */
+	.intro {
+		padding: 4rem 0 2rem;
+		background: var(--off-white);
+	}
+
+	.intro-text {
+		text-align: center;
+		font-size: 1.0625rem;
+		line-height: 1.8;
+		color: var(--muted);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	/* ─── PRIORITY SECTIONS ─── */
+	.priority-section {
+		padding: 4rem 0;
+		background: var(--off-white);
+	}
+
+	.priority-section.alt {
+		background: var(--white);
+	}
+
+	.priority-block {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		gap: 2.5rem;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.priority-number {
+		text-align: right;
+		padding-top: 0.25rem;
+	}
+
+	.priority-number span {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--navy);
+		opacity: 0.15;
+		line-height: 1;
+	}
+
+	.priority-content h2 {
+		font-size: 2rem;
+		color: var(--navy);
+		font-weight: 700;
+		margin-bottom: 0.75rem;
+	}
+
+	.priority-rule {
+		width: 60px;
+		height: 2px;
+		background: linear-gradient(90deg, var(--navy), var(--red));
+		margin-bottom: 1.5rem;
+	}
+
+	.priority-lead {
+		font-size: 1.125rem;
+		color: var(--ink);
+		font-style: italic;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+	}
+
+	.priority-points {
+		list-style: none;
+		padding: 0;
+	}
+
+	.priority-points li {
+		font-size: 0.9375rem;
+		line-height: 1.75;
+		color: var(--muted);
+		padding: 0.625rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.priority-points li:last-child {
+		border-bottom: none;
+	}
+
+	.priority-points li::before {
+		content: '—';
+		position: absolute;
+		left: 0;
+		color: var(--red);
+		font-weight: 700;
+	}
+
+	/* ─── QUOTE BAND ─── */
+	.quote-band {
+		background: var(--red);
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+
+	.quote-band blockquote {
+		max-width: 600px;
+		margin: 0 auto;
+		font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+		font-style: italic;
+		line-height: 1.8;
+		color: var(--white);
+		padding: 0 1rem;
+	}
+
+	.quote-band cite {
+		display: block;
+		margin-top: 1.25rem;
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.65);
+		font-style: normal;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	/* ─── CTA ─── */
+	.cta-section {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 0;
+	}
+
+	.cta-section h2 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.cta-section p {
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 1rem;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* ─── RESPONSIVE ─── */
+	@media (max-width: 640px) {
+		.priority-block {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+
+		.priority-number {
+			text-align: left;
+			padding-top: 0;
+		}
+
+		.priority-number span {
+			font-size: 2.5rem;
+		}
+
+		.page-header {
+			padding: 3rem 1.5rem 2.5rem;
+		}
+
+		.priority-section {
+			padding: 3rem 0;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>

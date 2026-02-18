@@ -1,0 +1,517 @@
+---
+import Head from '../Head.astro';
+import '../../styles/fonts.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	path?: string;
+	currentPage?: string;
+}
+
+const {
+	title = "Agissons Ensemble avec Pascale Richard",
+	description = "Pascale Richard, conseillère des Français de l'étranger. Candidate aux élections consulaires 2026 pour NY-NJ-CT-Bermuda.",
+	path = "/v2/",
+	currentPage = "accueil",
+} = Astro.props;
+
+const navItems = [
+	{ href: "/v2/", label: "Accueil", id: "accueil" },
+	{ href: "/v2/la-liste", label: "La Liste", id: "la-liste" },
+	{ href: "/v2/programme", label: "Programme", id: "programme" },
+	{ href: "/v2/soutiens", label: "Soutiens", id: "soutiens" },
+	{ href: "/v2/evenements", label: "Événements", id: "evenements" },
+];
+---
+
+<html lang="fr">
+	<head>
+		<Head title={title} description={description} path={path} />
+	</head>
+	<body>
+		<div class="tricolore-top"></div>
+
+		<header>
+			<div class="header-inner">
+				<a href="/v2/" class="logo-group">
+					<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="Renaissance" class="header-logo" />
+					<div class="logo-text">
+						<span class="logo-title">Agissons Ensemble</span>
+						<span class="logo-subtitle">avec Pascale Richard</span>
+					</div>
+				</a>
+
+				<button class="menu-toggle" id="menuToggle" aria-label="Menu">
+					<span></span><span></span><span></span>
+				</button>
+
+				<nav id="mainNav">
+					<ul>
+						{navItems.map(item => (
+							<li>
+								<a href={item.href} class:list={[{ active: currentPage === item.id }]}>
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer>
+			<div class="footer-inner">
+				<div class="footer-brand">
+					<img src="/assets/logos/RENAISSANCE_monogramme_marine.png" alt="Renaissance" class="footer-logo" />
+					<div>
+						<p class="footer-name">Agissons Ensemble avec Pascale Richard</p>
+						<p class="footer-geo">NY &middot; NJ &middot; CT &middot; Bermuda</p>
+					</div>
+				</div>
+				<div class="footer-links">
+					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer">Instagram</a>
+					<a href="mailto:contact@ensembleny2026.org">Contact</a>
+				</div>
+				<div class="footer-legal">
+					<p>&copy; 2026 Agissons Ensemble avec Pascale Richard &mdash; Élections consulaires 2026</p>
+				</div>
+			</div>
+			<div class="tricolore-bottom"></div>
+		</footer>
+
+		<script>
+			const toggle = document.getElementById('menuToggle');
+			const nav = document.getElementById('mainNav');
+			toggle?.addEventListener('click', () => {
+				nav?.classList.toggle('open');
+				toggle.classList.toggle('open');
+			});
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	/* ═══════════════════════════════════════════════
+	   V2 — AGISSONS ENSEMBLE
+	   Multi-page campaign site for Pascale Richard
+	   Elections consulaires 2026 · NY-NJ-CT-Bermuda
+	   ═══════════════════════════════════════════════ */
+
+	:root {
+		--navy: #002395;
+		--navy-deep: #001A6E;
+		--navy-darker: #000F45;
+		--red: #ED2939;
+		--red-dark: #C4212F;
+		--gold: #C9A84C;
+		--gold-light: #D4B96A;
+		--white: #FFFFFF;
+		--off-white: #F7F8FC;
+		--light: #EEF0F8;
+		--ink: #1A1A2E;
+		--muted: #5C5C72;
+		--border: #D8DAE6;
+		--rule: #B8BBCF;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html {
+		font-family: 'Maax', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		color: var(--ink);
+		scroll-behavior: smooth;
+		font-size: 16px;
+	}
+
+	body {
+		background: var(--off-white);
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	main {
+		flex: 1;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	/* ─── CONTAINER ─── */
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.container.narrow {
+		max-width: 780px;
+	}
+
+	/* ─── SECTION HEADERS ─── */
+	.section-header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-bottom: 0.625rem;
+	}
+
+	.section-rule {
+		flex: 1;
+		max-width: 120px;
+		height: 1px;
+		background: var(--rule);
+	}
+
+	.section-label {
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--red);
+		text-align: center;
+		white-space: nowrap;
+	}
+
+	.section-title {
+		text-align: center;
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+		color: var(--navy);
+		margin-bottom: 3rem;
+		line-height: 1.3;
+		font-weight: 700;
+	}
+
+	/* ─── BUTTONS ─── */
+	.btn {
+		display: inline-block;
+		padding: 0.875rem 2.25rem;
+		border-radius: 2px;
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		transition: all 0.25s ease;
+		cursor: pointer;
+		border: 1px solid transparent;
+		font-family: inherit;
+	}
+
+	.btn-primary {
+		background: var(--red);
+		color: var(--white);
+		border-color: var(--red);
+	}
+
+	.btn-primary:hover {
+		background: var(--red-dark);
+		border-color: var(--red-dark);
+	}
+
+	.btn-ghost {
+		background: transparent;
+		color: var(--navy);
+		border-color: var(--navy);
+	}
+
+	.btn-ghost:hover {
+		background: var(--navy);
+		color: var(--white);
+	}
+
+	.btn-ghost-light {
+		background: transparent;
+		color: rgba(255, 255, 255, 0.85);
+		border-color: rgba(255, 255, 255, 0.35);
+	}
+
+	.btn-ghost-light:hover {
+		border-color: var(--white);
+		color: var(--white);
+		background: rgba(255, 255, 255, 0.1);
+	}
+</style>
+
+<style>
+	/* ─── TRICOLORE STRIPE ─── */
+	.tricolore-top,
+	.tricolore-bottom {
+		height: 4px;
+		background: linear-gradient(
+			90deg,
+			var(--navy) 0%, var(--navy) 33%,
+			var(--white) 33%, var(--white) 66%,
+			var(--red) 66%, var(--red) 100%
+		);
+	}
+
+	.tricolore-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1001;
+	}
+
+	/* ─── HEADER ─── */
+	header {
+		position: sticky;
+		top: 4px;
+		z-index: 1000;
+		background: var(--white);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.header-inner {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 64px;
+	}
+
+	.logo-group {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		text-decoration: none;
+	}
+
+	.header-logo {
+		height: 28px;
+		width: auto;
+		opacity: 0.7;
+	}
+
+	.logo-text {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.2;
+	}
+
+	.logo-title {
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: var(--navy);
+		letter-spacing: 0.02em;
+	}
+
+	.logo-subtitle {
+		font-size: 0.6875rem;
+		color: var(--muted);
+		letter-spacing: 0.02em;
+	}
+
+	/* ─── DESKTOP NAV ─── */
+	nav ul {
+		list-style: none;
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	nav a {
+		display: block;
+		padding: 0.5rem 1rem;
+		font-size: 0.8125rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--muted);
+		transition: color 0.2s ease;
+		border-radius: 2px;
+	}
+
+	nav a:hover {
+		color: var(--navy);
+	}
+
+	nav a.active {
+		color: var(--navy);
+		background: var(--light);
+	}
+
+	/* ─── HAMBURGER ─── */
+	.menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		width: 28px;
+		height: 20px;
+		position: relative;
+		z-index: 1002;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: var(--navy);
+		position: absolute;
+		left: 0;
+		transition: all 0.3s ease;
+	}
+
+	.menu-toggle span:nth-child(1) { top: 0; }
+	.menu-toggle span:nth-child(2) { top: 9px; }
+	.menu-toggle span:nth-child(3) { top: 18px; }
+
+	.menu-toggle.open span:nth-child(1) {
+		top: 9px;
+		transform: rotate(45deg);
+	}
+
+	.menu-toggle.open span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.menu-toggle.open span:nth-child(3) {
+		top: 9px;
+		transform: rotate(-45deg);
+	}
+
+	/* ─── FOOTER ─── */
+	footer {
+		background: var(--white);
+		border-top: 1px solid var(--border);
+		margin-top: auto;
+	}
+
+	.footer-inner {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 2.5rem 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+	}
+
+	.footer-brand {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.footer-logo {
+		height: 24px;
+		width: auto;
+		opacity: 0.5;
+	}
+
+	.footer-name {
+		font-size: 0.8125rem;
+		font-weight: 700;
+		color: var(--navy);
+	}
+
+	.footer-geo {
+		font-size: 0.6875rem;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.footer-links a {
+		font-size: 0.8125rem;
+		font-weight: 700;
+		color: var(--muted);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		transition: color 0.2s ease;
+	}
+
+	.footer-links a:hover {
+		color: var(--red);
+	}
+
+	.footer-legal {
+		width: 100%;
+		text-align: center;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.footer-legal p {
+		font-size: 0.75rem;
+		color: var(--muted);
+		letter-spacing: 0.02em;
+	}
+
+	/* ─── MOBILE ─── */
+	@media (max-width: 768px) {
+		.menu-toggle {
+			display: block;
+		}
+
+		nav {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 280px;
+			height: 100vh;
+			background: var(--white);
+			box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+			padding: 5rem 2rem 2rem;
+			transition: right 0.3s ease;
+			z-index: 1001;
+		}
+
+		nav.open {
+			right: 0;
+		}
+
+		nav ul {
+			flex-direction: column;
+			gap: 0;
+		}
+
+		nav a {
+			padding: 1rem 0;
+			font-size: 1rem;
+			border-bottom: 1px solid var(--border);
+		}
+
+		.header-inner {
+			padding: 0 1.25rem;
+		}
+
+		.logo-title {
+			font-size: 0.8125rem;
+		}
+
+		.logo-subtitle {
+			font-size: 0.625rem;
+		}
+
+		.footer-inner {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.footer-brand {
+			flex-direction: column;
+		}
+	}
+</style>
