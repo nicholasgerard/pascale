@@ -18,17 +18,27 @@ import Layout from '../../components/v2/Layout.astro';
 	</section>
 
 	<!-- ═══ INTRO ═══ -->
-	<section class="intro">
+	<section class="intro" aria-labelledby="programme-heading">
 		<div class="container narrow">
 			<div class="section-header">
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 				<p class="section-label" data-i18n data-i18n-fr="Engagements" data-i18n-en="Commitments">Engagements</p>
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 			</div>
-			<h2 class="section-title" data-i18n data-i18n-fr="Trois priorités pour notre communauté" data-i18n-en="Three priorities for our community">Trois priorités pour notre communauté</h2>
+			<h2 id="programme-heading" class="section-title" data-i18n data-i18n-fr="Trois priorités pour notre communauté" data-i18n-en="Three priorities for our community">Trois priorités pour notre communauté</h2>
 			<p class="intro-text" data-i18n data-i18n-fr="Notre liste s'engage autour de trois axes fondamentaux pour améliorer le quotidien des Français établis à New York, au New Jersey, au Connecticut et aux Bermudes." data-i18n-en="Our team is committed to three fundamental areas to improve daily life for French citizens in New York, New Jersey, Connecticut and Bermuda.">
 				Notre liste s'engage autour de trois axes fondamentaux pour améliorer le quotidien des Français établis à New York, au New Jersey, au Connecticut et aux Bermudes.
 			</p>
+		</div>
+	</section>
+
+	<!-- ═══ ATMOSPHERIC PHOTO ═══ -->
+	<section class="photo-break">
+		<div class="container">
+			<figure class="photo-break-inner">
+				<img src="/assets/images/richard-candid.webp" alt="Pascale Richard at the Assembly of French Citizens Abroad" />
+				<figcaption class="photo-caption" data-i18n data-i18n-fr="Pascale Richard à l'Assemblée des Français de l'étranger" data-i18n-en="Pascale Richard at the Assembly of French Citizens Abroad">Pascale Richard à l'Assemblée des Français de l'étranger</figcaption>
+			</figure>
 		</div>
 	</section>
 
@@ -36,12 +46,12 @@ import Layout from '../../components/v2/Layout.astro';
 	<section class="priority-section" id="education">
 		<div class="container">
 			<div class="priority-block">
-				<div class="priority-number">
+				<div class="priority-number" aria-hidden="true">
 					<span>01</span>
 				</div>
 				<div class="priority-content">
 					<h2 data-i18n data-i18n-fr="Éducation" data-i18n-en="Education">Éducation</h2>
-					<div class="priority-rule"></div>
+					<div class="priority-rule" aria-hidden="true"></div>
 					<p class="priority-lead" data-i18n data-i18n-fr="Garantir l'accès à une éducation française de qualité pour tous nos enfants." data-i18n-en="Guarantee access to quality French education for all our children.">Garantir l'accès à une éducation française de qualité pour tous nos enfants.</p>
 					<ul class="priority-points">
 						<li data-i18n data-i18n-fr="Soutenir et développer le réseau des écoles françaises et bilingues dans la circonscription" data-i18n-en="Support and develop the network of French and bilingual schools in the constituency">Soutenir et développer le réseau des écoles françaises et bilingues dans la circonscription</li>
@@ -58,12 +68,12 @@ import Layout from '../../components/v2/Layout.astro';
 	<section class="priority-section alt" id="social">
 		<div class="container">
 			<div class="priority-block">
-				<div class="priority-number">
+				<div class="priority-number" aria-hidden="true">
 					<span>02</span>
 				</div>
 				<div class="priority-content">
 					<h2>Social</h2>
-					<div class="priority-rule"></div>
+					<div class="priority-rule" aria-hidden="true"></div>
 					<p class="priority-lead" data-i18n data-i18n-fr="Accompagner les Français en difficulté et renforcer le lien communautaire." data-i18n-en="Support French citizens in difficulty and strengthen community ties.">Accompagner les Français en difficulté et renforcer le lien communautaire.</p>
 					<ul class="priority-points">
 						<li data-i18n data-i18n-fr="Accompagner les Français en difficulté — personnes âgées isolées, malades, familles touchées par la vie chère" data-i18n-en="Support French citizens in difficulty — isolated elderly, ill individuals, families affected by the cost of living">Accompagner les Français en difficulté — personnes âgées isolées, malades, familles touchées par la vie chère</li>
@@ -80,12 +90,12 @@ import Layout from '../../components/v2/Layout.astro';
 	<section class="priority-section" id="sante">
 		<div class="container">
 			<div class="priority-block">
-				<div class="priority-number">
+				<div class="priority-number" aria-hidden="true">
 					<span>03</span>
 				</div>
 				<div class="priority-content">
 					<h2 data-i18n data-i18n-fr="Santé" data-i18n-en="Health">Santé</h2>
-					<div class="priority-rule"></div>
+					<div class="priority-rule" aria-hidden="true"></div>
 					<p class="priority-lead" data-i18n data-i18n-fr="Faciliter l'accès aux soins pour les Français de l'étranger." data-i18n-en="Facilitate access to healthcare for French citizens abroad.">Faciliter l'accès aux soins pour les Français de l'étranger.</p>
 					<ul class="priority-points">
 						<li data-i18n data-i18n-fr="Améliorer la couverture santé des Français établis hors de France" data-i18n-en="Improve health coverage for French citizens living abroad">Améliorer la couverture santé des Français établis hors de France</li>
@@ -156,6 +166,35 @@ import Layout from '../../components/v2/Layout.astro';
 		color: var(--muted);
 		max-width: 600px;
 		margin: 0 auto;
+	}
+
+	/* ─── PHOTO BREAK ─── */
+	.photo-break {
+		padding: 0 0 2rem;
+		background: var(--off-white);
+	}
+
+	.photo-break-inner {
+		max-width: 700px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	.photo-break-inner img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+		filter: grayscale(15%);
+	}
+
+	.photo-caption {
+		font-size: 0.75rem;
+		color: var(--muted);
+		text-align: center;
+		margin-top: 0.75rem;
+		font-style: italic;
+		letter-spacing: 0.02em;
 	}
 
 	/* ─── PRIORITY SECTIONS ─── */

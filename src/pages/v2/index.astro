@@ -9,24 +9,19 @@ import Layout from '../../components/v2/Layout.astro';
 	currentPage="accueil"
 >
 	<!-- ═══ HERO (group photo banner) ═══ -->
-	<section class="hero">
-		<div class="hero-photo-banner">
-			<!-- Group photo placeholder — replace src when ready -->
-			<div class="hero-placeholder">
-				<span data-i18n data-i18n-fr="Photo de groupe à venir" data-i18n-en="Group photo coming soon">Photo de groupe à venir</span>
-			</div>
-		</div>
+	<section class="hero" aria-label="Hero">
+		<img class="hero-bg" src="/assets/images/hero-banner.jpg" alt="Agissons Ensemble — Pascale Richard and candidates for the 2026 consular elections" />
 		<div class="hero-overlay">
 			<div class="hero-content">
 				<p class="election-label" data-i18n data-i18n-fr="Élections consulaires 2026" data-i18n-en="Consular Elections 2026">Élections consulaires 2026</p>
 				<h1>Agissons Ensemble</h1>
-				<div class="geo">
+				<div class="geo" aria-label="Constituency: New York, New Jersey, Connecticut, Bermuda">
 					<span>New York</span>
-					<span class="dot"></span>
+					<span class="dot" aria-hidden="true"></span>
 					<span>New Jersey</span>
-					<span class="dot"></span>
+					<span class="dot" aria-hidden="true"></span>
 					<span>Connecticut</span>
-					<span class="dot"></span>
+					<span class="dot" aria-hidden="true"></span>
 					<span>Bermuda</span>
 				</div>
 				<div class="hero-buttons">
@@ -38,7 +33,7 @@ import Layout from '../../components/v2/Layout.astro';
 	</section>
 
 	<!-- ═══ ABOUT PASCALE ═══ -->
-	<section class="about">
+	<section class="about" aria-labelledby="about-heading">
 		<div class="container">
 			<div class="about-inner">
 				<div class="about-avatar">
@@ -47,9 +42,9 @@ import Layout from '../../components/v2/Layout.astro';
 				<div class="about-content">
 					<div class="section-header" style="justify-content: flex-start;">
 						<p class="section-label" data-i18n data-i18n-fr="Qui suis-je" data-i18n-en="About me">Qui suis-je</p>
-						<span class="section-rule"></span>
+						<span class="section-rule" aria-hidden="true"></span>
 					</div>
-					<h2>Pascale Richard</h2>
+					<h2 id="about-heading">Pascale Richard</h2>
 					<p class="about-role" data-i18n data-i18n-fr="Conseillère des Français de l'étranger" data-i18n-en="Councillor for French citizens abroad">Conseillère des Français de l'étranger</p>
 					<p class="about-bio" data-i18n data-i18n-fr="Installée à New York depuis plus de 25 ans, Pascale Richard a d'abord mené une carrière de journaliste en tant que rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York." data-i18n-en="Based in New York for over 25 years, Pascale Richard first pursued a career in journalism as editor-in-chief of France Amérique, then as director of cultural events at the Lycée Français de New York.">
 						Installée à New York depuis plus de 25 ans, Pascale Richard a d'abord mené une carrière de journaliste en tant que rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York.
@@ -65,7 +60,7 @@ import Layout from '../../components/v2/Layout.astro';
 					</ul>
 					<div class="about-links">
 						<a href="/v2/la-liste" class="btn btn-ghost" data-i18n data-i18n-fr="Voir toute la liste" data-i18n-en="See the full team">Voir toute la liste</a>
-						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="interview-link" data-i18n data-i18n-fr="Lire l'interview sur Renaissance →" data-i18n-en="Read the interview on Renaissance →">Lire l'interview sur Renaissance →</a>
+						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="interview-link" data-i18n data-i18n-fr="Lire l'interview sur Renaissance →" data-i18n-en="Read the interview on Renaissance →" aria-label="Interview Renaissance">Lire l'interview sur Renaissance →</a>
 					</div>
 				</div>
 			</div>
@@ -73,14 +68,14 @@ import Layout from '../../components/v2/Layout.astro';
 	</section>
 
 	<!-- ═══ PRIORITIES OVERVIEW ═══ -->
-	<section class="priorities-overview">
+	<section class="priorities-overview" aria-labelledby="priorities-heading">
 		<div class="container">
 			<div class="section-header">
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 				<p class="section-label" data-i18n data-i18n-fr="Engagements" data-i18n-en="Commitments">Engagements</p>
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 			</div>
-			<h2 class="section-title" data-i18n data-i18n-fr="Trois priorités pour notre communauté" data-i18n-en="Three priorities for our community">Trois priorités pour notre communauté</h2>
+			<h2 id="priorities-heading" class="section-title" data-i18n data-i18n-fr="Trois priorités pour notre communauté" data-i18n-en="Three priorities for our community">Trois priorités pour notre communauté</h2>
 			<div class="priority-grid">
 				<div class="priority-card">
 					<div class="card-icon">01</div>
@@ -105,14 +100,14 @@ import Layout from '../../components/v2/Layout.astro';
 	</section>
 
 	<!-- ═══ SOUTIENS PREVIEW ═══ -->
-	<section class="soutiens-preview">
+	<section class="soutiens-preview" aria-labelledby="soutiens-heading">
 		<div class="container">
 			<div class="section-header">
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 				<p class="section-label" data-i18n data-i18n-fr="Ils nous soutiennent" data-i18n-en="They support us">Ils nous soutiennent</p>
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 			</div>
-			<h2 class="section-title" data-i18n data-i18n-fr="Des soutiens de premier plan" data-i18n-en="Leading supporters">Des soutiens de premier plan</h2>
+			<h2 id="soutiens-heading" class="section-title" data-i18n data-i18n-fr="Des soutiens de premier plan" data-i18n-en="Leading supporters">Des soutiens de premier plan</h2>
 			<div class="soutiens-logos">
 				<div class="soutien-badge">Eléonore Caroit</div>
 				<div class="soutien-badge">Olivier Cassegrain</div>
@@ -139,53 +134,34 @@ import Layout from '../../components/v2/Layout.astro';
 </Layout>
 
 <style>
-	/* ─── HERO (banner with group photo) ─── */
+	/* ─── HERO (full-bleed background photo) ─── */
 	.hero {
 		position: relative;
 		background: var(--navy-deep);
 		color: var(--white);
 		overflow: hidden;
+		min-height: 640px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 	}
 
-	.hero-photo-banner {
-		position: relative;
-		width: 100%;
-		min-height: 400px;
-	}
-
-	.hero-photo-banner img {
+	.hero-bg {
+		position: absolute;
+		inset: 0;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center;
+		object-position: center 20%;
 		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	.hero-placeholder {
-		width: 100%;
-		min-height: 400px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-deep) 100%);
-		border-bottom: 3px solid;
-		border-image: linear-gradient(90deg, var(--navy), var(--red)) 1;
-	}
-
-	.hero-placeholder span {
-		font-size: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		color: rgba(255, 255, 255, 0.2);
-		font-weight: 700;
+		z-index: 0;
 	}
 
 	.hero-overlay {
-		background: linear-gradient(to top, var(--navy-deep) 0%, rgba(0, 26, 110, 0.85) 40%, rgba(0, 26, 110, 0.5) 100%);
 		position: relative;
+		z-index: 1;
+		background: linear-gradient(to top, var(--navy-deep) 0%, rgba(0, 26, 110, 0.8) 50%, transparent 100%);
+		margin-top: auto;
 	}
 
 	.hero-content {
@@ -478,14 +454,37 @@ import Layout from '../../components/v2/Layout.astro';
 		}
 	}
 
-	@media (max-width: 640px) {
-		.hero-photo-banner,
-		.hero-placeholder {
-			min-height: 280px;
+	@media (max-width: 800px) {
+		/* Stacked layout: photo on top, text on solid blue below */
+		.hero {
+			min-height: 0;
+			display: block;
+		}
+
+		.hero-bg {
+			position: relative;
+			inset: auto;
+			height: 300px;
+			object-position: center 20%;
+		}
+
+		.hero-overlay {
+			background: var(--navy-deep);
+			margin-top: 0;
 		}
 
 		.hero-content {
-			padding: 2rem 1.5rem 3rem;
+			padding: 2.5rem 2rem 3rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.hero-bg {
+			height: 240px;
+		}
+
+		.hero-content {
+			padding: 2rem 1.5rem 2.5rem;
 		}
 
 		.hero h1 {

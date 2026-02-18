@@ -2,20 +2,20 @@
 import Layout from '../../components/v2/Layout.astro';
 
 const members = [
-	{ name: "Pascale Richard", role: "Tête de liste", initials: "PR", accent: true },
-	{ name: "Yvan Bedouet", role: "", initials: "YB" },
-	{ name: "Isabelle Bonneau", role: "", initials: "IB" },
-	{ name: "Luis Honsel", role: "", initials: "LH" },
-	{ name: "Aissata Fernandez Taranco", role: "", initials: "AF" },
-	{ name: "Gaël Lambert", role: "", initials: "GL" },
-	{ name: "Liliane Rubin", role: "", initials: "LR" },
-	{ name: "Jean-Paul Le Boucher", role: "", initials: "JL" },
-	{ name: "Martine Rubenstein", role: "", initials: "MR" },
-	{ name: "Jean-Luc Streiff", role: "", initials: "JS" },
-	{ name: "Line Malha", role: "", initials: "LM" },
-	{ name: "Guillaume Haeringer", role: "", initials: "GH" },
-	{ name: "Nicole Devilaine", role: "", initials: "ND" },
-	{ name: "Joseph Papin", role: "", initials: "JP" },
+	{ name: "Pascale Richard", role: "Tête de liste", initials: "PR", headshot: "pascale", accent: true },
+	{ name: "Yvan Bedouet", role: "", initials: "YB", headshot: "yvan" },
+	{ name: "Isabelle Bonneau", role: "", initials: "IB", headshot: "isabelle" },
+	{ name: "Luis Honsel", role: "", initials: "LH", headshot: "luis" },
+	{ name: "Aissata Fernandez Taranco", role: "", initials: "AF", headshot: "aissata" },
+	{ name: "Gaël Lambert", role: "", initials: "GL", headshot: "gael" },
+	{ name: "Liliane Rubin", role: "", initials: "LR", headshot: "liliane" },
+	{ name: "Jean-Paul Le Boucher", role: "", initials: "JL", headshot: "jeanpaul" },
+	{ name: "Martine Rubenstein", role: "", initials: "MR", headshot: "martine" },
+	{ name: "Jean-Luc Streiff", role: "", initials: "JS", headshot: "jeanluc" },
+	{ name: "Line Malha", role: "", initials: "LM", headshot: "line" },
+	{ name: "Guillaume Haeringer", role: "", initials: "GH", headshot: "guillaume" },
+	{ name: "Nicole Devilaine", role: "", initials: "ND", headshot: "nicole" },
+	{ name: "Joseph Papin", role: "", initials: "JP", headshot: "joseph" },
 ];
 ---
 
@@ -35,33 +35,29 @@ const members = [
 		</div>
 	</section>
 
-	<!-- ═══ LIST PHOTO PLACEHOLDER ═══ -->
+	<!-- ═══ LIST PHOTO ═══ -->
 	<section class="list-photo">
 		<div class="container">
-			<div class="photo-placeholder">
-				<div class="photo-placeholder-inner">
-					<span class="photo-icon">📸</span>
-					<p data-i18n data-i18n-fr="Photo de groupe de la liste" data-i18n-en="Team group photo">Photo de groupe de la liste</p>
-					<p class="photo-sub" data-i18n data-i18n-fr="À venir" data-i18n-en="Coming soon">À venir</p>
-				</div>
+			<div class="photo-banner">
+				<img src="/assets/images/hero-banner.jpg" alt="The Agissons Ensemble team — the 14 candidates for the 2026 consular elections" />
 			</div>
 		</div>
 	</section>
 
 	<!-- ═══ TEAM GRID ═══ -->
-	<section class="team-section">
+	<section class="team-section" aria-labelledby="team-heading">
 		<div class="container">
 			<div class="section-header">
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 				<p class="section-label" data-i18n data-i18n-fr="Nos candidats" data-i18n-en="Our candidates">Nos candidats</p>
-				<span class="section-rule"></span>
+				<span class="section-rule" aria-hidden="true"></span>
 			</div>
-			<h2 class="section-title" data-i18n data-i18n-fr="Les membres de la liste" data-i18n-en="Team members">Les membres de la liste</h2>
+			<h2 id="team-heading" class="section-title" data-i18n data-i18n-fr="Les membres de la liste" data-i18n-en="Team members">Les membres de la liste</h2>
 
 			<!-- Head of list - featured -->
-			<div class="featured-member">
+			<article class="featured-member">
 				<div class="featured-photo">
-					<img src="/assets/images/pascale.jpg" alt="Pascale Richard" />
+					<img src="/assets/images/headshots/pascale.jpeg" alt="Pascale Richard" />
 				</div>
 				<div class="featured-info">
 					<span class="member-badge" data-i18n data-i18n-fr="Tête de liste" data-i18n-en="Head of list">Tête de liste</span>
@@ -71,19 +67,19 @@ const members = [
 						Installée à New York depuis plus de 25 ans. Journaliste, rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York. Engagée depuis 2016 avec En Marche, élue conseillère des Français de l'étranger en 2021, suppléante de Roland Lescure.
 					</p>
 				</div>
-			</div>
+			</article>
 
 			<!-- Other members grid -->
-			<div class="members-grid">
+			<ul class="members-grid" role="list">
 				{members.slice(1).map((member) => (
-					<div class="member-card">
+					<li class="member-card">
 						<div class="member-avatar">
-							<span class="avatar-initials">{member.initials}</span>
+							<img src={`/assets/images/headshots/${member.headshot}.jpeg`} alt={member.name} />
 						</div>
 						<h4>{member.name}</h4>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</div>
 	</section>
 
@@ -147,36 +143,18 @@ const members = [
 		background: var(--off-white);
 	}
 
-	.photo-placeholder {
-		background: var(--white);
-		border: 2px dashed var(--border);
-		padding: 4rem 2rem;
-		text-align: center;
-		max-width: 800px;
+	.photo-banner {
+		max-width: 900px;
 		margin: 0 auto;
+		overflow: hidden;
+		border: 1px solid var(--border);
 	}
 
-	.photo-placeholder-inner {
-		color: var(--muted);
-	}
-
-	.photo-icon {
-		font-size: 2rem;
+	.photo-banner img {
+		width: 100%;
+		height: auto;
 		display: block;
-		margin-bottom: 0.75rem;
-	}
-
-	.photo-placeholder p {
-		font-size: 1rem;
-		font-weight: 700;
-		color: var(--navy);
-	}
-
-	.photo-sub {
-		font-size: 0.875rem !important;
-		font-weight: 400 !important;
-		color: var(--muted) !important;
-		margin-top: 0.25rem;
+		object-fit: cover;
 	}
 
 	/* ─── TEAM SECTION ─── */
@@ -251,6 +229,7 @@ const members = [
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		gap: 1.5rem;
+		list-style: none;
 	}
 
 	.member-card {
@@ -267,22 +246,21 @@ const members = [
 	}
 
 	.member-avatar {
-		width: 80px;
-		height: 80px;
+		width: 100px;
+		height: 100px;
 		border-radius: 50%;
-		background: var(--light);
-		border: 2px solid var(--border);
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		overflow: hidden;
+		border: 3px solid var(--white);
+		box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(0, 0, 0, 0.08);
 		margin: 0 auto 1rem;
 	}
 
-	.avatar-initials {
-		font-size: 1.25rem;
-		font-weight: 700;
-		color: var(--navy);
-		letter-spacing: 0.04em;
+	.member-avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		display: block;
 	}
 
 	.member-card h4 {
@@ -349,10 +327,6 @@ const members = [
 
 		.page-header {
 			padding: 3rem 1.5rem 2.5rem;
-		}
-
-		.photo-placeholder {
-			padding: 3rem 1.5rem;
 		}
 
 		.cta-buttons {
