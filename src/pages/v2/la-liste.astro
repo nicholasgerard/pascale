@@ -1,0 +1,363 @@
+---
+import Layout from '../../components/v2/Layout.astro';
+
+const members = [
+	{ name: "Pascale Richard", role: "Tête de liste", initials: "PR", accent: true },
+	{ name: "Yvan Bedouet", role: "", initials: "YB" },
+	{ name: "Isabelle Bonneau", role: "", initials: "IB" },
+	{ name: "Luis Honsel", role: "", initials: "LH" },
+	{ name: "Aissata Fernandez Taranco", role: "", initials: "AF" },
+	{ name: "Gaël Lambert", role: "", initials: "GL" },
+	{ name: "Liliane Rubin", role: "", initials: "LR" },
+	{ name: "Jean-Paul Le Boucher", role: "", initials: "JL" },
+	{ name: "Martine Rubenstein", role: "", initials: "MR" },
+	{ name: "Jean-Luc Streiff", role: "", initials: "JS" },
+	{ name: "Line Malha", role: "", initials: "LM" },
+	{ name: "Guillaume Haeringer", role: "", initials: "GH" },
+	{ name: "Nicole Devilaine", role: "", initials: "ND" },
+	{ name: "Joseph Papin", role: "", initials: "JP" },
+];
+---
+
+<Layout
+	title="La Liste — Agissons Ensemble avec Pascale Richard"
+	description="Découvrez les 14 membres de la liste Agissons Ensemble pour les élections consulaires 2026 NY-NJ-CT-Bermuda."
+	path="/v2/la-liste"
+	currentPage="la-liste"
+>
+	<!-- ═══ PAGE HEADER ═══ -->
+	<section class="page-header">
+		<div class="container">
+			<p class="election-label">Élections consulaires 2026</p>
+			<h1>La Liste</h1>
+			<p class="page-subtitle">Agissons Ensemble avec Pascale Richard</p>
+			<p class="page-desc">14 candidats engagés pour représenter les Français de New York, New Jersey, Connecticut et des Bermudes.</p>
+		</div>
+	</section>
+
+	<!-- ═══ LIST PHOTO PLACEHOLDER ═══ -->
+	<section class="list-photo">
+		<div class="container">
+			<div class="photo-placeholder">
+				<div class="photo-placeholder-inner">
+					<span class="photo-icon">📸</span>
+					<p>Photo de groupe de la liste</p>
+					<p class="photo-sub">À venir</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ TEAM GRID ═══ -->
+	<section class="team-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-rule"></span>
+				<p class="section-label">Nos candidats</p>
+				<span class="section-rule"></span>
+			</div>
+			<h2 class="section-title">Les membres de la liste</h2>
+
+			<!-- Head of list - featured -->
+			<div class="featured-member">
+				<div class="featured-photo">
+					<img src="/assets/images/pascale.jpg" alt="Pascale Richard" />
+				</div>
+				<div class="featured-info">
+					<span class="member-badge">Tête de liste</span>
+					<h3>Pascale Richard</h3>
+					<p class="member-role">Conseillère des Français de l'étranger</p>
+					<p class="member-bio">
+						Installée à New York depuis plus de 25 ans. Journaliste, rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York. Engagée depuis 2016 avec En Marche, élue conseillère des Français de l'étranger en 2021, suppléante de Roland Lescure.
+					</p>
+				</div>
+			</div>
+
+			<!-- Other members grid -->
+			<div class="members-grid">
+				{members.slice(1).map((member) => (
+					<div class="member-card">
+						<div class="member-avatar">
+							<span class="avatar-initials">{member.initials}</span>
+						</div>
+						<h4>{member.name}</h4>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- ═══ CTA ═══ -->
+	<section class="cta-section">
+		<div class="container">
+			<h2>Rejoignez-nous</h2>
+			<p>Découvrez notre programme et nos engagements pour la communauté française.</p>
+			<div class="cta-buttons">
+				<a href="/v2/programme" class="btn btn-primary">Notre programme</a>
+				<a href="/v2/soutiens" class="btn btn-ghost-light">Nos soutiens</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* ─── PAGE HEADER ─── */
+	.page-header {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 2rem 3.5rem;
+	}
+
+	.election-label {
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-size: 0.6875rem;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.4);
+		margin-bottom: 1rem;
+	}
+
+	.page-header h1 {
+		font-size: clamp(2.25rem, 5vw, 3.5rem);
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
+
+	.page-subtitle {
+		font-size: 1.125rem;
+		color: rgba(255, 255, 255, 0.65);
+		font-style: italic;
+		margin-bottom: 1rem;
+	}
+
+	.page-desc {
+		font-size: 0.9375rem;
+		color: rgba(255, 255, 255, 0.45);
+		max-width: 520px;
+		margin: 0 auto;
+		line-height: 1.7;
+	}
+
+	/* ─── LIST PHOTO ─── */
+	.list-photo {
+		padding: 3rem 0 0;
+		background: var(--off-white);
+	}
+
+	.photo-placeholder {
+		background: var(--white);
+		border: 2px dashed var(--border);
+		padding: 4rem 2rem;
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.photo-placeholder-inner {
+		color: var(--muted);
+	}
+
+	.photo-icon {
+		font-size: 2rem;
+		display: block;
+		margin-bottom: 0.75rem;
+	}
+
+	.photo-placeholder p {
+		font-size: 1rem;
+		font-weight: 700;
+		color: var(--navy);
+	}
+
+	.photo-sub {
+		font-size: 0.875rem !important;
+		font-weight: 400 !important;
+		color: var(--muted) !important;
+		margin-top: 0.25rem;
+	}
+
+	/* ─── TEAM SECTION ─── */
+	.team-section {
+		padding: 4rem 0 5rem;
+		background: var(--off-white);
+	}
+
+	/* ─── FEATURED MEMBER ─── */
+	.featured-member {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: 2.5rem;
+		background: var(--white);
+		border: 1px solid var(--border);
+		padding: 2.5rem;
+		margin-bottom: 3rem;
+		position: relative;
+	}
+
+	.featured-member::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, var(--navy), var(--red));
+	}
+
+	.featured-photo img {
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.member-badge {
+		display: inline-block;
+		background: var(--red);
+		color: var(--white);
+		font-size: 0.6875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		padding: 0.375rem 0.875rem;
+		margin-bottom: 1rem;
+	}
+
+	.featured-info h3 {
+		font-size: 1.75rem;
+		color: var(--navy);
+		margin-bottom: 0.375rem;
+		font-weight: 700;
+	}
+
+	.member-role {
+		font-size: 1rem;
+		color: var(--red);
+		font-style: italic;
+		margin-bottom: 1.25rem;
+	}
+
+	.member-bio {
+		font-size: 0.9375rem;
+		line-height: 1.8;
+		color: var(--muted);
+	}
+
+	/* ─── MEMBERS GRID ─── */
+	.members-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.member-card {
+		background: var(--white);
+		border: 1px solid var(--border);
+		padding: 2rem 1.5rem;
+		text-align: center;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.member-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+	}
+
+	.member-avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: var(--light);
+		border: 2px solid var(--border);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1rem;
+	}
+
+	.avatar-initials {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--navy);
+		letter-spacing: 0.04em;
+	}
+
+	.member-card h4 {
+		font-size: 0.9375rem;
+		color: var(--navy);
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	/* ─── CTA ─── */
+	.cta-section {
+		background: var(--navy-deep);
+		color: var(--white);
+		text-align: center;
+		padding: 4rem 0;
+	}
+
+	.cta-section h2 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.cta-section p {
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 1rem;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* ─── RESPONSIVE ─── */
+	@media (max-width: 768px) {
+		.featured-member {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 2rem;
+		}
+
+		.featured-photo img {
+			max-height: 320px;
+			width: 100%;
+		}
+
+		.members-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.members-grid {
+			grid-template-columns: 1fr;
+			max-width: 300px;
+			margin: 0 auto;
+		}
+
+		.page-header {
+			padding: 3rem 1.5rem 2.5rem;
+		}
+
+		.photo-placeholder {
+			padding: 3rem 1.5rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>
