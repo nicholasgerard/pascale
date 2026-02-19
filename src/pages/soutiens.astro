@@ -69,8 +69,9 @@ const supporters = [
 	</section>
 
 	<!-- ═══ SUPPORTERS GRID ═══ -->
-	<section class="supporters-section">
+	<section class="supporters-section" aria-labelledby="supporters-heading">
 		<div class="container">
+			<h2 id="supporters-heading" class="sr-only" data-i18n data-i18n-fr="Nos soutiens" data-i18n-en="Our supporters">Nos soutiens</h2>
 			<div class="supporters-grid">
 				{supporters.map((supporter) => (
 					<div class="supporter-card">

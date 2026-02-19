@@ -100,20 +100,40 @@ const navItems = [
 		</footer>
 
 		<script>
+			// Language state
+			let currentLang = 'fr';
+
 			// Mobile menu toggle
 			const toggle = document.getElementById('menuToggle');
 			const nav = document.getElementById('mainNav');
+
+			function closeMenu() {
+				nav?.classList.remove('open');
+				toggle?.classList.remove('open');
+				toggle?.setAttribute('aria-expanded', 'false');
+				toggle?.setAttribute('aria-label', currentLang === 'en' ? 'Open menu' : 'Ouvrir le menu');
+				document.getElementById('navBackdrop')?.remove();
+			}
+
 			toggle?.addEventListener('click', () => {
-				nav?.classList.toggle('open');
-				toggle.classList.toggle('open');
-				const isOpen = toggle.classList.contains('open');
-				toggle.setAttribute('aria-expanded', String(isOpen));
-				toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+				const isOpen = nav?.classList.contains('open');
+				if (isOpen) {
+					closeMenu();
+				} else {
+					nav?.classList.add('open');
+					toggle.classList.add('open');
+					toggle.setAttribute('aria-expanded', 'true');
+					toggle.setAttribute('aria-label', currentLang === 'en' ? 'Close menu' : 'Fermer le menu');
+					// Add backdrop
+					const backdrop = document.createElement('div');
+					backdrop.id = 'navBackdrop';
+					backdrop.style.cssText = 'position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.3);';
+					backdrop.addEventListener('click', closeMenu);
+					document.body.appendChild(backdrop);
+				}
 			});
 
 			// Language toggle
-			let currentLang = 'fr';
-
 			function setLang(lang: string) {
 				currentLang = lang;
 				document.documentElement.setAttribute('lang', lang);

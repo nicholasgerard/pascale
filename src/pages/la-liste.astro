@@ -1,22 +1,6 @@
 ---
 import Layout from '../components/Layout.astro';
-
-const members = [
-	{ name: "Pascale Richard", role: "Tête de liste", initials: "PR", headshot: "pascale", accent: true },
-	{ name: "Yvan Bedouet", role: "", initials: "YB", headshot: "yvan" },
-	{ name: "Isabelle Bonneau", role: "", initials: "IB", headshot: "isabelle" },
-	{ name: "Luis Honsel", role: "", initials: "LH", headshot: "luis" },
-	{ name: "Aissata Fernandez Taranco", role: "", initials: "AF", headshot: "aissata" },
-	{ name: "Gaël Lambert", role: "", initials: "GL", headshot: "gael" },
-	{ name: "Liliane Rubin", role: "", initials: "LR", headshot: "liliane" },
-	{ name: "Jean-Paul Le Boucher", role: "", initials: "JL", headshot: "jeanpaul" },
-	{ name: "Martine Rubenstein", role: "", initials: "MR", headshot: "martine" },
-	{ name: "Jean-Luc Streiff", role: "", initials: "JS", headshot: "jeanluc" },
-	{ name: "Line Malha", role: "", initials: "LM", headshot: "line" },
-	{ name: "Guillaume Haeringer", role: "", initials: "GH", headshot: "guillaume" },
-	{ name: "Nicole Devilaine", role: "", initials: "ND", headshot: "nicole" },
-	{ name: "Joseph Papin", role: "", initials: "JP", headshot: "joseph" },
-];
+import { members } from '../data/members';
 ---
 
 <Layout
@@ -36,7 +20,7 @@ const members = [
 	</section>
 
 	<!-- ═══ LIST PHOTO ═══ -->
-	<section class="list-photo">
+	<section class="list-photo" aria-label="Photo de groupe">
 		<div class="container">
 			<div class="photo-banner">
 				<img src="/assets/images/hero-banner.jpg" alt="The Agissons Ensemble team — the 14 candidates for the 2026 consular elections" />
@@ -54,34 +38,47 @@ const members = [
 			</div>
 			<h2 id="team-heading" class="section-title" data-i18n data-i18n-fr="Les membres de la liste" data-i18n-en="Team members">Les membres de la liste</h2>
 
-			<!-- Head of list - featured -->
-			<article class="featured-member">
-				<div class="featured-photo">
-					<img src="/assets/images/headshots/pascale.jpeg" alt="Pascale Richard" />
-				</div>
-				<div class="featured-info">
-					<span class="member-badge" data-i18n data-i18n-fr="Tête de liste" data-i18n-en="Head of list">Tête de liste</span>
-					<h3>Pascale Richard</h3>
-					<p class="member-role" data-i18n data-i18n-fr="Conseillère des Français de l'étranger" data-i18n-en="Councillor for French citizens abroad">Conseillère des Français de l'étranger</p>
-					<p class="member-bio" data-i18n data-i18n-fr="Installée à New York depuis plus de 25 ans. Journaliste, rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York. Engagée depuis 2016 avec En Marche, élue conseillère des Français de l'étranger en 2021, suppléante de Roland Lescure." data-i18n-en="Based in New York for over 25 years. Journalist, editor-in-chief of France Amérique, then director of cultural events at the Lycée Français de New York. Committed since 2016 with En Marche, elected councillor for French citizens abroad in 2021, deputy to Roland Lescure.">
-						Installée à New York depuis plus de 25 ans. Journaliste, rédactrice en chef de France Amérique, puis directrice des événements culturels au Lycée Français de New York. Engagée depuis 2016 avec En Marche, élue conseillère des Français de l'étranger en 2021, suppléante de Roland Lescure.
-					</p>
-				</div>
-			</article>
-
-			<!-- Other members grid -->
 			<ul class="members-grid" role="list">
-				{members.slice(1).map((member) => (
-					<li class="member-card">
-						<div class="member-avatar">
-							<img src={`/assets/images/headshots/${member.headshot}.jpeg`} alt={member.name} />
-						</div>
-						<h4>{member.name}</h4>
+				{members.map((member, i) => (
+					<li class:list={["member-card", { featured: member.accent }]} data-index={i}>
+						<button class="card-trigger" aria-label={`Voir le profil de ${member.name}`} data-index={i}>
+							<div class="member-avatar">
+								{member.headshot ? (
+									<img src={`/assets/images/headshots/${member.headshot}.jpeg`} alt={member.name} />
+								) : (
+									<span class="avatar-initials">{member.initials}</span>
+								)}
+							</div>
+							{member.accent && <span class="member-badge" data-i18n data-i18n-fr="Tête de liste" data-i18n-en="Head of list">Tête de liste</span>}
+							<h3>{member.name}</h3>
+							<p class="card-title" data-i18n data-i18n-fr={member.title} data-i18n-en={member.titleEn}>{member.title}</p>
+							<span class="card-hint" data-i18n data-i18n-fr="Voir le profil →" data-i18n-en="View profile →">Voir le profil &rarr;</span>
+						</button>
 					</li>
 				))}
 			</ul>
 		</div>
 	</section>
+
+	<!-- ═══ MODAL ═══ -->
+	<div class="modal-overlay" id="memberModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Profil du membre">
+		<div class="modal-content">
+			<button class="modal-close" aria-label="Fermer / Close">&times;</button>
+			<div class="modal-body">
+				<div class="modal-photo" id="modalPhoto"></div>
+				<div class="modal-info">
+					<span class="member-badge modal-badge" id="modalBadge" style="display:none;" data-i18n data-i18n-fr="Tête de liste" data-i18n-en="Head of list">Tête de liste</span>
+					<h3 id="modalName"></h3>
+					<p class="modal-title" id="modalTitle"></p>
+					<a class="modal-linkedin" id="modalLinkedin" href="#" target="_blank" rel="noopener noreferrer" style="display:none;" aria-label="LinkedIn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+						<span>LinkedIn</span>
+					</a>
+					<p class="modal-bio" id="modalBio"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- ═══ CTA ═══ -->
 	<section class="cta-section">
@@ -94,6 +91,77 @@ const members = [
 			</div>
 		</div>
 	</section>
+
+	<script define:vars={{ members }}>
+		const modal = document.getElementById('memberModal');
+		const modalPhoto = document.getElementById('modalPhoto');
+		const modalName = document.getElementById('modalName');
+		const modalTitle = document.getElementById('modalTitle');
+		const modalBio = document.getElementById('modalBio');
+		const modalBadge = document.getElementById('modalBadge');
+		const modalLinkedin = document.getElementById('modalLinkedin');
+		const closeBtn = modal.querySelector('.modal-close');
+		let lastFocusedButton = null;
+
+		function getCurrentLang() {
+			return document.documentElement.getAttribute('lang') || 'fr';
+		}
+
+		function openModal(index) {
+			const m = members[index];
+			const lang = getCurrentLang();
+			if (m.headshot) {
+				modalPhoto.innerHTML = `<img src="/assets/images/headshots/${m.headshot}.jpeg" alt="${m.name}" />`;
+			} else {
+				modalPhoto.innerHTML = `<span class="avatar-initials-modal">${m.initials}</span>`;
+			}
+			modalName.textContent = m.name;
+			modalTitle.textContent = lang === 'en' ? m.titleEn : m.title;
+			modalTitle.setAttribute('data-i18n', '');
+			modalTitle.setAttribute('data-i18n-fr', m.title);
+			modalTitle.setAttribute('data-i18n-en', m.titleEn);
+			modalBio.textContent = lang === 'en' ? m.bioEn : m.bio;
+			modalBio.setAttribute('data-i18n', '');
+			modalBio.setAttribute('data-i18n-fr', m.bio);
+			modalBio.setAttribute('data-i18n-en', m.bioEn);
+			modalBadge.style.display = m.accent ? 'inline-block' : 'none';
+			if (m.linkedin) {
+				modalLinkedin.href = m.linkedin;
+				modalLinkedin.style.display = 'inline-flex';
+			} else {
+				modalLinkedin.style.display = 'none';
+			}
+			modal.setAttribute('aria-hidden', 'false');
+			modal.classList.add('active');
+			document.body.style.overflow = 'hidden';
+			closeBtn.focus();
+		}
+
+		function closeModal() {
+			modal.setAttribute('aria-hidden', 'true');
+			modal.classList.remove('active');
+			document.body.style.overflow = '';
+			if (lastFocusedButton) {
+				lastFocusedButton.focus();
+				lastFocusedButton = null;
+			}
+		}
+
+		document.querySelectorAll('.card-trigger').forEach(btn => {
+			btn.addEventListener('click', () => {
+				lastFocusedButton = btn;
+				openModal(Number(btn.dataset.index));
+			});
+		});
+
+		closeBtn.addEventListener('click', closeModal);
+		modal.addEventListener('click', (e) => {
+			if (e.target === modal) closeModal();
+		});
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+		});
+	</script>
 </Layout>
 
 <style>
@@ -163,71 +231,10 @@ const members = [
 		background: var(--off-white);
 	}
 
-	/* ─── FEATURED MEMBER ─── */
-	.featured-member {
-		display: grid;
-		grid-template-columns: 240px 1fr;
-		gap: 2.5rem;
-		background: var(--white);
-		border: 1px solid var(--border);
-		padding: 2.5rem;
-		margin-bottom: 3rem;
-		position: relative;
-	}
-
-	.featured-member::before {
-		content: '';
-		position: absolute;
-		top: -1px;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, var(--navy), var(--red));
-	}
-
-	.featured-photo img {
-		width: 100%;
-		aspect-ratio: 3 / 4;
-		object-fit: cover;
-		object-position: center top;
-	}
-
-	.member-badge {
-		display: inline-block;
-		background: var(--red);
-		color: var(--white);
-		font-size: 0.6875rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.12em;
-		padding: 0.375rem 0.875rem;
-		margin-bottom: 1rem;
-	}
-
-	.featured-info h3 {
-		font-size: 1.75rem;
-		color: var(--navy);
-		margin-bottom: 0.375rem;
-		font-weight: 700;
-	}
-
-	.member-role {
-		font-size: 1rem;
-		color: var(--red);
-		font-style: italic;
-		margin-bottom: 1.25rem;
-	}
-
-	.member-bio {
-		font-size: 0.9375rem;
-		line-height: 1.8;
-		color: var(--muted);
-	}
-
 	/* ─── MEMBERS GRID ─── */
 	.members-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 		gap: 1.5rem;
 		list-style: none;
 	}
@@ -235,24 +242,42 @@ const members = [
 	.member-card {
 		background: var(--white);
 		border: 1px solid var(--border);
-		padding: 2rem 1.5rem;
 		text-align: center;
 		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		position: relative;
+	}
+
+	.member-card.featured {
+		border-top: 3px solid transparent;
+		border-image: linear-gradient(90deg, var(--navy), var(--red)) 1;
 	}
 
 	.member-card:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+	}
+
+	.card-trigger {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 2rem 1.5rem 1.5rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-family: inherit;
+		color: inherit;
 	}
 
 	.member-avatar {
-		width: 100px;
-		height: 100px;
+		width: 110px;
+		height: 110px;
 		border-radius: 50%;
 		overflow: hidden;
 		border: 3px solid var(--white);
 		box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(0, 0, 0, 0.08);
-		margin: 0 auto 1rem;
+		margin-bottom: 1rem;
 	}
 
 	.member-avatar img {
@@ -263,11 +288,193 @@ const members = [
 		display: block;
 	}
 
-	.member-card h4 {
-		font-size: 0.9375rem;
+	.avatar-initials {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background: var(--light);
+		color: var(--navy);
+		font-size: 1.75rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+	}
+
+	.member-badge {
+		display: inline-block;
+		background: var(--red);
+		color: var(--white);
+		font-size: 0.625rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		padding: 0.25rem 0.625rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.member-card h3 {
+		font-size: 1rem;
 		color: var(--navy);
 		font-weight: 700;
-		line-height: 1.3;
+		margin-bottom: 0.25rem;
+	}
+
+	.card-title {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		font-style: italic;
+		margin-bottom: 0.75rem;
+	}
+
+	.card-hint {
+		font-size: 0.6875rem;
+		color: var(--red);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	.member-card:hover .card-hint {
+		opacity: 1;
+	}
+
+	/* ─── MODAL ─── */
+	.modal-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: 2000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.25s ease, visibility 0.25s ease;
+	}
+
+	.modal-overlay.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.modal-content {
+		background: var(--white);
+		max-width: 680px;
+		width: 100%;
+		max-height: 85vh;
+		overflow-y: auto;
+		position: relative;
+		transform: scale(0.95);
+		transition: transform 0.25s ease;
+	}
+
+	.modal-overlay.active .modal-content {
+		transform: scale(1);
+	}
+
+	.modal-close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: none;
+		border: none;
+		font-size: 1.75rem;
+		cursor: pointer;
+		color: var(--muted);
+		width: 36px;
+		height: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+		transition: color 0.2s ease;
+	}
+
+	.modal-close:hover {
+		color: var(--navy);
+	}
+
+	.modal-body {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 2rem;
+		padding: 2.5rem;
+	}
+
+	.modal-photo {
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		overflow: hidden;
+		border: 1px solid var(--border);
+	}
+
+	.modal-photo :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		display: block;
+	}
+
+	.modal-photo :global(.avatar-initials-modal) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background: var(--light);
+		color: var(--navy);
+		font-size: 3rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+	}
+
+	.modal-badge {
+		margin-bottom: 0.75rem;
+	}
+
+	.modal-info h3 {
+		font-size: 1.5rem;
+		color: var(--navy);
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	.modal-title {
+		font-size: 0.9375rem;
+		color: var(--red);
+		font-style: italic;
+		margin-bottom: 0.75rem;
+	}
+
+	.modal-linkedin {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		color: #0a66c2;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		text-decoration: none;
+		margin-bottom: 1.25rem;
+		transition: opacity 0.2s ease;
+	}
+
+	.modal-linkedin:hover {
+		opacity: 0.75;
+	}
+
+	.modal-linkedin svg {
+		flex-shrink: 0;
+	}
+
+	.modal-bio {
+		font-size: 0.9375rem;
+		line-height: 1.8;
+		color: var(--muted);
 	}
 
 	/* ─── CTA ─── */
@@ -301,20 +508,19 @@ const members = [
 
 	/* ─── RESPONSIVE ─── */
 	@media (max-width: 768px) {
-		.featured-member {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-			padding: 2rem;
-		}
-
-		.featured-photo img {
-			max-height: 320px;
-			width: 100%;
-		}
-
 		.members-grid {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1rem;
+		}
+
+		.modal-body {
+			grid-template-columns: 1fr;
+			padding: 2rem;
+		}
+
+		.modal-photo {
+			max-width: 200px;
+			margin: 0 auto;
 		}
 	}
 
