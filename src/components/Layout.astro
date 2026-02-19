@@ -127,7 +127,7 @@ const navItems = [
 					// Add backdrop
 					const backdrop = document.createElement('div');
 					backdrop.id = 'navBackdrop';
-					backdrop.style.cssText = 'position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.3);';
+					backdrop.style.cssText = 'position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.3);';
 					backdrop.addEventListener('click', closeMenu);
 					document.body.appendChild(backdrop);
 				}
@@ -467,6 +467,7 @@ const navItems = [
 	#mainNav a.active {
 		color: var(--navy);
 		background: var(--light);
+		box-shadow: inset 0 -2px 0 var(--navy);
 	}
 
 	/* ─── LANG TOGGLE (footer) ─── */
@@ -658,6 +659,15 @@ const navItems = [
 			padding: 1rem 0;
 			font-size: 1rem;
 			border-bottom: 1px solid var(--border);
+			border-left: 3px solid transparent;
+			padding-left: 0.75rem;
+		}
+
+		#mainNav a.active {
+			color: var(--navy);
+			background: var(--light);
+			box-shadow: none;
+			border-left-color: var(--red);
 		}
 
 		.header-inner {
