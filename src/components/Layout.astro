@@ -26,9 +26,12 @@ const navItems = [
 ];
 ---
 
-<html lang="fr">
+<html lang="fr" data-theme="auto">
 	<head>
 		<Head title={title} description={description} path={path} />
+		<script is:inline>
+			try{const t=localStorage.getItem('site-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}
+		</script>
 	</head>
 	<body>
 		<div class="tricolore-top" aria-hidden="true"></div>
@@ -56,6 +59,11 @@ const navItems = [
 								</li>
 							))}
 						</ul>
+						<div class="nav-footer">
+							<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer">Instagram</a>
+							<a href="mailto:contact@ensembleny2026.org">contact@ensembleny2026.org</a>
+							<p>&copy; 2026 Agissons Ensemble</p>
+						</div>
 					</nav>
 
 					<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
@@ -89,11 +97,24 @@ const navItems = [
 						<span class="footer-sep" aria-hidden="true"></span>
 						<p class="footer-copy">&copy; 2026 &mdash; <span data-i18n data-i18n-fr="Élections consulaires" data-i18n-en="Consular Elections">Élections consulaires</span> NY &middot; NJ &middot; CT &middot; Bermuda</p>
 					</div>
-					<button class="lang-toggle" id="langToggle" aria-label="Changer de langue / Switch language">
-						<span class="lang-option active" data-l="fr">FR</span>
-						<span class="lang-sep" aria-hidden="true">|</span>
-						<span class="lang-option" data-l="en">EN</span>
-					</button>
+					<div class="footer-controls">
+						<button class="lang-toggle" id="langToggle" aria-label="Changer de langue / Switch language">
+							<span class="lang-option active" data-l="fr">FR</span>
+							<span class="lang-sep" aria-hidden="true">|</span>
+							<span class="lang-option" data-l="en">EN</span>
+						</button>
+						<div class="theme-toggle" id="themeToggle" role="group" aria-label="Theme">
+							<button class="theme-opt" data-t="light" aria-label="Light theme">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+							</button>
+							<button class="theme-opt active" data-t="auto" aria-label="System theme">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor"/></svg>
+							</button>
+							<button class="theme-opt" data-t="dark" aria-label="Dark theme">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="tricolore-bottom" aria-hidden="true"></div>
@@ -133,6 +154,11 @@ const navItems = [
 				}
 			});
 
+			// Close mobile nav on link click
+			nav?.querySelectorAll('ul a').forEach(link => {
+				link.addEventListener('click', closeMenu);
+			});
+
 			// Language toggle
 			function setLang(lang: string) {
 				currentLang = lang;
@@ -162,6 +188,30 @@ const navItems = [
 				const saved = localStorage.getItem('site-lang');
 				if (saved === 'en') setLang('en');
 			} catch(e) {}
+
+			// Theme toggle
+			function setTheme(theme: string) {
+				document.documentElement.setAttribute('data-theme', theme);
+				document.querySelectorAll('.theme-opt').forEach(btn => {
+					btn.classList.toggle('active', btn.getAttribute('data-t') === theme);
+				});
+				try { localStorage.setItem('site-theme', theme); } catch(e) {}
+			}
+
+			document.getElementById('themeToggle')?.addEventListener('click', (e) => {
+				const btn = (e.target as HTMLElement).closest('.theme-opt');
+				if (!btn) return;
+				const theme = btn.getAttribute('data-t');
+				if (theme) setTheme(theme);
+			});
+
+			// Initialize theme
+			try {
+				const savedTheme = localStorage.getItem('site-theme') || 'auto';
+				setTheme(savedTheme);
+			} catch(e) {
+				setTheme('auto');
+			}
 		</script>
 	</body>
 </html>
@@ -188,6 +238,44 @@ const navItems = [
 		--muted: #5C5C72;
 		--border: #D8DAE6;
 		--rule: #B8BBCF;
+		--surface: #FFFFFF;
+		--header-bg: rgba(255, 255, 255, 0.8);
+	}
+
+	[data-theme="dark"] {
+		color-scheme: dark;
+		--surface: #1C1C30;
+		--off-white: #151528;
+		--light: #262642;
+		--ink: #E2E2EC;
+		--muted: #9898B2;
+		--border: #2C2C46;
+		--rule: #3A3A58;
+		--navy: #7BA3FF;
+		--navy-deep: #0C1428;
+		--navy-darker: #080E1E;
+		--red: #FF6B78;
+		--red-dark: #E85666;
+		--header-bg: rgba(20, 20, 38, 0.8);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		[data-theme="auto"] {
+			color-scheme: dark;
+			--surface: #1C1C30;
+			--off-white: #151528;
+			--light: #262642;
+			--ink: #E2E2EC;
+			--muted: #9898B2;
+			--border: #2C2C46;
+			--rule: #3A3A58;
+			--navy: #7BA3FF;
+			--navy-deep: #0C1428;
+			--navy-darker: #080E1E;
+			--red: #FF6B78;
+			--red-dark: #E85666;
+			--header-bg: rgba(20, 20, 38, 0.8);
+		}
 	}
 
 	* { margin: 0; padding: 0; box-sizing: border-box; }
@@ -369,9 +457,9 @@ const navItems = [
 		height: 4px;
 		background: linear-gradient(
 			90deg,
-			var(--navy) 0%, var(--navy) 33%,
-			var(--white) 33%, var(--white) 66%,
-			var(--red) 66%, var(--red) 100%
+			#002395 0%, #002395 33%,
+			#FFFFFF 33%, #FFFFFF 66%,
+			#ED2939 66%, #ED2939 100%
 		);
 	}
 
@@ -388,7 +476,9 @@ const navItems = [
 		position: sticky;
 		top: 4px;
 		z-index: 1000;
-		background: var(--white);
+		background: var(--header-bg);
+		-webkit-backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(20px);
 		border-bottom: 1px solid var(--border);
 	}
 
@@ -547,7 +637,7 @@ const navItems = [
 
 	/* ─── FOOTER ─── */
 	footer {
-		background: var(--white);
+		background: var(--surface);
 		border-top: 1px solid var(--border);
 		margin-top: auto;
 	}
@@ -603,6 +693,12 @@ const navItems = [
 		align-items: center;
 	}
 
+	.footer-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
 	.footer-meta {
 		display: flex;
 		align-items: center;
@@ -627,6 +723,47 @@ const navItems = [
 		letter-spacing: 0.02em;
 	}
 
+	/* ─── NAV FOOTER (mobile drawer) ─── */
+	.nav-footer {
+		display: none;
+	}
+
+	/* ─── THEME TOGGLE ─── */
+	.theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		border: 1px solid var(--border);
+		border-radius: 2px;
+		overflow: hidden;
+		transition: border-color 0.25s ease;
+	}
+
+	.theme-toggle:hover {
+		border-color: var(--navy);
+	}
+
+	.theme-opt {
+		background: none;
+		border: none;
+		padding: 0.375rem 0.5rem;
+		cursor: pointer;
+		color: var(--rule);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: color 0.25s ease, background 0.25s ease;
+		font-family: inherit;
+	}
+
+	.theme-opt.active {
+		color: var(--navy);
+		background: var(--light);
+	}
+
+	.theme-opt:hover {
+		color: var(--navy);
+	}
+
 	/* ─── MOBILE ─── */
 	@media (max-width: 768px) {
 		.menu-toggle {
@@ -639,11 +776,15 @@ const navItems = [
 			right: -100%;
 			width: 280px;
 			height: 100vh;
-			background: var(--white);
+			height: 100dvh;
+			background: var(--surface);
 			box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
 			padding: 5rem 2rem 2rem;
 			transition: right 0.3s ease;
 			z-index: 1001;
+			display: flex;
+			flex-direction: column;
+			overflow-y: auto;
 		}
 
 		#mainNav.open {
@@ -659,6 +800,7 @@ const navItems = [
 			font-size: 1rem;
 			border-bottom: 1px solid var(--border);
 			border-left: 3px solid transparent;
+			border-radius: 0;
 			margin: 0 -2rem;
 			padding: 1rem 2rem 1rem calc(2rem - 3px);
 		}
@@ -668,6 +810,33 @@ const navItems = [
 			background: var(--light);
 			box-shadow: none;
 			border-left-color: var(--red);
+		}
+
+		.nav-footer {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			margin-top: auto;
+			padding-top: 1.5rem;
+		}
+
+		.nav-footer a {
+			font-size: 0.75rem;
+			color: var(--muted);
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			font-weight: 700;
+			transition: color 0.2s ease;
+		}
+
+		.nav-footer a:hover {
+			color: var(--red);
+		}
+
+		.nav-footer p {
+			font-size: 0.6875rem;
+			color: var(--rule);
+			margin-top: 0.5rem;
 		}
 
 		.header-inner {
