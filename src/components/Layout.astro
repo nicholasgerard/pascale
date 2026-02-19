@@ -61,7 +61,7 @@ const navItems = [
 						</ul>
 						<div class="nav-footer">
 							<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer">Instagram</a>
-							<a href="mailto:contact@ensembleny2026.org">contact@ensembleny2026.org</a>
+							<a href="mailto:contact@ensembleny2026.org" data-i18n data-i18n-fr="Nous écrire" data-i18n-en="Email us">Nous écrire</a>
 							<p>&copy; 2026 Agissons Ensemble</p>
 						</div>
 					</nav>
@@ -97,6 +97,7 @@ const navItems = [
 						<span class="footer-sep" aria-hidden="true"></span>
 						<p class="footer-copy">&copy; 2026 &mdash; <span data-i18n data-i18n-fr="Élections consulaires" data-i18n-en="Consular Elections">Élections consulaires</span> NY &middot; NJ &middot; CT &middot; Bermuda</p>
 					</div>
+					<div id="footerControlsSlot" class="footer-controls-slot"></div>
 				</div>
 			</div>
 			<div class="tricolore-bottom" aria-hidden="true"></div>
@@ -212,6 +213,24 @@ const navItems = [
 				setTheme(savedTheme);
 			} catch(e) {
 				setTheme('auto');
+			}
+
+			// Dock floating controls into footer when visible
+			const floating = document.getElementById('floatingControls');
+			const footerSlot = document.getElementById('footerControlsSlot');
+			if (floating && footerSlot) {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							footerSlot.appendChild(floating);
+							floating.classList.add('docked');
+						} else {
+							document.body.appendChild(floating);
+							floating.classList.remove('docked');
+						}
+					});
+				}, { threshold: 0 });
+				observer.observe(footerSlot);
 			}
 		</script>
 	</body>
@@ -707,6 +726,12 @@ const navItems = [
 	}
 
 	/* ─── FLOATING CONTROLS ─── */
+	.footer-controls-slot {
+		display: flex;
+		align-items: center;
+		min-height: 2rem;
+	}
+
 	.floating-controls {
 		position: fixed;
 		bottom: 1.25rem;
@@ -722,6 +747,7 @@ const navItems = [
 		border-radius: 8px;
 		border: 1px solid var(--border);
 		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+		transition: box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 	}
 
 	.floating-controls .lang-toggle,
@@ -733,6 +759,18 @@ const navItems = [
 	.floating-controls .lang-toggle:hover,
 	.floating-controls .theme-toggle:hover {
 		border: none;
+	}
+
+	.floating-controls.docked {
+		position: static;
+		background: none;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+		box-shadow: none;
+		border: none;
+		padding: 0;
+		border-radius: 0;
+		gap: 0.5rem;
 	}
 
 	.footer-meta {
