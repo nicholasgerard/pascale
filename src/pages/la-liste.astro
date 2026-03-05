@@ -20,10 +20,10 @@ import { members } from '../data/members';
 	</section>
 
 	<!-- ═══ LIST PHOTO ═══ -->
-	<section class="list-photo" aria-label="Photo de groupe">
+	<section class="list-photo" aria-label="Photo de groupe" data-aria-fr="Photo de groupe" data-aria-en="Team photo">
 		<div class="container">
 			<div class="photo-banner">
-				<img src="/assets/images/hero-banner.jpg" alt="The Agissons Ensemble team — the 14 candidates for the 2026 consular elections" />
+				<img src="/assets/images/hero-banner.jpg" alt="The Agissons Ensemble team — the 14 candidates for the 2026 consular elections" loading="lazy" />
 			</div>
 		</div>
 	</section>
@@ -44,7 +44,7 @@ import { members } from '../data/members';
 						<button class="card-trigger" aria-label={`Voir le profil de ${member.name}`} data-index={i}>
 							<div class="member-avatar">
 								{member.headshot ? (
-									<img src={`/assets/images/headshots/${member.headshot}.jpeg`} alt={member.name} />
+									<img src={`/assets/images/headshots/${member.headshot}.jpeg`} alt={member.name} loading="lazy" />
 								) : (
 									<span class="avatar-initials">{member.initials}</span>
 								)}
@@ -61,7 +61,7 @@ import { members } from '../data/members';
 	</section>
 
 	<!-- ═══ MODAL ═══ -->
-	<div class="modal-overlay" id="memberModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Profil du membre">
+	<div class="modal-overlay" id="memberModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Profil du membre" data-aria-fr="Profil du membre" data-aria-en="Member profile">
 		<div class="modal-content">
 			<button class="modal-close" aria-label="Fermer / Close">&times;</button>
 			<div class="modal-body">

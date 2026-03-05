@@ -60,13 +60,13 @@ const navItems = [
 							))}
 						</ul>
 						<div class="nav-footer">
-							<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer">Instagram</a>
+							<a href="https://www.instagram.com/agissonsensemble2026" target="_blank" rel="noopener noreferrer">Instagram</a>
 							<a href="mailto:contact@ensembleny2026.org" data-i18n data-i18n-fr="Nous écrire" data-i18n-en="Email us">Nous écrire</a>
 							<p>&copy; 2026 Agissons Ensemble</p>
 						</div>
 					</nav>
 
-					<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+					<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" data-aria-fr="Ouvrir le menu" data-aria-en="Open menu" aria-expanded="false" aria-controls="mainNav">
 						<span></span><span></span><span></span>
 					</button>
 				</div>
@@ -89,7 +89,7 @@ const navItems = [
 					<a href="/soutiens" data-i18n data-i18n-fr="Soutiens" data-i18n-en="Supporters">Soutiens</a>
 					<a href="/evenements" data-i18n data-i18n-fr="Événements" data-i18n-en="Events">Événements</a>
 					<a href="/contact">Contact</a>
-					<a href="https://www.instagram.com/pascalevrichard" target="_blank" rel="noopener noreferrer" aria-label="Instagram (nouvelle fenêtre)">Instagram<span class="sr-only" data-i18n data-i18n-fr=" (ouvre dans une nouvelle fenêtre)" data-i18n-en=" (opens in a new window)"> (ouvre dans une nouvelle fenêtre)</span></a>
+					<a href="https://www.instagram.com/agissonsensemble2026" target="_blank" rel="noopener noreferrer" aria-label="Instagram (nouvelle fenêtre)">Instagram<span class="sr-only" data-i18n data-i18n-fr=" (ouvre dans une nouvelle fenêtre)" data-i18n-en=" (opens in a new window)"> (ouvre dans une nouvelle fenêtre)</span></a>
 				</nav>
 				<div class="footer-bottom">
 					<div class="footer-meta">
@@ -173,6 +173,11 @@ const navItems = [
 				document.querySelectorAll('nav a[data-fr]').forEach(a => {
 					const text = a.getAttribute(`data-${lang}`);
 					if (text) a.textContent = text;
+				});
+				// Update translatable aria-labels
+				document.querySelectorAll('[data-aria-fr]').forEach(el => {
+					const val = el.getAttribute(`data-aria-${lang}`);
+					if (val) el.setAttribute('aria-label', val);
 				});
 				// Update toggle highlight
 				document.querySelectorAll('.lang-option').forEach(opt => {
