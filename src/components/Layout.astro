@@ -34,8 +34,6 @@ const navItems = [
 		</script>
 	</head>
 	<body>
-		<div class="tricolore-top" aria-hidden="true"></div>
-
 		<a href="#main-content" class="skip-link" data-i18n data-i18n-fr="Aller au contenu principal" data-i18n-en="Skip to main content">Aller au contenu principal</a>
 
 		<header role="banner">
@@ -100,7 +98,6 @@ const navItems = [
 					<div id="footerControlsSlot" class="footer-controls-slot"></div>
 				</div>
 			</div>
-			<div class="tricolore-bottom" aria-hidden="true"></div>
 		</footer>
 
 		<div class="floating-controls" id="floatingControls">
@@ -449,7 +446,7 @@ const navItems = [
 	}
 
 	.skip-link:focus {
-		top: 4px;
+		top: 0;
 	}
 
 	.sr-only {
@@ -478,30 +475,10 @@ const navItems = [
 </style>
 
 <style>
-	/* ─── TRICOLORE STRIPE ─── */
-	.tricolore-top,
-	.tricolore-bottom {
-		height: 4px;
-		background: linear-gradient(
-			90deg,
-			#002395 0%, #002395 33%,
-			#FFFFFF 33%, #FFFFFF 66%,
-			#ED2939 66%, #ED2939 100%
-		);
-	}
-
-	.tricolore-top {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1001;
-	}
-
 	/* ─── HEADER ─── */
 	header {
 		position: sticky;
-		top: 4px;
+		top: 0;
 		z-index: 1000;
 		background: var(--header-bg);
 		-webkit-backdrop-filter: saturate(180%) blur(20px);

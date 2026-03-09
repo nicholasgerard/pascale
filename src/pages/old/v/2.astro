@@ -12,9 +12,6 @@ import '../../../styles/fonts.css';
 		/>
 	</head>
 	<body>
-		<!-- Vertical tricolore left stripe -->
-		<div class="tricolore-stripe" aria-hidden="true"></div>
-
 		<!-- ═══ HERO — BLUE BAND ═══ -->
 		<section class="band band-blue hero">
 			<nav>
@@ -191,27 +188,6 @@ import '../../../styles/fonts.css';
 
 	body {
 		position: relative;
-	}
-
-	/* ─── VERTICAL TRICOLORE LEFT STRIPE ─── */
-	/* FIX #9: 4px width + subtle depth shadow */
-	.tricolore-stripe {
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		width: 4px;
-		z-index: 100;
-		background: linear-gradient(
-			to bottom,
-			var(--blue) 0%,
-			var(--blue) 33.33%,
-			var(--white) 33.33%,
-			var(--white) 66.66%,
-			var(--red) 66.66%,
-			var(--red) 100%
-		);
-		box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
 	}
 
 	/* ─── BAND SYSTEM ─── */
@@ -472,7 +448,7 @@ import '../../../styles/fonts.css';
 		left: 0;
 		width: 100%;
 		height: 3px;
-		background: linear-gradient(90deg, var(--blue), var(--red));
+		background: var(--blue);
 	}
 
 	.card-number {
@@ -514,13 +490,12 @@ import '../../../styles/fonts.css';
 		padding: 0 2rem;
 	}
 
-	/* FIX #12: Tricolore gradient bar instead of gold bar */
 	.quote-band blockquote::before {
 		content: '';
 		display: block;
 		width: 40px;
 		height: 3px;
-		background: linear-gradient(90deg, var(--blue), var(--white), var(--red));
+		background: rgba(255, 255, 255, 0.4);
 		margin: 0 auto 1.5rem;
 		border-radius: 2px;
 	}
@@ -717,15 +692,6 @@ import '../../../styles/fonts.css';
 
 	/* ─── RESPONSIVE 640px ─── */
 	@media (max-width: 640px) {
-		/* FIX #11: Thinner stripe on mobile + body padding to avoid content hugging */
-		.tricolore-stripe {
-			width: 3px;
-		}
-
-		body {
-			padding-left: 8px;
-		}
-
 		.hero-inner {
 			padding: 2.5rem 1.5rem 4rem;
 		}
