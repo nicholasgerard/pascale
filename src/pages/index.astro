@@ -60,7 +60,11 @@ import Layout from '../components/Layout.astro';
 					</ul>
 					<div class="about-links">
 						<a href="/la-liste" class="btn btn-ghost" data-i18n data-i18n-fr="Voir toute la liste" data-i18n-en="See the full team">Voir toute la liste</a>
-						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="interview-link" data-i18n data-i18n-fr="Lire l'interview sur Renaissance →" data-i18n-en="Read the interview on Renaissance →" aria-label="Interview Renaissance">Lire l'interview sur Renaissance →</a>
+					</div>
+					<div class="press-links">
+						<p class="press-label" data-i18n data-i18n-fr="Dans la presse" data-i18n-en="In the press">Dans la presse</p>
+						<a href="https://renaissance-fde.fr/portrait-dune-elue-a-votre-service-pascale-richard-new-york/" target="_blank" rel="noopener noreferrer" class="press-link" data-i18n data-i18n-fr="Renaissance — Portrait d'une élue à votre service" data-i18n-en="Renaissance — Portrait of an elected official at your service" aria-label="Interview Renaissance">Renaissance — Portrait d'une élue à votre service</a>
+						<a href="https://lepetitjournal.com/new-york/communaute/pascale-richard-elections-consulaires-439393" target="_blank" rel="noopener noreferrer" class="press-link" data-i18n data-i18n-fr="Le Petit Journal — Pascale Richard, élections consulaires" data-i18n-en="Le Petit Journal — Pascale Richard, consular elections" aria-label="Article Le Petit Journal">Le Petit Journal — Pascale Richard, élections consulaires</a>
 					</div>
 				</div>
 			</div>
@@ -304,16 +308,49 @@ import Layout from '../components/Layout.astro';
 		flex-wrap: wrap;
 	}
 
-	.interview-link {
-		font-size: 0.8125rem;
-		color: var(--muted);
-		letter-spacing: 0.02em;
-		transition: color 0.2s ease;
-		text-decoration: none;
+	.press-links {
+		margin-top: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
 
-	.interview-link:hover {
+	.press-label {
+		font-size: 0.6875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		font-weight: 700;
+		color: var(--rule);
+		margin-bottom: 0.125rem;
+	}
+
+	.press-link {
+		font-size: 0.8125rem;
+		color: var(--muted);
+		text-decoration: none;
+		transition: color 0.2s ease;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.press-link::before {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 1px;
+		background: var(--rule);
+		flex-shrink: 0;
+		transition: background 0.2s ease, width 0.2s ease;
+	}
+
+	.press-link:hover {
 		color: var(--red);
+	}
+
+	.press-link:hover::before {
+		background: var(--red);
+		width: 24px;
 	}
 
 	/* ─── PRIORITIES OVERVIEW ─── */
