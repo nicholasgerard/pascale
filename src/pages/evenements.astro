@@ -1,5 +1,6 @@
 ---
 import Layout from '../components/Layout.astro';
+import EventGallery from '../components/EventGallery.astro';
 ---
 
 <Layout
@@ -21,50 +22,71 @@ import Layout from '../components/Layout.astro';
 	<section class="events-section">
 		<div class="container narrow">
 
-			<!-- Event 1: March 10 -->
+			<!-- April 18 -->
 			<div class="event-card">
 				<div class="event-date">
-					<span class="event-day">10</span>
-					<span class="event-month" data-i18n data-i18n-fr="MARS" data-i18n-en="MAR">MARS</span>
+					<span class="event-day">18</span>
+					<span class="event-month" data-i18n data-i18n-fr="AVR" data-i18n-en="APR">AVR</span>
 				</div>
 				<div class="event-info">
-					<p class="event-time" data-i18n data-i18n-fr="Mardi 10 mars à 20h30" data-i18n-en="Tuesday, March 10 at 8:30 PM">Mardi 10 mars à 20h30</p>
-					<h3 data-i18n data-i18n-fr="Rencontre avec Aurore Bergé" data-i18n-en="Meeting with Aurore Bergé">Rencontre avec Aurore Bergé</h3>
+					<p class="event-time" data-i18n data-i18n-fr="Samedi 18 avril à 17h00" data-i18n-en="Saturday, April 18 at 5:00 PM">Samedi 18 avril à 17h00</p>
+					<h3 data-i18n data-i18n-fr="Rencontre — Élections consulaires" data-i18n-en="Meeting — Consular Elections">Rencontre — Élections consulaires</h3>
 					<p class="event-desc" data-i18n
-						data-i18n-fr="Ministre de l'Égalité entre les femmes et les hommes et de la lutte contre les discriminations, modérée par Aissata Fernandez Taranco et Yvan Bedouet."
-						data-i18n-en="Minister for Equality between Women and Men and the Fight against Discrimination, moderated by Aissata Fernandez Taranco and Yvan Bedouet.">
-						Ministre de l'Égalité entre les femmes et les hommes et de la lutte contre les discriminations, modérée par Aissata Fernandez Taranco et Yvan Bedouet.
+						data-i18n-fr="Réunion d'information sur les élections consulaires avec Pascale Richard, tête de la liste Agissons Ensemble."
+						data-i18n-en="Information meeting about the consular elections with Pascale Richard, head of the Agissons Ensemble slate.">
+						Réunion d'information sur les élections consulaires avec Pascale Richard, tête de la liste Agissons Ensemble.
 					</p>
-					<p class="event-location">126 West 87th Street, New York, NY 10024</p>
-					<span class="event-passed" data-i18n data-i18n-fr="Événement passé" data-i18n-en="Past event">Événement passé</span>
-
-					<!-- Photo Gallery -->
-					<div class="event-gallery">
-						<p class="gallery-label" data-i18n data-i18n-fr="Photos de l'événement" data-i18n-en="Event photos">Photos de l'événement</p>
-						<div class="gallery-grid">
-							<button class="gallery-thumb" data-full="/assets/images/events/mar_10_1.jpg" aria-label="Photo 1">
-								<img src="/assets/images/events/mar_10_1.jpg" alt="Rencontre avec Aurore Bergé — photo de groupe" loading="lazy" />
-							</button>
-							<button class="gallery-thumb" data-full="/assets/images/events/mar_10_2.jpg" aria-label="Photo 2">
-								<img src="/assets/images/events/mar_10_2.jpg" alt="Rencontre avec Aurore Bergé — échanges" loading="lazy" />
-							</button>
-							<button class="gallery-thumb" data-full="/assets/images/events/mar_10_3.jpg" aria-label="Photo 3">
-								<img src="/assets/images/events/mar_10_3.jpg" alt="Rencontre avec Aurore Bergé — discussion" loading="lazy" />
-							</button>
-						</div>
-					</div>
+					<p class="event-location">c/o Marie Jose Hunter, 17 Wainscott Stone Road, Wainscott, NY 11975</p>
+					<img src="/assets/images/events/apr_18.jpg" alt="Réunion d'information sur les élections consulaires avec Pascale Richard" class="event-poster" width="1080" height="1080" loading="lazy" />
+					<a href="https://www.eventbrite.com/e/1986643530278" target="_blank" rel="noopener noreferrer" class="btn btn-sm" data-i18n data-i18n-fr="S'inscrire sur Eventbrite" data-i18n-en="Register on Eventbrite">
+						S'inscrire sur Eventbrite
+					</a>
 				</div>
 			</div>
 
-			<!-- Lightbox -->
-			<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
-				<button class="lightbox-close" aria-label="Fermer">&times;</button>
-				<button class="lightbox-prev" aria-label="Previous">&#8249;</button>
-				<img class="lightbox-img" src="" alt="" />
-				<button class="lightbox-next" aria-label="Next">&#8250;</button>
+			<!-- April 13 -->
+			<div class="event-card">
+				<div class="event-date">
+					<span class="event-day">13</span>
+					<span class="event-month" data-i18n data-i18n-fr="AVR" data-i18n-en="APR">AVR</span>
+				</div>
+				<div class="event-info">
+					<p class="event-time" data-i18n data-i18n-fr="Lundi 13 avril à 18h00" data-i18n-en="Monday, April 13 at 6:00 PM">Lundi 13 avril à 18h00</p>
+					<h3 data-i18n data-i18n-fr="Rencontre avec R. Lescure, ministre, et C. Weissberg, notre député" data-i18n-en="Meeting with R. Lescure, Minister, and C. Weissberg, our MP">Rencontre avec R. Lescure, ministre, et C. Weissberg, notre député</h3>
+					<p class="event-desc" data-i18n
+						data-i18n-fr="Rencontre avec Roland Lescure, ministre, et Christophe Weissberg, notre député."
+						data-i18n-en="Meeting with Roland Lescure, Minister, and Christophe Weissberg, our MP.">
+						Rencontre avec Roland Lescure, ministre, et Christophe Weissberg, notre député.
+					</p>
+					<p class="event-location">743 East 6th Street, New York, NY 10009</p>
+					<span class="event-passed" data-i18n data-i18n-fr="Événement passé" data-i18n-en="Past event">Événement passé</span>
+
+					<EventGallery slug="apr_13" count={6} altPrefix="Rencontre avec R. Lescure et C. Weissberg" />
+				</div>
 			</div>
 
-			<!-- Event 2: March 19 -->
+			<!-- April 11 -->
+			<div class="event-card">
+				<div class="event-date">
+					<span class="event-day">11</span>
+					<span class="event-month" data-i18n data-i18n-fr="AVR" data-i18n-en="APR">AVR</span>
+				</div>
+				<div class="event-info">
+					<p class="event-time" data-i18n data-i18n-fr="Samedi 11 avril à 11h00" data-i18n-en="Saturday, April 11 at 11:00 AM">Samedi 11 avril à 11h00</p>
+					<h3 data-i18n data-i18n-fr="Rencontre avec Pascale Richard" data-i18n-en="Meeting with Pascale Richard">Rencontre avec Pascale Richard</h3>
+					<p class="event-desc" data-i18n
+						data-i18n-fr="Conseillère des Français de l'Étranger — Rencontrez Pascale Richard et les membres de sa liste au festival francophone de Princeton."
+						data-i18n-en="Councillor for French Citizens Abroad — Meet Pascale Richard and members of her slate at the Princeton francophone festival.">
+						Conseillère des Français de l'Étranger — Rencontrez Pascale Richard et les membres de sa liste au festival francophone de Princeton.
+					</p>
+					<p class="event-location">Princeton Public Library, 65 Witherspoon Street, Princeton, NJ 08542</p>
+					<span class="event-passed" data-i18n data-i18n-fr="Événement passé" data-i18n-en="Past event">Événement passé</span>
+
+					<EventGallery slug="apr_11" count={11} altPrefix="Rencontre avec Pascale Richard à Princeton" />
+				</div>
+			</div>
+
+			<!-- March 19 -->
 			<div class="event-card">
 				<div class="event-date">
 					<span class="event-day">19</span>
@@ -83,48 +105,33 @@ import Layout from '../components/Layout.astro';
 				</div>
 			</div>
 
-			<!-- Event 3: April 11 -->
+			<!-- March 10 -->
 			<div class="event-card">
 				<div class="event-date">
-					<span class="event-day">11</span>
-					<span class="event-month" data-i18n data-i18n-fr="AVR" data-i18n-en="APR">AVR</span>
+					<span class="event-day">10</span>
+					<span class="event-month" data-i18n data-i18n-fr="MARS" data-i18n-en="MAR">MARS</span>
 				</div>
 				<div class="event-info">
-					<p class="event-time" data-i18n data-i18n-fr="Samedi 11 avril à 11h00" data-i18n-en="Saturday, April 11 at 11:00 AM">Samedi 11 avril à 11h00</p>
-					<h3 data-i18n data-i18n-fr="Rencontre avec Pascale Richard" data-i18n-en="Meeting with Pascale Richard">Rencontre avec Pascale Richard</h3>
+					<p class="event-time" data-i18n data-i18n-fr="Mardi 10 mars à 20h30" data-i18n-en="Tuesday, March 10 at 8:30 PM">Mardi 10 mars à 20h30</p>
+					<h3 data-i18n data-i18n-fr="Rencontre avec Aurore Bergé" data-i18n-en="Meeting with Aurore Bergé">Rencontre avec Aurore Bergé</h3>
 					<p class="event-desc" data-i18n
-						data-i18n-fr="Conseillère des Français de l'Étranger — Rencontrez Pascale Richard et les membres de sa liste au festival francophone de Princeton."
-						data-i18n-en="Councillor for French Citizens Abroad — Meet Pascale Richard and members of her slate at the Princeton francophone festival.">
-						Conseillère des Français de l'Étranger — Rencontrez Pascale Richard et les membres de sa liste au festival francophone de Princeton.
+						data-i18n-fr="Ministre de l'Égalité entre les femmes et les hommes et de la lutte contre les discriminations, modérée par Aissata Fernandez Taranco et Yvan Bedouet."
+						data-i18n-en="Minister for Equality between Women and Men and the Fight against Discrimination, moderated by Aissata Fernandez Taranco and Yvan Bedouet.">
+						Ministre de l'Égalité entre les femmes et les hommes et de la lutte contre les discriminations, modérée par Aissata Fernandez Taranco et Yvan Bedouet.
 					</p>
-					<p class="event-location">Princeton Public Library, 65 Witherspoon Street, Princeton, NJ 08542</p>
-					<img src="/assets/images/events/apr_11.jpg" alt="Rencontre avec Pascale Richard à Princeton" class="event-poster" loading="lazy" />
-					<a href="https://www.eventbrite.com/e/rencontre-avec-pascale-richard-conseillere-des-francais-de-l-etranger-tickets-1986724312901" target="_blank" rel="noopener noreferrer" class="btn btn-sm" data-i18n data-i18n-fr="S'inscrire sur Eventbrite" data-i18n-en="Register on Eventbrite">
-						S'inscrire sur Eventbrite
-					</a>
+					<p class="event-location">126 West 87th Street, New York, NY 10024</p>
+					<span class="event-passed" data-i18n data-i18n-fr="Événement passé" data-i18n-en="Past event">Événement passé</span>
+
+					<EventGallery slug="mar_10" count={3} altPrefix="Rencontre avec Aurore Bergé" />
 				</div>
 			</div>
 
-			<!-- Event 4: April 13 -->
-			<div class="event-card">
-				<div class="event-date">
-					<span class="event-day">13</span>
-					<span class="event-month" data-i18n data-i18n-fr="AVR" data-i18n-en="APR">AVR</span>
-				</div>
-				<div class="event-info">
-					<p class="event-time" data-i18n data-i18n-fr="Lundi 13 avril à 18h00" data-i18n-en="Monday, April 13 at 6:00 PM">Lundi 13 avril à 18h00</p>
-					<h3 data-i18n data-i18n-fr="Rencontre avec R. Lescure, ministre, et C. Weissberg, notre député" data-i18n-en="Meeting with R. Lescure, Minister, and C. Weissberg, our MP">Rencontre avec R. Lescure, ministre, et C. Weissberg, notre député</h3>
-					<p class="event-desc" data-i18n
-						data-i18n-fr="Rencontre avec Roland Lescure, ministre, et Christophe Weissberg, notre député."
-						data-i18n-en="Meeting with Roland Lescure, Minister, and Christophe Weissberg, our MP.">
-						Rencontre avec Roland Lescure, ministre, et Christophe Weissberg, notre député.
-					</p>
-					<p class="event-location">743 East 6th Street, New York, NY 10009</p>
-					<img src="/assets/images/events/apr_13.png" alt="Rencontre avec R. Lescure et C. Weissberg" class="event-poster" loading="lazy" />
-					<a href="https://www.eventbrite.com/e/rencontre-avec-r-lescure-ministre-et-c-weissberg-notre-depute-tickets-1986787692471" target="_blank" rel="noopener noreferrer" class="btn btn-sm" data-i18n data-i18n-fr="S'inscrire sur Eventbrite" data-i18n-en="Register on Eventbrite">
-						S'inscrire sur Eventbrite
-					</a>
-				</div>
+			<!-- Lightbox -->
+			<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+				<button class="lightbox-close" aria-label="Fermer">&times;</button>
+				<button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+				<img class="lightbox-img" src="" alt="" />
+				<button class="lightbox-next" aria-label="Next">&#8250;</button>
 			</div>
 
 		</div>
@@ -213,17 +220,6 @@ import Layout from '../components/Layout.astro';
 		border: 1px solid var(--border);
 		padding: 2rem;
 		margin-bottom: 1.5rem;
-		position: relative;
-	}
-
-	.event-card::before {
-		content: '';
-		position: absolute;
-		top: -1px;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, var(--navy), var(--red));
 	}
 
 	.event-date {
@@ -557,22 +553,26 @@ import Layout from '../components/Layout.astro';
 		const closeBtn = lightbox.querySelector('.lightbox-close');
 		const prevBtn = lightbox.querySelector('.lightbox-prev');
 		const nextBtn = lightbox.querySelector('.lightbox-next');
-		const thumbs = Array.from(document.querySelectorAll('.gallery-thumb'));
+		let currentGroup: Element[] = [];
 		let currentIndex = 0;
 
 		function showPhoto(index: number) {
-			const btn = thumbs[index];
+			const btn = currentGroup[index];
 			if (!btn) return;
 			currentIndex = index;
 			lightboxImg.src = btn.getAttribute('data-full') || '';
 			lightboxImg.alt = btn.querySelector('img')?.alt || '';
 		}
 
-		thumbs.forEach((btn, i) => {
-			btn.addEventListener('click', () => {
-				showPhoto(i);
-				lightbox.hidden = false;
-				document.body.style.overflow = 'hidden';
+		document.querySelectorAll('.event-gallery').forEach((gallery) => {
+			const groupThumbs = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+			groupThumbs.forEach((btn, i) => {
+				btn.addEventListener('click', () => {
+					currentGroup = groupThumbs;
+					showPhoto(i);
+					lightbox.hidden = false;
+					document.body.style.overflow = 'hidden';
+				});
 			});
 		});
 
@@ -583,11 +583,13 @@ import Layout from '../components/Layout.astro';
 		}
 
 		prevBtn?.addEventListener('click', () => {
-			showPhoto((currentIndex - 1 + thumbs.length) % thumbs.length);
+			if (!currentGroup.length) return;
+			showPhoto((currentIndex - 1 + currentGroup.length) % currentGroup.length);
 		});
 
 		nextBtn?.addEventListener('click', () => {
-			showPhoto((currentIndex + 1) % thumbs.length);
+			if (!currentGroup.length) return;
+			showPhoto((currentIndex + 1) % currentGroup.length);
 		});
 
 		closeBtn?.addEventListener('click', closeLightbox);
@@ -595,12 +597,11 @@ import Layout from '../components/Layout.astro';
 			if (e.target === lightbox) closeLightbox();
 		});
 		document.addEventListener('keydown', (e) => {
-			if (lightbox.hidden) return;
+			if (lightbox.hidden || !currentGroup.length) return;
 			if (e.key === 'Escape') closeLightbox();
-			if (e.key === 'ArrowLeft') showPhoto((currentIndex - 1 + thumbs.length) % thumbs.length);
-			if (e.key === 'ArrowRight') showPhoto((currentIndex + 1) % thumbs.length);
+			if (e.key === 'ArrowLeft') showPhoto((currentIndex - 1 + currentGroup.length) % currentGroup.length);
+			if (e.key === 'ArrowRight') showPhoto((currentIndex + 1) % currentGroup.length);
 		});
 	}
 	document.addEventListener('DOMContentLoaded', initGallery);
-	document.addEventListener('astro:page-load', initGallery);
 </script>

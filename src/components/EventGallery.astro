@@ -1,0 +1,20 @@
+---
+interface Props {
+	slug: string;
+	count: number;
+	altPrefix: string;
+}
+const { slug, count, altPrefix } = Astro.props;
+const photos = Array.from({ length: count }, (_, i) => i + 1);
+---
+
+<div class="event-gallery">
+	<p class="gallery-label" data-i18n data-i18n-fr="Photos de l'événement" data-i18n-en="Event photos">Photos de l'événement</p>
+	<div class="gallery-grid">
+		{photos.map((i) => (
+			<button class="gallery-thumb" data-full={`/assets/images/events/${slug}_${i}.jpg`} aria-label={`Photo ${i}`}>
+				<img src={`/assets/images/events/${slug}_${i}_thumb.jpg`} alt={`${altPrefix} — photo ${i}`} loading="lazy" />
+			</button>
+		))}
+	</div>
+</div>
